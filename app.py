@@ -5,6 +5,8 @@ from flask import (
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField
 if os.path.exists("env.py"):
     import env
 
@@ -22,6 +24,15 @@ mongo = PyMongo(app)
 def get_inventory():
     inventory = mongo.db.loudspeaker_systems.find()
     return render_template("inventory.html", inventories=inventory)
+
+class LoginForm(FlaskForm):
+    username = StringField('username')
+    password = PasswordField('password')
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    form = LoginForm()
+    return render_template("register.html", form=form)
 
 
 if __name__ == "__main__":
