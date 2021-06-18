@@ -1,18 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        <div class="col s12 m8 offset-m2">
-        <div class="card blue-grey darken-1">
-            <form method= "POST" action = "{{ url_for('register') }}" class="card-content white-text">
-                <span class="card-title">Test</span>
-                {{ form.csrf_token}}
-                {{ form.username.label }}
-                {{ form.username }}
+        <form class ="col s12 m8 offset-m2" method= "POST" action = "{{ url_for('register') }}">
+        <!--username-->
+        <div class="row">
+            <div class="col s12">
+            {{ form.csrf_token}}
+            <i class="fas fa-user-plus"></i>
+            {{ form.username.label }}
+            {{ form.username }}
+            </div>
+        </div>
+        <!--password-->
+        <div class="row">
+            <div class="col s12">
+                <i class="fas fa-user-lock"></i>
                 {{ form.password.label }}
                 {{ form.password }}
-                <input type=submit value="Submit">
-                </form>
+            </div>
         </div>
+        <!--submit button-->
+        <div class="row">
+            <input type=submit value="Submit">
         </div>
+        </form>
     </div>
 {% endblock %}

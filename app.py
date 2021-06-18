@@ -32,6 +32,8 @@ class LoginForm(FlaskForm):
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = LoginForm()
+    if form.validate_on_submit():
+        return "Your Account Has Been Created"
     return render_template("register.html", form=form)
 
 
