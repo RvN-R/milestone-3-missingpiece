@@ -9,6 +9,9 @@
             <i class="fas fa-user-plus"></i>
             {{ form.username.label }}
             {{ form.username }}
+            {% for error in form.username.errors %}
+                <li style="color: red;">{{ error }}</li>
+            {% endfor %}
             </div>
         </div>
         <!--password-->

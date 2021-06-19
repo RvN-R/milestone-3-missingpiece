@@ -7,6 +7,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
+from wtforms.validators import InputRequired, Length
 if os.path.exists("env.py"):
     import env
 
@@ -26,8 +27,8 @@ def get_inventory():
     return render_template("inventory.html", inventories=inventory)
 
 class LoginForm(FlaskForm):
-    username = StringField('username')
-    password = PasswordField('password')
+    username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message= 'Username must be between 10 and 15 Characters')])
+    password = PasswordField('password', validators=[InputRequired()])
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
