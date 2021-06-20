@@ -2,3 +2,7 @@
 
 Input ISSUE 1 image
 Input ISSUE 2 image
+
+I manage to get passed this by using an "and". Now when the function recieves a POST and teh validators are met then the registration us submitted to my DB. Now if my validators aren't met I don't get incorrect information being submitted to my DB, and if a username has already been used then it can't be used again. 
+
+Input ISSUE 3 image
