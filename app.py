@@ -26,17 +26,32 @@ def get_inventory():
     inventory = mongo.db.loudspeaker_systems.find()
     return render_template("inventory.html", inventories=inventory)
 
-class LoginForm(FlaskForm):
+class RegistrationForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message= 'Username must be between 10 and 15 Characters')])
     password = PasswordField('password', validators=[InputRequired()])
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    form = LoginForm()
-    if form.validate_on_submit():
-        return "Your Account Has Been Created"
-    return render_template("register.html", form=form)
+    form = RegistrationForm()
+    if request.method == "POST" and form.validate_on_submit():
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
 
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+            
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": request.form.get("password")
+        }
+        mongo.db.users.insert_one(register)
+        
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
+        
+    return render_template("register.html", form=form)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
