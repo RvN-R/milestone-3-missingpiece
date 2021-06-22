@@ -1,31 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row">
-        <form class ="col s12 m8 offset-m2" method= "POST" action = "{{ url_for('register') }}">
-        <!--username-->
+
+    <div class="container">
         <div class="row">
             <div class="col s12">
-            {{ form.csrf_token}}
-            <i class="fas fa-user-plus"></i>
-            {{ form.username.label }}
-            {{ form.username }}
-            {% for error in form.username.errors %}
-                <li style="color: red;">{{ error }}</li>
-            {% endfor %}
+                <h3 class="center-align">Log In</h3>
             </div>
         </div>
-        <!--password-->
+        <div class="row">
+            <form class ="col s12 m8 offset-m2" method= "POST" action = "{{ url_for('login') }}">
+            <!--username-->
+            <div class="row">
+                <div class="col s12">
+                {{ form.csrf_token}}
+                <i class="fas fa-user-cog"></i>
+                {{ form.username.label }}
+                {{ form.username }}
+                {% for error in form.username.errors %}
+                    <li style="color: red;">{{ error }}</li>
+                {% endfor %}
+                </div>
+            </div>
+            <!--password-->
+            <div class="row">
+                <div class="col s12">
+                    <i class="fas fa-user-lock"></i>
+                    {{ form.password.label }}
+                    {{ form.password }}
+                </div>
+            </div>
+            <!--Log In button-->
+            <div class="row">
+                <input type=submit value="Submit">
+            </div>
+            </form>
+        </div>
         <div class="row">
             <div class="col s12">
-                <i class="fas fa-user-lock"></i>
-                {{ form.password.label }}
-                {{ form.password }}
+                <p class="center-align">
+                    New Here ? <a href="{{ url_for('register') }}">Register Account</a>
+                </p>
             </div>
         </div>
-        <!--submit button-->
-        <div class="row">
-            <input type=submit value="Submit">
-        </div>
-        </form>
     </div>
+    
 {% endblock %}

@@ -24,7 +24,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">How it Works</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Log In</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="#">Log Out</a></li>
                 <li><a href="#">Search Inventory</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -36,7 +36,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">How it Works</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Log In</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Search Inventory</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -54,7 +54,7 @@
       {% with messages = get_flashed_messages() %}
           {% if messages %}
               {% for message in messages %}
-                  <div class="row flashes">
+                  <div class="row flashes center-align">
                       <h4>{{ message }}</h4>
                   </div>
               {% endfor %}
