@@ -22,6 +22,13 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 @app.route("/")
+
+
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+
 @app.route("/get_inventory")
 def get_inventory():
     inventory = mongo.db.loudspeaker_systems.find()
