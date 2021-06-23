@@ -25,6 +25,7 @@
                 <li><a href="#">How it Works</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="#">Log Out</a></li>
                 <li><a href="#">Search Inventory</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -37,6 +38,7 @@
             <li><a href="#">How it Works</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Search Inventory</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
