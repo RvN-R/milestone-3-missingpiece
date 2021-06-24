@@ -118,6 +118,7 @@ def add_inventory():
     categories = mongo.db.loudspeaker_brand.find().sort("loudspeaker_brand_name", 1)
     return render_template("add_inventory.html", categories=categories)
 
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
