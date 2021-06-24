@@ -3,9 +3,24 @@
 
 <div class="container">
     <div class="row">
-        <div class="col sm12">
-            <h3>Add Inventory</h3>
+        <div class="col sm12 m8 offset-m2">
+            <h3 class="center-align">Add Inventory</h3>
         </div>
+    </div>
+    <div class="row">
+        <form class="col sm12 m8 offset-m2" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="loudspeaker_brand_name" name="loudspeaker_brand_name" class="validate" required>
+                      <option value="" disabled selected>Choose your Loudspeaker Brand</option>
+                      {% for category in categories %}
+                        <option value="{{ category.loudspeaker_brand_name }}">{{ category.loudspeaker_brand_name }}</option>
+                      {% endfor %}
+                    </select>
+                    <label for="loudspeaker_brand_name">Loudspeaker Brand</label>
+                  </div>
+            </div>
+        </form>
     </div>
 </div>
 
