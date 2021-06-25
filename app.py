@@ -113,10 +113,16 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_inventory")
+@app.route("/add_inventory", methods =["GET", "POST"])
 def add_inventory():
     categories = mongo.db.loudspeaker_brand.find().sort("loudspeaker_brand_name", 1)
+
     return render_template("add_inventory.html", categories=categories)
+
+@app.route("/choose_loudspeaker_brand")
+def choose_loudspeaker_brand():
+        return ("Hello World")
+    
 
 
 if __name__ == "__main__":
