@@ -12,7 +12,7 @@
             <div class="row">
                 <!--Loudspeaker Brand Select-->
                 <div class="input-field col s12">
-                    <select id="loudspeaker_brand_name" onselect="choose_loudspeaker_brand()" name="loudspeaker_brand_name" class="validate" required>
+                    <select id="loudspeaker_brand_name" name="loudspeaker_brand_name" class="validate" required>
                       <option value="" disabled selected>Choose your Loudspeaker Brand</option>
                       {% for category in categories %}
                         <option value="{{ category.loudspeaker_brand_name }}">{{ category.loudspeaker_brand_name }}</option>
@@ -22,21 +22,6 @@
                     <a id="open"><i class="far fa-check-circle"></i></a>
                     <a id="close"><i class="far fa-times-circle"></i></a>
                 </div>
-                <div class="col sm12 input-field loudspeaker_product_name_col">
-                    <select id="loudspeaker_product_name">
-                        <option value="" disabled selected>Choose your Loudspeaker Product</option>
-                        <option value="1">Option 1</option>
-                      </select>
-                      <label>Loudspeaker Product</label>
-                </div>
-                <!--Submit Button-->
-                <!-- <div class="row">
-                    <div class="col s12 center-align">
-                        <button class="submit btn-large">
-                            Add Inventory
-                        </button>
-                    </div>
-                </div> -->
             </div>
         </form>
     </div>

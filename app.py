@@ -119,11 +119,6 @@ def add_inventory():
 
     return render_template("add_inventory.html", categories=categories)
 
-@app.route("/choose_loudspeaker_brand")
-def choose_loudspeaker_brand():
-        return ("Hello World")
-    
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
