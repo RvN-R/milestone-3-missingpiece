@@ -2,14 +2,14 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('select').formSelect();
-    $('.loudspeaker_product_name_col').hide();  
+    $('.martinaudo_col').hide();  
   });
 
   /* Jquery used to open and close Loudspeaker Product Name */
-  $("#close").click(function(){
-    $(".loudspeaker_product_name_col").hide();
-  });
+  // $("#loudspeaker_brand_name").click(function(){
+  //   $(".loudspeaker_brand_martinaudio").hide();
+  // });
   
-  $("#open").click(function(){
-    $(".loudspeaker_product_name_col").show();
+  $("#loudspeaker_brand_name").click(function(){
+    $(".martinaudo_col").show();
   });
