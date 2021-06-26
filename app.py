@@ -113,8 +113,19 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_inventory")
+@app.route("/add_inventory", methods=["GET", "POST"])
 def add_inventory():
+    if request.method == "POST":
+        inventory = {
+            "loudspeaker_brand": request.form.get("loudspeaker_brand"),
+            "loudspeaker_product": request.form.get("loudspeaker_product"),
+            "mixer_brand": request.form.get("mixer_brand"),
+            "mixer_product": request.form.get("mixer_product"),
+            "microphone_brand": request.form.get("microphone_brand"),
+            "microphone_product": request.form.get("microphone_product")
+        }
+        mongo.db.inventories.insert_one(inventory)
+        flash("Inventory Successfully Added")
     return render_template("add_inventory.html")
 
 if __name__ == "__main__":
