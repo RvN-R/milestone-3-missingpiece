@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center-align">Add Inventory</h3>
+        </div>
+    </div>
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <!--Loudspeaker Categories-->
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="loudspeaker_brand" type="text" class="validate">
+              <label for="loudspeaker_brand">Loudspeaker Brand</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="loudspeaker_product" type="tel" class="validate">
+              <label for="loudspeaker_product">Loudspeaker Product</label>
+            </div>
+          </div>
+           <!--Mixer Categories-->
+           <div class="row">
+            <div class="input-field col s6">
+              <input id="mixer_brand" type="text" class="validate">
+              <label for="mixer_brand">Mixer Brand</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="mixer_product" type="tel" class="validate">
+              <label for="mixer_product">Mixer Product</label>
+            </div>
+          </div>
+          <!--Microphone Categories-->
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="microphone_brand" type="text" class="validate">
+              <label for="microphone_brand">Microphone Brand</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="microphone_product" type="tel" class="validate">
+              <label for="microphone_product">Microphone Product</label>
+            </div>
+          </div>
+        </form>
+      </div>
+</div>
+{% endblock %}
