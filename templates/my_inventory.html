@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2>Inventory</h2>
-
-    {% for inventory in inventories %}
-        {{ inventory.category_name }}<br>
-        {{ inventory.loudspeaker_brand_name }}<br>
-        {{ inventory.loudspeaker_model_name }}<br>
-    {% endfor %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center-align">My Inventory</h3>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

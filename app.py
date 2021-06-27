@@ -129,6 +129,11 @@ def add_inventory():
         flash("Inventory Successfully Added")
     return render_template("add_inventory.html")
 
+
+@app.route("/my_inventory")
+def my_inventory():
+    return render_template("my_inventory.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
