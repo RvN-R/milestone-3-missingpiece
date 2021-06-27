@@ -121,7 +121,8 @@ def add_inventory():
             "mixer_brand": request.form.get("mixer_brand"),
             "mixer_product": request.form.get("mixer_product"),
             "microphone_brand": request.form.get("microphone_brand"),
-            "microphone_product": request.form.get("microphone_product")
+            "microphone_product": request.form.get("microphone_product"),
+            "created_by": session["user"]
         }
         mongo.db.inventories.insert_one(inventory)
         flash("Inventory Successfully Added")
