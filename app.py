@@ -94,14 +94,17 @@ def login():
 
     return render_template("login.html", form=form)
 
-
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     #grad the session user's username from db
     username= mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    if session["user"]:
-        return render_template("profile.html", username=username)
+
+    created_by= mongo.db.inventories.find_one({"created_by": session["user"]})["created_by"]
+
+    if username == created_by:
+        inventories = list(mongo.db.inventories.find())
+        return render_template("profile.html", username=username, inventories=inventories)
     return redirect(url_for("login"))
 
 
@@ -132,7 +135,8 @@ def add_inventory():
 
 @app.route("/my_inventory")
 def my_inventory():
-    return render_template("my_inventory.html")
+    inventories = list(mongo.db.inventories.find())
+    return render_template("my_inventory.html",inventories=inventories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
