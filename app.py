@@ -31,7 +31,8 @@ def home():
 
 @app.route("/get_inventory")
 def get_inventory():
-    return render_template("search_inventory.html")
+    inventories = list(mongo.db.inventories.find())
+    return render_template("search_inventory.html", inventories=inventories)
 
 class RegistrationForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message= 'Username must be between 10 and 15 Characters')])
@@ -116,13 +117,13 @@ def logout():
 def add_inventory():
     if request.method == "POST":
         inventory = {
+            "created_by": session["user"],
             "loudspeaker_brand": request.form.get("loudspeaker_brand"),
             "loudspeaker_product": request.form.get("loudspeaker_product"),
             "mixer_brand": request.form.get("mixer_brand"),
             "mixer_product": request.form.get("mixer_product"),
             "microphone_brand": request.form.get("microphone_brand"),
-            "microphone_product": request.form.get("microphone_product"),
-            "created_by": session["user"]
+            "microphone_product": request.form.get("microphone_product")
         }
         mongo.db.inventories.insert_one(inventory)
         flash("Inventory Successfully Added")

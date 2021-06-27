@@ -7,18 +7,31 @@
         </div>
     </div>
     <div class="row">
+        {% for inventory in inventories%}
         <div class="col s12 m6">
             <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-              </div>
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">{{ inventory.created_by }}</h4><br>
+                    <p><strong>Brand of Loudspeakers in Stock:</strong>{{ inventory.loudspeaker_brand }}</p>
+                    <p><strong>{{ inventory.loudspeaker_brand }} in stock is:
+                        </strong>{{ inventory.loudspeaker_product }}</p><br>
+
+                    <p><strong>Brand of Mixing Consoles in Stock:</strong>{{ inventory.mixer_brand }}</p>
+                    <p><strong>{{ inventory.mixer_brand }} in stock is a: </strong>{{ inventory.mixer_product }}</p><br>
+
+                    <p><strong>Brand of Microphones in Stock:</strong>{{ inventory.microphone_brand }}</p>
+                    <p><strong>{{ inventory.microphone_brand }} in stock is: </strong>{{ inventory.microphone_product }}
+                    </p><br>
+
+                </div>
             </div>
-          </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
