@@ -31,8 +31,7 @@ def home():
 
 @app.route("/get_inventory")
 def get_inventory():
-    inventory = mongo.db.loudspeaker_systems.find()
-    return render_template("inventory.html", inventories=inventory)
+    return render_template("search_inventory.html")
 
 class RegistrationForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message= 'Username must be between 10 and 15 Characters')])
