@@ -10,40 +10,73 @@
         <form class="col s12" method="POST" action="{{ url_for('add_inventory') }}">
             <!--Loudspeaker Categories-->
           <div class="row">
+            <div class="col s12">
+              <h4>Do You Stock Loudspeakers in Your Inventory?</h4>
+            </div>
+            <div class="col 6">
+              <a class="waves-effect waves-light btn-large" id="loudspeaker_yes_btn">YES</a>
+            </div>
+            <div class="col 6">
+              <a class="waves-effect waves-light btn-large" id="loudspeaker_no_btn">NO</a>
+            </div>
+          </div>
+          <div class="row loudspeaker_brand_row">
             <div class="input-field col s12">
-              <input id="loudspeaker_brand" name= "loudspeaker_brand" type="text" class="validate">
+              <input id="loudspeaker_brand" name= "loudspeaker_brand" type="text" class="validate" required>
               <label for="loudspeaker_brand">Loudspeaker Brand</label>
             </div>
           </div>
-          <div class="row">
+          <div class="row loudspeaker_product_row">
             <div class="input-field col s12">
-                <input id="loudspeaker_product" name= "loudspeaker_product" type="text" class="validate">
+                <input id="loudspeaker_product" name= "loudspeaker_product" type="text" class="validate" required>
                 <label for="loudspeaker_product">Loudspeaker Product</label>
               </div>
           </div>
            <!--Mixer Categories-->
            <div class="row">
+            <div class="col s12">
+              <h4>Do You Stock Mixing Consoles in Your Inventory?</h4>
+            </div>
+            <div class="col 6">
+              <a class="waves-effect waves-light btn-large" id="mixer_yes_btn">YES</a>
+            </div>
+            <div class="col 6">
+              <a class="waves-effect waves-light btn-large" id="mixer_no_btn">NO</a>
+            </div>
+          </div>
+           <div class="row mixer_brand_row">
             <div class="input-field col s12">
-              <input id="mixer_brand" name="mixer_brand" type="text" class="validate">
+              <input id="mixer_brand" name="mixer_brand" type="text" class="validate" required>
               <label for="mixer_brand">Mixer Brand</label>
             </div>
           </div>
-          <div class="row">
+          <div class="row mixer_product_row">
             <div class="input-field col s12">
-                <input id="mixer_product" name="mixer_product" type="text" class="validate">
+                <input id="mixer_product" name="mixer_product" type="text" class="validate" required>
                 <label for="mixer_product">Mixer Product</label>
               </div>
           </div>
           <!--Microphone Categories-->
           <div class="row">
-            <div class="input-field col s12">
-              <input id="microphone_brand" name="microphone_brand" type="text" class="validate">
-              <label for="microphone_brand">Microphone Brand</label>
+            <div class="col s12">
+              <h4>Do You Stock Microphones in Your Inventory?</h4>
+            </div>
+            <div class="col 6">
+              <a class="waves-effect waves-light btn-large" id="mic_yes_btn">YES</a>
+            </div>
+            <div class="col 6">
+              <a class="waves-effect waves-light btn-large" id="mic_no_btn">NO</a>
             </div>
           </div>
-          <div class="row">
+          <div class="row mic_brand_row">
             <div class="input-field col s12">
-                <input id="microphone_product" name="microphone_product" type="text" class="validate">
+              <input id="microphone_brand" name="microphone_brand" type="text" class="validate">
+              <label for="microphone_brand" required>Microphone Brand</label>
+            </div>
+          </div>
+          <div class="row mic_product_row">
+            <div class="input-field col s12">
+                <input id="microphone_product" name="microphone_product" type="text" class="validate" required>
                 <label for="microphone_product">Microphone Product</label>
               </div>
           </div>
