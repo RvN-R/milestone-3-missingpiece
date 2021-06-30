@@ -13,6 +13,7 @@ $(document).ready(function(){
 $("#loudspeaker_no_btn").click(function(){
   $("#loudspeaker_brand").val("Don't Hold Stock"); 
   $("#loudspeaker_product").val("N/A");
+  $("#loudspeaker_product_qty").val(0);
   $(".loudspeaker_brand_row").show(1000);
   $(".loudspeaker_product_row").show(1000);
 
@@ -21,6 +22,7 @@ $("#loudspeaker_no_btn").click(function(){
 $("#loudspeaker_yes_btn").click(function(){
   $("#loudspeaker_brand").val(""); 
   $("#loudspeaker_product").val("");
+  $("#loudspeaker_product_qty").val("");
   $(".loudspeaker_brand_row").show(1000);
   $(".loudspeaker_product_row").show(1000);
 });
@@ -28,6 +30,7 @@ $("#loudspeaker_yes_btn").click(function(){
 $("#mixer_no_btn").click(function(){
   $("#mixer_brand").val("Don't Hold Stock"); 
   $("#mixer_product").val("N/A");
+  $("#mixer_product_qty").val(0);
   $(".mixer_brand_row").show(1000);
   $(".mixer_product_row").show(1000);
 
@@ -36,6 +39,7 @@ $("#mixer_no_btn").click(function(){
 $("#mixer_yes_btn").click(function(){
   $("#mixer_brand").val(""); 
   $("#mixer_product").val("");
+  $("#mixer_product_qty").val("");
   $(".mixer_brand_row").show(1000);
   $(".mixer_product_row").show(1000);
 });
@@ -43,6 +47,7 @@ $("#mixer_yes_btn").click(function(){
 $("#mic_no_btn").click(function(){
   $("#microphone_brand").val("Don't Hold Stock"); 
   $("#microphone_product").val("N/A");
+  $("#microphone_product_qty").val(0);
   $(".mic_brand_row").show(1000);
   $(".mic_product_row").show(1000);
 
@@ -51,6 +56,7 @@ $("#mic_no_btn").click(function(){
 $("#mic_yes_btn").click(function(){
   $("#microphone_brand").val(""); 
   $("#microphone_product").val("");
+  $("#microphone_product_qty").val("");
   $(".mic_brand_row").show(1000);
   $(".mic_product_row").show(1000);
 });
