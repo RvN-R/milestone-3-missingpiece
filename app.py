@@ -138,6 +138,24 @@ def add_inventory():
 
 @app.route("/edit_inventory/<inventory_id>", methods=["GET", "POST"])
 def edit_inventory(inventory_id):
+
+    if request.method == "POST":
+        submit = {
+            "created_by": session["user"],
+            "loudspeaker_brand": request.form.get("loudspeaker_brand"),
+            "loudspeaker_product": request.form.get("loudspeaker_product"),
+            "loudspeaker_product_qty": request.form.get("loudspeaker_product_qty"),
+            "mixer_brand": request.form.get("mixer_brand"),
+            "mixer_product": request.form.get("mixer_product"),
+            "mixer_product_qty": request.form.get("mixer_product_qty"),
+            "microphone_brand": request.form.get("microphone_brand"),
+            "microphone_product": request.form.get("microphone_product"),
+            "microphone_product_qty": request.form.get("microphone_product_qty")
+        }
+        mongo.db.inventories.update({"_id": ObjectId(inventory_id)}, submit)
+        flash("Inventory Successfully Updated")
+        return my_inventory()
+
     inventory = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
     return render_template("edit_inventory.html", inventory=inventory)
 
@@ -146,7 +164,7 @@ def edit_inventory(inventory_id):
 @app.route("/my_inventory")
 def my_inventory():
     inventories = list(mongo.db.inventories.find())
-    return render_template("my_inventory.html",inventories=inventories)
+    return render_template("my_inventory.html", inventories=inventories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
