@@ -136,6 +136,13 @@ def add_inventory():
     return render_template("add_inventory.html")
 
 
+@app.route("/edit_inventory/<inventory_id>", methods=["GET", "POST"])
+def edit_inventory(inventory_id):
+    inventory = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
+    return render_template("edit_inventory.html", inventory=inventory)
+
+
+
 @app.route("/my_inventory")
 def my_inventory():
     inventories = list(mongo.db.inventories.find())
