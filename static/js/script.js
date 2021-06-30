@@ -1,12 +1,12 @@
 /* JQuery for Materialize Navbar and Mobile Side Navbar*/
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
-    $(".loudspeaker_brand_row").hide();
-    $(".loudspeaker_product_row").hide();
-    $(".mixer_brand_row").hide();
-    $(".mixer_product_row").hide();
-    $(".mic_brand_row").hide();
-    $(".mic_product_row").hide();
+    $(".hide_loudspeaker_brand_row").hide();
+    $(".hide_loudspeaker_product_row").hide();
+    $(".hide_mixer_brand_row").hide();
+    $(".hide_mixer_product_row").hide();
+    $(".hide_mic_brand_row").hide();
+    $(".hide_mic_product_row").hide();
 
   });
 /* Loudspeaker Brand Inventory Form Function*/
