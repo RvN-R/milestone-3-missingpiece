@@ -17,16 +17,15 @@
                 </div>
                 <div class="card-content">
                     <h4 class="card-title">{{ inventory.created_by }}</h4><br>
-                    <p><strong>Brand of Loudspeakers in Stock:</strong>{{ inventory.loudspeaker_brand }}</p>
-                    <p><strong>{{ inventory.loudspeaker_brand }} in stock is:
-                        </strong>{{ inventory.loudspeaker_product }}</p><br>
+                    <p><strong>Brand of Loudspeakers in Stock:</strong>{{ inventory.loudspeaker_brand }}</p><br>
+                    <p><strong>{{ inventory.loudspeaker_brand }} product in stock is:
+                        </strong>{{ inventory.loudspeaker_product }} and <strong>{{ inventory.loudspeaker_product_qty }}</strong> are in stock.</p><br>
 
-                    <p><strong>Brand of Mixing Consoles in Stock:</strong>{{ inventory.mixer_brand }}</p>
-                    <p><strong>{{ inventory.mixer_brand }} in stock is a: </strong>{{ inventory.mixer_product }}</p><br>
+                    <p><strong>Brand of Mixing Consoles in Stock:</strong>{{ inventory.mixer_brand }}</p><br>
+                    <p><strong>{{ inventory.mixer_brand }} product in stock is a: </strong>{{ inventory.mixer_product }} and <strong>{{ inventory.mixer_product_qty }}</strong> are in stock.</p><br>
 
-                    <p><strong>Brand of Microphones in Stock:</strong>{{ inventory.microphone_brand }}</p>
-                    <p><strong>{{ inventory.microphone_brand }} in stock is: </strong>{{ inventory.microphone_product }}
-                    </p><br>
+                    <p><strong>Brand of Microphones in Stock:</strong>{{ inventory.microphone_brand }}</p><br>
+                    <p><strong>{{ inventory.microphone_brand }} product in stock is: </strong>{{ inventory.microphone_product }} and <strong>{{ inventory.microphone_product_qty }}</strong> are in stock.</p><br>
 
                 </div>
             </div>
