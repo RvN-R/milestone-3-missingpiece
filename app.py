@@ -160,6 +160,13 @@ def edit_inventory(inventory_id):
     return render_template("edit_inventory.html", inventory=inventory)
 
 
+@app.route("/delete_inventory/<inventory_id>")
+def delete_inventory(inventory_id):
+    mongo.db.inventories.remove({"_id": ObjectId(inventory_id)})
+    flash("Inventory Successfully Deleted")
+    return my_inventory()
+
+
 
 @app.route("/my_inventory")
 def my_inventory():
