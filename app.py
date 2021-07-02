@@ -69,9 +69,7 @@ def register():
         
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful {}!".format(request.form.get("username")))
-        return redirect(url_for("profile", username=session["user"]))
-
-        
+        return redirect(url_for("profile", username=session["user"])) 
     return render_template("register.html", form=form)
 
 
@@ -107,15 +105,12 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    #grad the session user's username from db
-    username= mongo.db.users.find_one(
+    username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    created_by= mongo.db.inventories.find_one({"created_by": session["user"]})["created_by"]
-
-    if username == created_by:
-        inventories = list(mongo.db.inventories.find())
-        return render_template("profile.html", username=username, inventories=inventories)
+    if session["user"]:
+        return render_template("profile.html", username=username)
+    
     return redirect(url_for("login"))
 
 
