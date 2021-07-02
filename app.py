@@ -63,12 +63,13 @@ def register():
             
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "company_name": request.form.get("company_name").lower()
         }
         mongo.db.users.insert_one(register)
         
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful {}!".format(request.form.get("username")))
+        flash("Registration Successful {}!".format(request.form.get("company_name")))
         return redirect(url_for("profile", username=session["user"])) 
     return render_template("register.html", form=form)
 
