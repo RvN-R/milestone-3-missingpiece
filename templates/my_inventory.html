@@ -29,7 +29,7 @@
                     <p><strong>{{ inventory.microphone_brand }} product in stock is: </strong>{{ inventory.microphone_product }} and <strong>{{ inventory.microphone_product_qty }}</strong> are in stock.</p><br>
                     <div class="row">
                         <div class="col s6">
-                            <a href="{{ url_for('edit_inventory',inventory_id=inventory._id) }}" class="waves-effect waves-light btn-small">Edit</a>
+                            <a href="{{ url_for('edit_inventory',inventory_id=inventory._id) }}" class="btn btn-primary">Edit</a>
                         </div>
                         <!--Bootstrap Button-->
                         <div class="col s6">
@@ -38,7 +38,7 @@
                               </button>
                         </div>
                         <!--Bootstrap Modal-->
-                        <div class="modal fade" id="modal{{ inventory.inventory_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal modal fade" id="modal{{ inventory.inventory_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
