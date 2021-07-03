@@ -45,8 +45,15 @@
             <!--Street Name-->
             <div class="row">
                 <div class=" input-field col s12">
-                    <input id="street_name" name="street_name" type="text" class="validate" required>
+                    <input id="street_name" name="street_name" type="text" minlength="10" maxlength="50" class="validate" required>
                     <label for="street_name"><i class="fas fa-road"></i> Street Name</label>
+                </div>
+            </div>
+            <!--Postcode-->
+            <div class="row">
+                <div class=" input-field col s12">
+                    <input id="postcode" name="postcode" type="text" minlength="6" class="validate" required>
+                    <label for="city"><i class="fas fa-road"></i> Postcode</label>
                 </div>
             </div>
             <!--City-->

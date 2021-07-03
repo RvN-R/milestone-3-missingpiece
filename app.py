@@ -66,6 +66,7 @@ def register():
             "password": generate_password_hash(request.form.get("password")),
             "company_name": request.form.get("company_name").lower(),
             "street_name": request.form.get("street_name").lower(),
+            "postcode": request.form.get("postcode").lower(),
             "city": request.form.get("city").lower(),
             "phone": request.form.get("phone").lower()
         }
