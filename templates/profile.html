@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
     <div class="container">
         {% for company in companies if session.user == company.username %}
             <div class="row">
@@ -11,7 +10,7 @@
                     </h3>
                 </div>
             </div>
+            <div id="map"></div>
         {% endfor %}
     </div>
-    
 {% endblock %}

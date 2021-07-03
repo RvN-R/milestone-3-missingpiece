@@ -29,18 +29,45 @@
                     {{ form.password }}
                 </div>
             </div>
+            <!--Heading-->
             <div class="row">
                 <div class="col s12">
                     <h4 class="center-align">Input Company Details</h4>
                 </div>
+            </div>
+            <!--Company Name-->
+            <div class="row">
                 <div class=" input-field col s12">
-                    <input id="company_name" name="company_name" type="text" class="validate">
-                    <label for="company_name">Company Name</label>
+                    <input id="company_name" name="company_name" type="text" class="validate" required>
+                    <label for="company_name"><i class="fas fa-users"></i> Company Name</label>
+                </div>
+            </div>
+            <!--Street Name-->
+            <div class="row">
+                <div class=" input-field col s12">
+                    <input id="street_name" name="street_name" type="text" class="validate" required>
+                    <label for="street_name"><i class="fas fa-road"></i> Street Name</label>
+                </div>
+            </div>
+            <!--City-->
+            <div class="row">
+                <div class=" input-field col s12">
+                    <input id="city" name="city" type="text" minlength="3" class="validate" required>
+                    <label for="city"><i class="fas fa-building"></i> City Name</label>
+                </div>
+            </div>
+            <!--Phone Number-->
+            <div class="row">
+                <div class=" input-field col s12">
+                    
+                    <input id="phone" name="phone" type="tel" class="validate" required>
+                    <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
                 </div>
             </div>
             <!--submit button-->
             <div class="row">
-                <input type=submit value="Submit">
+                <button class="btn waves-effect waves-light" type="submit" value="Submit">Submit
+                <!-- <input type=submit value="Submit"> -->
             </div>
             </form>
         </div>
