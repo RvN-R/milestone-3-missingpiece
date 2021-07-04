@@ -112,15 +112,6 @@ def login():
 def profile(username):
     companies = list(mongo.db.users.find())
     return render_template("profile.html", companies=companies)
-    # username = mongo.db.users.find_one(
-    #     {"username": session["user"]})["username"]
-
-    # if session["user"]:
-    #     return render_template("profile.html", username=username)
-    
-    # return redirect(url_for("login"))
-
-
 
 @app.route("/logout")
 def logout():
@@ -172,6 +163,25 @@ def edit_inventory(inventory_id):
 
     inventory = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
     return render_template("edit_inventory.html", inventory=inventory)
+
+
+@app.route("/edit_company_address/<company_id>", methods=["GET", "POST"])
+def edit_company_address(company_id):
+
+    if request.method == "POST":
+        submit = {
+            "company_name": request.form.get("company_name").lower(),
+            "street_name": request.form.get("street_name").lower(),
+            "postcode": request.form.get("postcode").lower(),
+            "city": request.form.get("city").lower(),
+            "phone": request.form.get("phone").lower()
+        }
+        mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
+        flash("Company Details Updated")
+        return profile()
+
+    company = mongo.db.users.find_one({"_id": ObjectId(company_id)})
+    return render_template("edit_company_address.html", company=company)
 
 
 @app.route("/delete_inventory/<inventory_id>")
