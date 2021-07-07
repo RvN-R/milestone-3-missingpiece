@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_inventory') }}">
-            <!--Loudspeaker Categories-->
+            <!--Categories-->
           <div class="row">
             <div class="col s12">
               <h4>Fill out information below to add to your inventory</h4>
@@ -26,27 +26,29 @@
               </div>
             </div>
           </div>
-          <div class="row loudspeaker_brand_row hide_loudspeaker_brand_row">
+          <!--Brand Input-->
+          <div class="row">
             <div class="input-field col s12">
-              <input id="loudspeaker_brand" name= "loudspeaker_brand" type="text" class="validate" required>
-              <label for="loudspeaker_brand">Loudspeaker Brand</label>
+              <input id="brand" name= "brand" type="text" class="validate" required>
+              <label for="brand">Please Input the Brand Name</label>
             </div>
           </div>
-          <div class="row loudspeaker_product_row hide_loudspeaker_product_row">
+          <!--product-->
+          <div class="row">
             <div class="input-field col s10">
-                <input id="loudspeaker_product" name= "loudspeaker_product" type="text" class="validate" required>
-                <label for="loudspeaker_product">Loudspeaker Product</label>
+                <input id="product" name= "product" type="text" class="validate" required>
+                <label for="product"> Please Input the Product Name</label>
               </div>
               <div class="input-field col s2">
-                <input id="loudspeaker_product_qty" name= "loudspeaker_product_qty" type="text" class="validate" required>
-                <label for="loudspeaker_product_qty">Quantity</label>
+                <input id="product_qty" name= "product_qty" type="number" class="validate" required>
+                <label for="product_qty">Quantity</label>
               </div>
           </div>
           <!--Submit Button-->
           <div class="row">
               <div class="col s12 center-align">
                   <button type="submit" class="btn-large">
-                      Add Inventory
+                      Add To Inventory
                   </button>
               </div>
           </div>

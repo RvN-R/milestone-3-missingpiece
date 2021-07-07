@@ -126,15 +126,10 @@ def add_inventory():
     if request.method == "POST":
         inventory = {
             "created_by": session["user"],
-            "loudspeaker_brand": request.form.get("loudspeaker_brand"),
-            "loudspeaker_product": request.form.get("loudspeaker_product"),
-            "loudspeaker_product_qty": request.form.get("loudspeaker_product_qty"),
-            "mixer_brand": request.form.get("mixer_brand"),
-            "mixer_product": request.form.get("mixer_product"),
-            "mixer_product_qty": request.form.get("mixer_product_qty"),
-            "microphone_brand": request.form.get("microphone_brand"),
-            "microphone_product": request.form.get("microphone_product"),
-            "microphone_product_qty": request.form.get("microphone_product_qty")
+            "categories_name": request.form.get("categories_name"),
+            "brand": request.form.get("brand"),
+            "product": request.form.get("product"),
+            "product_qty": request.form.get("product_qty")
         }
         mongo.db.inventories.insert_one(inventory)
         flash("Inventory Successfully Added")
