@@ -145,22 +145,18 @@ def edit_inventory(inventory_id):
     if request.method == "POST":
         submit = {
             "created_by": session["user"],
-            "loudspeaker_brand": request.form.get("loudspeaker_brand"),
-            "loudspeaker_product": request.form.get("loudspeaker_product"),
-            "loudspeaker_product_qty": request.form.get("loudspeaker_product_qty"),
-            "mixer_brand": request.form.get("mixer_brand"),
-            "mixer_product": request.form.get("mixer_product"),
-            "mixer_product_qty": request.form.get("mixer_product_qty"),
-            "microphone_brand": request.form.get("microphone_brand"),
-            "microphone_product": request.form.get("microphone_product"),
-            "microphone_product_qty": request.form.get("microphone_product_qty")
+            "categories_name": request.form.get("categories_name"),
+            "brand": request.form.get("brand"),
+            "product": request.form.get("product"),
+            "product_qty": request.form.get("product_qty")
         }
         mongo.db.inventories.update({"_id": ObjectId(inventory_id)}, submit)
         flash("Inventory Successfully Updated")
         return my_inventory()
 
     inventory = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
-    return render_template("edit_inventory.html", inventory=inventory)
+    categories = mongo.db.categories.find().sort("categories_name", 1)
+    return render_template("edit_inventory.html", inventory=inventory, categories=categories)
 
 
 @app.route("/edit_company_address/<company_id>", methods=["GET", "POST"])

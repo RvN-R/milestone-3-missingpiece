@@ -8,89 +8,44 @@
     </div>
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('edit_inventory',inventory_id=inventory._id) }}">
-            <!--Loudspeaker Categories-->
-          <div class="row">
-            <div class="col s12">
-              <h4>Do You Stock Loudspeakers in Your Inventory?</h4>
-            </div>
-            <div class="col 6">
-              <a class="waves-effect waves-light btn-large" id="loudspeaker_yes_btn">YES</a>
-            </div>
-            <div class="col 6">
-              <a class="waves-effect waves-light btn-large" id="loudspeaker_no_btn">NO</a>
-            </div>
-          </div>
-          <div class="row loudspeaker_brand_row">
-            <div class="input-field col s12">
-              <input id="loudspeaker_brand" name= "loudspeaker_brand" value="{{ inventory.loudspeaker_brand }}" type="text" class="validate" required>
-              <label for="loudspeaker_brand">Loudspeaker Brand</label>
-            </div>
-          </div>
-          <div class="row loudspeaker_product_row">
-            <div class="input-field col s10">
-                <input id="loudspeaker_product" name= "loudspeaker_product" value ="{{ inventory.loudspeaker_product }}" type="text" class="validate" required>
-                <label for="loudspeaker_product">Loudspeaker Product</label>
-              </div>
-              <div class="input-field col s2">
-                <input id="loudspeaker_product_qty" name= "loudspeaker_product_qty" value ="{{ inventory.loudspeaker_product_qty
-                }}" type="text" class="validate" required>
-                <label for="loudspeaker_product_qty">Quantity</label>
-              </div>
-          </div>
-           <!--Mixer Categories-->
+           <!--Categories-->
            <div class="row">
             <div class="col s12">
-              <h4>Do You Stock Mixing Consoles in Your Inventory?</h4>
-            </div>
-            <div class="col 6">
-              <a class="waves-effect waves-light btn-large" id="mixer_yes_btn">YES</a>
-            </div>
-            <div class="col 6">
-              <a class="waves-effect waves-light btn-large" id="mixer_no_btn">NO</a>
+              <h4>Fill out information below to add to your inventory</h4>
             </div>
           </div>
-           <div class="row mixer_brand_row">
-            <div class="input-field col s12">
-              <input id="mixer_brand" name="mixer_brand" value="{{ inventory.mixer_brand }}" type="text" class="validate" required>
-              <label for="mixer_brand">Mixer Brand</label>
-            </div>
-          </div>
-          <div class="row mixer_product_row">
-            <div class="input-field col s10">
-                <input id="mixer_product" name="mixer_product" value="{{ inventory.mixer_product }}" type="text" class="validate" required>
-                <label for="mixer_product">Mixer Product</label>
-              </div>
-              <div class="input-field col s2">
-                <input id="mixer_product_qty" name= "mixer_product_qty" value="{{ inventory.mixer_product_qty }}" type="text" class="validate" required>
-                <label for="mixer_product_qty">Quantity</label>
-              </div>
-          </div>
-          <!--Microphone Categories-->
           <div class="row">
-            <div class="col s12">
-              <h4>Do You Stock Microphones in Your Inventory?</h4>
-            </div>
-            <div class="col 6">
-              <a class="waves-effect waves-light btn-large" id="mic_yes_btn">YES</a>
-            </div>
-            <div class="col 6">
-              <a class="waves-effect waves-light btn-large" id="mic_no_btn">NO</a>
-            </div>
-          </div>
-          <div class="row mic_brand_row">
             <div class="input-field col s12">
-              <input id="microphone_brand" name="microphone_brand" value="{{ inventory.microphone_brand }}" type="text" class="validate">
-              <label for="microphone_brand" required>Microphone Brand</label>
+                <select id="categories_name" name="categories_name" class="validate" required>
+                  <option value="" disabled selected>Choose your option</option>
+                  {% for category in categories %}
+                    {% if category.categories_name == inventory.categories_name %}
+                      <option value="{{ category.categories_name }}" selected>{{ category.categories_name }}</option>
+                    {% else %}
+                      <option value="{{ category.categories_name }}">{{ category.categories_name }}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+                <label for="categories_name">Category</label>
+              </div>
             </div>
           </div>
-          <div class="row mic_product_row">
+          <!--Brand Input-->
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="brand" name= "brand" value="{{ inventory.brand }}" type="text" class="validate" required>
+              <label for="brand">Please Input the Brand Name</label>
+            </div>
+          </div>
+          <!--product-->
+          <div class="row">
             <div class="input-field col s10">
-                <input id="microphone_product" name="microphone_product" value="{{ inventory.microphone_product }}" type="text" class="validate" required>
-                <label for="microphone_product">Microphone Product</label>
+                <input id="product" name= "product" value="{{ inventory.product }}" type="text" class="validate" required>
+                <label for="product"> Please Input the Product Name</label>
               </div>
               <div class="input-field col s2">
-                <input id="microphone_product_qty" name= "microphone_product_qty" value="{{ inventory.microphone_product_qty }}" type="text" class="validate" required>
-                <label for="microphone_product_qty">Quantity</label>
+                <input id="product_qty" name= "product_qty" value="{{ inventory.product_qty }}" type="number" class="validate" required>
+                <label for="product_qty">Quantity</label>
               </div>
           </div>
           <!--Submit Button-->
