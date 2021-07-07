@@ -138,7 +138,10 @@ def add_inventory():
         }
         mongo.db.inventories.insert_one(inventory)
         flash("Inventory Successfully Added")
-    return render_template("add_inventory.html")
+        return render_template("add_inventory.html")
+    
+    categories = mongo.db.categories.find().sort("categories_name", 1)
+    return render_template("add_inventory.html", categories=categories)
 
 
 @app.route("/edit_inventory/<inventory_id>", methods=["GET", "POST"])
