@@ -26,26 +26,12 @@
     <div class="row">
         {% for inventory in inventories%}
         <div class="col s12 m6">
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/sample-1.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">add</i></a>
-                </div>
-                <div class="card-content">
-                    <h4 class="card-title">{{ inventory.created_by }}</h4><br>
-                    <p><strong>Brand of Loudspeakers in Stock:</strong>{{ inventory.loudspeaker_brand }}</p>
-                    <p><strong>{{ inventory.loudspeaker_brand }} in stock is:
-                        </strong>{{ inventory.loudspeaker_product }}</p><br>
-
-                    <p><strong>Brand of Mixing Consoles in Stock:</strong>{{ inventory.mixer_brand }}</p>
-                    <p><strong>{{ inventory.mixer_brand }} in stock is a: </strong>{{ inventory.mixer_product }}</p><br>
-
-                    <p><strong>Brand of Microphones in Stock:</strong>{{ inventory.microphone_brand }}</p>
-                    <p><strong>{{ inventory.microphone_brand }} in stock is: </strong>{{ inventory.microphone_product }}
-                    </p><br>
-
-                </div>
+            <div class="card-content">
+                <h4 class="card-title">{{ inventory.created_by }}</h4><br>
+                
+                <p><strong>Catergory:</strong>{{ inventory.categories_name }}</p><br>
+                <p><strong>Brand of {{ inventory.categories_name }} in stock is:</strong>{{ inventory.brand }}</p><br>
+                <p><strong>Name of {{ inventory.brand }} product in stock is:</strong> {{ inventory.product }} and they have {{ inventory.product_qty }} in stock</p><br>
             </div>
         </div>
         {% endfor %}
