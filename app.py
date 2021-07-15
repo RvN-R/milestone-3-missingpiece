@@ -9,6 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
 from wtforms.validators import InputRequired, Length
+import sys
 if os.path.exists("env.py"):
     import env
 
@@ -38,10 +39,33 @@ def get_inventory():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     # inventories = list(mongo.db.inventories.find())
-    query = request.form.get("query")
-    inventories = list(mongo.db.inventories.find({"$text": {"$search": query}}))
-    return render_template("search_inventory.html", inventories=inventories)
-
+    # query = request.form.get("query")
+    # inventories = list(mongo.db.inventories.find({"$text": {"$search": query}}))
+    # return render_template("search_inventory.html", inventories=inventories)
+    pipeline = [
+        {
+            "$lookup": {
+                "from": "inventories",
+                "localField": "username",
+                "foreignField": "created_by",
+                "as": "company"
+            }
+        },
+        {
+            '$unwind': '$company'
+        },
+        {
+            '$project': {
+                'company_name': '$company_name',
+                'brand': '$company.brand',
+                'product': '$company.product',
+                'product_qty': '$company.product_qty',
+                '_id': 0
+            }
+        }]
+    results = list(mongo.db.users.aggregate(pipeline))
+    print(results, file=sys.stderr)
+    return render_template("search_inventory.html", results=results)
 
 class RegistrationForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message= 'Username must be between 10 and 15 Characters')])

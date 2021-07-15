@@ -22,7 +22,7 @@
             </div>
         </form>
     </div>
-    {% if inventories|length > 0 %}
+    <!-- {% if inventories|length > 0 %}
     <div class="row">
         {% for inventory in inventories%}
         <div class="col s12 m6">
@@ -42,6 +42,16 @@
             <h3 class="center-align">No Results Found</h3>
         </div>
     </div>
-    {% endif %}
+    {% endif %} -->
+    {% for result in results%}
+    <div class="row">
+        <div class="col s12">
+            {{ result['company_name'] }}
+            {{ result['brand'] }}
+            {{ result['product'] }}
+            {{ result['product_qty'] }}
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
