@@ -31,6 +31,7 @@
                   <li><a href="{{ url_for('add_inventory') }}">Add To Inventory</a></li>
                   <li><a href="{{ url_for('my_inventory') }}">My Inventory</a></li>
                 {% else %}
+                  <li><a href="{{ url_for('search_passive') }}">Search Inventory</a></li>
                   <li><a href="{{ url_for('register') }}">Register</a></li>
                   <li><a href="{{ url_for('login') }}">Log In</a></li>
                 {% endif %}
@@ -49,6 +50,7 @@
                   <li><a href="{{ url_for('add_inventory') }}">Add To Inventory</a></li>
                   <li><a href="{{ url_for('my_inventory') }}">My Inventory</a></li>
                 {% else %}
+                  <li><a href="{{ url_for('search_passive') }}">Search Inventory</a></li>
                   <li><a href="{{ url_for('register') }}">Register</a></li>
                   <li><a href="{{ url_for('login') }}">Log In</a></li>
                 {% endif %}
