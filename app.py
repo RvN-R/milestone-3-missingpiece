@@ -118,6 +118,16 @@ def profile(username):
     companies = list(mongo.db.users.find())
     return render_template("profile.html", companies=companies)
 
+
+@app.route("/contact_profile/")
+def contact_profile():
+    # inventory_item = mongo.db.inventories.find_one({"_id": ObjectId(id)})
+    # inventory_item_company_details = list(mongo.db.users.find())
+    # print(inventory_item, inventory_item_company_details, file=sys.stderr)
+    # return redirect('/')
+    return render_template("contact_profile.html")
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies
