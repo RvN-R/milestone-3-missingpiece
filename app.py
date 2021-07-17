@@ -121,10 +121,8 @@ def profile(username):
 
 @app.route("/contact_profile/")
 def contact_profile():
-    # inventory_item = mongo.db.inventories.find_one({"_id": ObjectId(id)})
-    # inventory_item_company_details = list(mongo.db.users.find())
-    # print(inventory_item, inventory_item_company_details, file=sys.stderr)
-    # return redirect('/')
+    inventory_item = mongo.db.inventories.find_one()
+    print(inventory_item, file=sys.stderr)
     return render_template("contact_profile.html")
 
 
