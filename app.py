@@ -45,7 +45,18 @@ def search():
     if request.method == "POST":
         query = request.form.get("query")
         inventories = list(mongo.db.inventories.find({"$text": {"$search": query}}))
-        return render_template("search_inventory.html", inventories=inventories)
+        created_by = list(mongo.db.inventories.find({"$text": {"$search": query}}, {"created_by": 1}))
+        users = []
+        for i in created_by:
+            users.append((mongo.db.users.find_one({"username": i.get("created_by")})))
+            print(users, file=sys.stderr)
+        # created_by_users = mongo.db.users.find_one({"username": i.get("created_by")})
+        # print(query, file=sys.stderr)
+        # print(inventories, file=sys.stderr)
+        # print(created_by, file=sys.stderr)
+        # print(i, file=sys.stderr)
+        # print(created_by_users, file=sys.stderr)
+        return render_template("search_inventory.html", inventories=inventories, users=users)
 
 
 class RegistrationForm(FlaskForm):

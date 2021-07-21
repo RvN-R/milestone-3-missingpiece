@@ -24,7 +24,7 @@
     </div>
     {% if inventories|length > 0 %}
     <div class="row">
-        {% for inventory in inventories%}
+        <!-- {% for inventory in inventories%}
         <div class="col s12 m6">
             <div class="card-content">
                 <h4 class="card-title">{{ inventory.created_by }}</h4><br>
@@ -34,6 +34,20 @@
                 <a href="{{ url_for('contact_profile') }}" class="btn-small" target="_blank">Check Avalabilty</a>
             </div>
         </div>
+        {% endfor %} -->
+    </div>
+    <div class="row">
+        {% for user in users %}
+            <div class="col s12 m6">
+                <div class="card-content">
+                    <h4 class="card-title">Contact Details</h4>
+                    <p><strong>Company Name:</strong>{{ user.company_name }}</p><br>
+                    <p><strong>Street Name: </strong>{{ user.street_name }}</p>
+                    <p><strong>Postcode: </strong>{{ user.postcode }}</p><br>
+                    <p><strong>City: </strong>{{ user.city }}</p><br>
+                    <p><strong>Phone:</strong>{{ user.phone }}</p><br>
+                </div>
+            </div>
         {% endfor %}
     </div>
     {% else %}
