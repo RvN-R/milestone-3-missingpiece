@@ -24,19 +24,58 @@
     </div>
     {% if inventories|length > 0 %}
     <div class="row">
-        <!-- {% for inventory in inventories%}
+        <!-- {% for collection in collections%}
+        {% for coll in collection %}
         <div class="col s12 m6">
             <div class="card-content">
-                <h4 class="card-title">{{ inventory.created_by }}</h4><br>
-                <p><strong>Catergory:</strong>{{ inventory.categories_name }}</p><br>
-                <p><strong>Brand of {{ inventory.categories_name }} in stock is:</strong>{{ inventory.brand }}</p><br>
-                <p><strong>Name of {{ inventory.brand }} product in stock is:</strong> {{ inventory.product }} and they have {{ inventory.product_qty }} in stock</p><br>
-                <a href="{{ url_for('contact_profile') }}" class="btn-small" target="_blank">Check Avalabilty</a>
+                <h4 class="card-title">{{ coll.created_by }}</h4><br>
+                <p><strong>Catergory:</strong>{{ coll.categories_name }}</p><br>
+                <p><strong>Brand of {{ coll.categories_name }} in stock is:</strong>{{ coll.brand }}</p><br>
+                <p><strong>Name of {{ coll.brand }} product in stock is:</strong> {{ coll.product }} and they have {{ coll.product_qty }} in stock</p><br>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">Contact Information</div>
+                        <div class="collapsible-body">
+                            <h4 class="card-title">Contact Details</h4>
+                            <p><strong>Company Name:</strong>{{ coll.company_name }}</p><br>
+                            <p><strong>Street Name: </strong>{{ coll.street_name }}</p>
+                            <p><strong>Postcode: </strong>{{ coll.postcode }}</p><br>
+                            <p><strong>City: </strong>{{ coll.city }}</p><br>
+                            <p><strong>Phone:</strong>{{ coll.phone }}</p><br>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
+        {% endfor %}
+        {% endfor %} -->
+        {% for collect in collections %}
+        <div class="col s12">
+            <div class="card-content">
+                <h4 class="card-title">{{ collections[2] }}</h4>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- {% for collection in collections %}
+        {% for coll in collection %}
+        <div class="col s12">
+            <h4>{{ coll.brand }}</h4>
+            <h4>{{ coll.product }}</h4>
+            <h4>{{ coll.product_qty }}</h4>
+            <h4>{{ coll.username }}</h4>
+            <h4>{{ coll.company_name }}</h4>
+            <h4>{{ coll.street_name }}</h4>
+            <h4>{{ coll.postcode }}</h4>
+            <h4>{{ coll.phone }}</h4>
+        </div>
+        {% endfor %}
+        {% endfor %} -->
+        <!-- {% for collect in collections %}
+            {{ collect[1].created_by }}
         {% endfor %} -->
     </div>
-    <div class="row">
+    <!-- <div class="row">
         {% for user in users %}
             <div class="col s12 m6">
                 <div class="card-content">
@@ -49,7 +88,7 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
+    </div> -->
     {% else %}
     <div class="row">
         <div class="col s12">

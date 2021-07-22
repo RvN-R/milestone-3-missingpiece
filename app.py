@@ -49,18 +49,46 @@ def search():
         users = []
         for i in created_by:
             users.append((mongo.db.users.find_one({"username": i.get("created_by")})))
-            print(users, file=sys.stderr)
+            # print(users, file=sys.stderr)
+        # collections = zip(users, inventories)
+
+        collect = []
+        for i in range(len(users)):
+            collect.append([users[i], inventories[i]])
+        
+        # print(f"COLLECT: {collect}")
+
+        boxes = []
+        for coll in collect:
+            boxes.append(
+                coll[1]
+            )
+        print(boxes) 
+    
+
+
+
+
+
         # created_by_users = mongo.db.users.find_one({"username": i.get("created_by")})
         # print(query, file=sys.stderr)
         # print(inventories, file=sys.stderr)
         # print(created_by, file=sys.stderr)
         # print(i, file=sys.stderr)
         # print(created_by_users, file=sys.stderr)
-        return render_template("search_inventory.html", inventories=inventories, users=users)
+        # print(list(collections), file=sys.stderr)
+        # print(f"CREATED_BY: {created_by}")
+        # for coll in collections:
+        #     f"COLL: {coll}"
+        #     for c in coll:
+        #         f"C: {c}"
+        #         for x in c:
+        #             f"X: {x}"
+        return render_template("search_inventory.html", inventories=inventories, collections=collect)
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message= 'Username must be between 10 and 15 Characters')])
+    username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message='Username must be between 10 and 15 Characters')])
     password = PasswordField('password', validators=[InputRequired()])
 
 
