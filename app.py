@@ -184,8 +184,9 @@ def add_inventory():
             "product_qty": request.form.get("product_qty")
         }
         mongo.db.inventories.insert_one(inventory)
+        categories = mongo.db.categories.find().sort("categories_name", 1)
         flash("Inventory Successfully Added")
-        return render_template("add_inventory.html")
+        return render_template("add_inventory.html", categories=categories)
     
     categories = mongo.db.categories.find().sort("categories_name", 1)
     return render_template("add_inventory.html", categories=categories)
