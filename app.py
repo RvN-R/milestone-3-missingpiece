@@ -49,35 +49,7 @@ def search():
         users = []
         for i in created_by:
             users.append((mongo.db.users.find_one({"username": i.get("created_by")})))
-            # print(users, file=sys.stderr)
-        # collections = zip(users, inventories)
-
-        collect = []
-        for i in range(len(users)):
-            collect.append([users[i], inventories[i]])
-        
-        # print(f"COLLECT: {collect}")
-
-        for completed in collect:
-            # print(completed)
-            for v in completed[0].values():
-                print(v)
-
-        # created_by_users = mongo.db.users.find_one({"username": i.get("created_by")})
-        # print(query, file=sys.stderr)
-        # print(inventories, file=sys.stderr)
-        # print(created_by, file=sys.stderr)
-        # print(i, file=sys.stderr)
-        # print(created_by_users, file=sys.stderr)
-        # print(list(collections), file=sys.stderr)
-        # print(f"CREATED_BY: {created_by}")
-        # for coll in collections:
-        #     f"COLL: {coll}"
-        #     for c in coll:
-        #         f"C: {c}"
-        #         for x in c:
-        #             f"X: {x}"
-        return render_template("search_inventory.html", inventories=inventories, collections=collect, completed=collect, boxes=zip(users, inventories))
+        return render_template("search_inventory.html", inventories=inventories,boxes=zip(users, inventories))
 
 
 class RegistrationForm(FlaskForm):
