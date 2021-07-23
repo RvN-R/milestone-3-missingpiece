@@ -17,8 +17,8 @@
     <header>
         <!--top navbar-->
         <nav>
-            <div class="nav-wrapper">
-              <a href="#!" class="brand-logo">Missing Piece</a>
+            <div class="nav-wrapper #1b1a18 black">
+              <a href="{{ url_for('home') }}" class="brand-logo"><i class=" home_puzzle_link fas fa-puzzle-piece"></i></a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -57,8 +57,8 @@
         </ul>
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h1 class="center-align">HERO IMAGE</h1>
+            <div class="col-12" id="header_image_col">
+              <h1 class="center-align"><i class="fas fa-puzzle-piece"></i> Missing Piece</h1></div>
             </div>
         </div>
     </div>
@@ -80,21 +80,21 @@
     {% block content %}
     {% endblock %}
   </main>
-    <footer class="page-footer">
+    <footer class="page-footer #1b1a18 black">
         <div class="container">
           <div class="row">
             <div class="col s12 center-align">
               <ul>
-                <li><a class="" href="#"><i class="fab fa-facebook-square"></i></a></li>
-                <li><a class="" href="#"><i class="fab fa-twitter-square"></i></a></li>
-                <li><a class="" href="#"><i class="fab fa-instagram-square"></i></a></li>
+                <li><a class="footer_icon" href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a class="footer_icon" href="#"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a class="footer_icon" href="#"><i class="fab fa-instagram-square"></i></a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2014 Copyright Text
+        <div class="footer-copyright #1b1a18 black">
+          <div class="container center-align footer_copyright_col">
+          © 2021 Copyright Text
           </div>
         </div>
       </footer>

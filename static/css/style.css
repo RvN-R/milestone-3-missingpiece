@@ -1,4 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* my_inventory CSS */
 .card {
     position: static;
+}
+
+/* General CSS used throught website */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/*.body-style css used to center webite on larger screen sizes*/
+body {
+    max-width: 2000px;
+    padding: 25px 0;
+    font-family: "Rubik", sans-serif;
+}
+
+.header_image_col {
+    background: url(/assets/images/header_hero_image.png)no-repeat center centers;
+    background-size: 2000px
+}
+
+/*Navigation*/
+
+nav .brand-logo{
+    color: #fee602;
+    padding: 0 25px;
+    
+}
+
+.home_puzzle_link{
+    font-size: 3rem;
+}
+
+nav ul a{
+    color: #fee602;
+    padding: 0 25px;
+    font-weight: 400;
+}
+
+a.sidenav-trigger.right{
+    color: #fee602;
+}
+
+.sidenav{
+    background-color: #1b1a18;
+}
+
+.sidenav li>a{
+    color: #fee602;
+}
+
+/* Navigation Hover */
+
+.home_puzzle_link:hover{
+    color: #fdfdfd;
+}
+
+nav ul a:hover{
+    color: #fdfdfd;
+}
+
+.sidenav li>a:hover{
+    color: #fdfdfd;
+}
+
+nav ul a:active{
+    color: #96B0D1;
+}
+
+/*Footer*/
+
+.footer_icon{
+    color:#fee602;
+    font-size: 3rem;
+}
+
+.footer_copyright_col{
+    color: #fee602;
+}
+
+/*Footer* Hover*/
+
+.footer_icon:hover{
+    color: #fdfdfd;
 }
