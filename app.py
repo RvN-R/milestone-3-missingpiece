@@ -58,17 +58,10 @@ def search():
         
         # print(f"COLLECT: {collect}")
 
-        boxes = []
-        for coll in collect:
-            boxes.append(
-                coll[1]
-            )
-        print(boxes) 
-    
-
-
-
-
+        for completed in collect:
+            # print(completed)
+            for v in completed[0].values():
+                print(v)
 
         # created_by_users = mongo.db.users.find_one({"username": i.get("created_by")})
         # print(query, file=sys.stderr)
@@ -84,7 +77,7 @@ def search():
         #         f"C: {c}"
         #         for x in c:
         #             f"X: {x}"
-        return render_template("search_inventory.html", inventories=inventories, collections=collect)
+        return render_template("search_inventory.html", inventories=inventories, collections=collect, completed=collect, boxes=zip(users, inventories))
 
 
 class RegistrationForm(FlaskForm):
@@ -186,7 +179,7 @@ def add_inventory():
         mongo.db.inventories.insert_one(inventory)
         categories = mongo.db.categories.find().sort("categories_name", 1)
         flash("Inventory Successfully Added")
-        return render_template("add_inventory.html", categories=categories)
+        return render_template("add_inventory.html",categories=categories)
     
     categories = mongo.db.categories.find().sort("categories_name", 1)
     return render_template("add_inventory.html", categories=categories)

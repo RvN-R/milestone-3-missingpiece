@@ -24,6 +24,48 @@
     </div>
     {% if inventories|length > 0 %}
     <div class="row">
+        {% for box in boxes %}
+            <div class="col s12">
+                <div class="card">
+                    <!-- <div class="card-image">
+                      <img src="#">
+                      <span class="card-title center-align">{{box[0].company_name}}</span>
+                    </div> -->
+                    <div class="card-content">
+                        <h4 class="card-title center-align">{{box[0].company_name}}</h4>
+                        <h5 class="card-title center-align">{{box[0].company_name}} Inventory Entery</h5>
+                    </div>
+                  </div>
+                <div class="card-content">
+                    <p><strong>Catergory:</strong> {{box[1].categories_name}}</p><br>
+                    <p><strong>Brand of {{box[1].categories_name}} in stock is:</strong> {{box[1].brand}}</p><br>
+                    <p><strong>Name of {{box[1].brand}} product in stock is:</strong> {{box[1].product}} and they have {{box[1].product_qty}} in stock</p><br>
+                    <ul class="collapsible">
+                        <li>
+                          <div class="collapsible-header center-align"><h5>{{box[0].company_name}} Contact Information</h5></div>
+                          <div class="collapsible-body">
+                            <h4 class="card-title">Contact Details</h4>
+                            <p><strong>Company Name:</strong>{{box[0].company_name}}</p><br>
+                            <p><strong>Street Name: </strong>{{box[0].street_name}}</p>
+                            <p><strong>Postcode: </strong>{{box[0].post_code}}</p><br>
+                            <p><strong>City: </strong>{{box[0].city}}</p><br>
+                            <p><strong>Phone:</strong>{{box[0].phone}}</p><br>
+                          </div>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+            <!-- {{box[0].username}}
+            {{box[0].company_name}}
+            {{box[0].street_name}}
+            {{box[0].post_code}}
+            {{box[0].city}}
+            {{box[0].phone}} -->
+
+            <!-- {{box[1].created_by}}
+            {{box[1].categories_name}} -->
+            
+        {% endfor %}
         <!-- {% for collection in collections%}
         {% for coll in collection %}
         <div class="col s12 m6">
@@ -49,13 +91,13 @@
         </div>
         {% endfor %}
         {% endfor %} -->
-        {% for collect in collections %}
+        <!-- {% for collect in collections %}
         <div class="col s12">
             <div class="card-content">
                 <h4 class="card-title">{{ collections[2] }}</h4>
             </div>
         </div>
-        {% endfor %}
+        {% endfor %} -->
 
         <!-- {% for collection in collections %}
         {% for coll in collection %}
@@ -71,9 +113,46 @@
         </div>
         {% endfor %}
         {% endfor %} -->
-        <!-- {% for collect in collections %}
-            {{ collect[1].created_by }}
+        <!-- {% for collects in collect %}
+            {{ collects }}
         {% endfor %} -->
+
+        <!-- {% for complete in completed %}
+            {% for value in complete[0].values() %}
+                {{value[4]}}
+            {% endfor %}
+        {% endfor %} -->
+        
+        <!-- {% for box in boxes %}
+            {% for elem in box %}
+                <div class="col s12">
+                    <div class="card-content">
+                        <div class="h4 class-title">
+                            {{elem.company_name}}
+                        </div>
+                        <div class="h4 class-title">
+                           Company Address
+                        </div>
+                        <p><strong>Street Name:</strong>{{elem.street_name}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %} -->
+
+        <!-- {% for box in boxes %}
+            {{ box }}
+        {% endfor %} -->
+
+
+        <!-- {% for box in boxes %}
+            {{box[0].username}}
+        {% endfor %} -->
+
+
+        <!-- {% for l, n in boxes %}
+            {{l.username}}
+        {% endfor %} -->
+
     </div>
     <!-- <div class="row">
         {% for user in users %}
