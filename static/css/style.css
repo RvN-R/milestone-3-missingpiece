@@ -22,6 +22,10 @@
     padding-left: 0;
 }
 
+p{
+    padding: 5px 0 5px 0;
+}
+
 /*.body-style css used to center webite on larger screen sizes*/
 body {
     max-width: 2000px;
