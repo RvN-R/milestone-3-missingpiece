@@ -27,16 +27,22 @@ body {
     max-width: 2000px;
     padding: 25px 0;
     font-family: "Rubik", sans-serif;
-    
-    
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 header{
-
+    background: url(/static/assets/images/header_hero_image.png)no-repeat center center;
+    height: 500px;
+    background-size: cover;
 }
 
-.header_image_col {
-    background-color: red;
+.header_logo{
+    padding-left: 0;
+    padding-right: 0;
+    text-shadow: 0 0 20px #fdfdfd;
+    color: #ffe604;
+
 }
 
 /*Navigation*/
@@ -72,14 +78,17 @@ a.sidenav-trigger.right{
 /* Navigation Hover */
 
 .home_puzzle_link:hover{
+    text-shadow: 0 0 10px #fee602;
     color: #fdfdfd;
 }
 
 nav ul a:hover{
+    text-shadow: 0 0 10px #fee602;
     color: #fdfdfd;
 }
 
 .sidenav li>a:hover{
+    text-shadow: 0 0 10px #fee602;
     color: #fdfdfd;
 }
 
@@ -101,5 +110,6 @@ nav ul a:active{
 /*Footer* Hover*/
 
 .footer_icon:hover{
+    text-shadow: 0 0 10px #fee602;
     color: #fdfdfd;
 }
