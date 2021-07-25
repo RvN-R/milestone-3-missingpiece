@@ -13,9 +13,6 @@
         <!--Bootstrap Modal Body-->
         <div class="col s12 m6">
             <div class="card">
-                <div class="card-image">
-    
-                </div>
                 <div class="card-content">
                     <!-- <h4 class="card-title">{{ inventory.created_by }}</h4><br> -->
                     
@@ -24,16 +21,16 @@
                     <p><strong>Name of {{ inventory.brand }} product in stock is:</strong> {{ inventory.product }} and they have <b>{{ inventory.product_qty }}</b> in stock</p><br>
                     <div class="row">
                         <div class="col s6">
-                            <a href="{{ url_for('edit_inventory',inventory_id=inventory._id) }}" class="btn btn-primary center-align waves-effect waves-light #ffe604 yellow accent-4 black-text text-darken-2"><strong>Edit</strong></a>
+                            <a href="{{ url_for('edit_inventory',inventory_id=inventory._id) }}" class="btn btn-primary center-align waves-effect waves-light #ffe604 yellow accent-2 black-text text-darken-2"><strong>Edit</strong></a>
                         </div>
                         <!--Bootstrap Button-->
                         <div class="col s6">
-                            <button type="button" class="btn btn-primary center-align waves-effect waves-light #ffe604 yellow accent-4 black-text text-darken-2" data-bs-toggle="modal" data-bs-target="#modal{{ inventory.inventory_id }}">
+                            <button type="button" class="btn btn-primary center-align waves-effect waves-light #ffe604 yellow accent-2 black-text text-darken-2" data-bs-toggle="modal" data-bs-target="#modal{{ inventory.inventory_id }}">
                                 <strong>Delete</strong>
                               </button>
                         </div>
                         <!--Bootstrap Modal-->
-                        <div class="modal modal fade" id="modal{{ inventory.inventory_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- <div class="modal modal fade" id="modal{{ inventory.inventory_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -48,7 +45,7 @@
                                 </div>
                             </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--Materalise Button-->
                         <!-- <div class="col s6">
                             <button data-target="#modal{{ inventory.inventory_id }}" class="btn modal-trigger">Modal</button>
@@ -68,6 +65,24 @@
                     </div>
                 </div>
             </div> -->
+            <div>
+                <div class="modal modal fade" id="modal{{ inventory.inventory_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+                        </div>
+                        <div class="modal-body">
+                        Are you sure you want to delete this Inventory?
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <a type="button" href="{{ url_for('delete_inventory', inventory_id=inventory._id) }}" class="btn btn-primary">Yes</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
         {% endfor %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

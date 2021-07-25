@@ -99,7 +99,10 @@ nav ul a:hover{
 nav ul a:active{
     color: #96B0D1;
 }
-
+/*Index*/
+.index_button_row{
+    padding-bottom: 20px;
+}
 /*Footer*/
 
 .footer_icon{
