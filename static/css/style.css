@@ -27,11 +27,16 @@ body {
     max-width: 2000px;
     padding: 25px 0;
     font-family: "Rubik", sans-serif;
+    
+    
+}
+
+header{
+
 }
 
 .header_image_col {
-    background: url(/assets/images/header_hero_image.png)no-repeat center centers;
-    background-size: 2000px
+    background-color: red;
 }
 
 /*Navigation*/
@@ -48,7 +53,7 @@ nav .brand-logo{
 
 nav ul a{
     color: #fee602;
-    padding: 0 25px;
+    padding: 0 20px;
     font-weight: 400;
 }
 
