@@ -103,6 +103,12 @@ nav ul a:active{
 .index_button_row{
     padding-bottom: 20px;
 }
+
+/*My Inventory*/
+.modal_relative{
+    /* position: static; */
+}
+
 /*Footer*/
 
 .footer_icon{
