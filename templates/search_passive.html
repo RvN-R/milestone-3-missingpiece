@@ -9,18 +9,24 @@
     <div class="row">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
             <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
+                <div class="input-field col s12">
                     <input type="text" name="query" id="query" class="validate" required>
                     <label for="query">Search Invetories</label>
                 </div>
-                <div class="col s12 m4">
-                    <a class="btn-small" href="{{ url_for('search_passive') }}">Resest</a>
-                    <button type="submit" class="btn-small">
+            </div>
+            <div class="row">
+                <div class="col s6 center-align">
+                    <a class="small_btn" type="button" href="{{ url_for('search_passive') }}">Reset</a>
+                </div>
+                <div class="col s6 center-align">
+                    <button type="submit" class="small_btn">
                         <i class="fas fa-search left"></i> Search
                     </button>
                 </div>
+                
             </div>
         </form>
     </div>
+    
 </div>
 {% endblock %}
