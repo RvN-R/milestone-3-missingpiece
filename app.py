@@ -182,11 +182,13 @@ def edit_company_address(company_id):
             "phone": request.form.get("phone").lower()
         }}
         mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
+        companies = list(mongo.db.users.find())
         flash("Company Details Updated")
-        return render_template("profile.html", company=company_id)
+        return render_template("profile.html", company=company_id, companies=companies)
 
     company = mongo.db.users.find_one({"_id": ObjectId(company_id)})
-    return render_template("edit_company_address.html", company=company)
+    companies = list(mongo.db.users.find())
+    return render_template("edit_company_address.html", company=company, companies=companies)
 
 
 @app.route("/delete_inventory/<inventory_id>")
