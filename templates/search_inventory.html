@@ -9,16 +9,21 @@
     <div class="row">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
             <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
+                <div class="input-field col s12">
                     <input type="text" name="query" id="query" class="validate" required>
                     <label for="query">Search Invetories</label>
                 </div>
-                <div class="col s12 m4">
-                    <a class="btn-small" href="{{ url_for('search_passive') }}">Resest</a>
-                    <button type="submit" class="btn-small">
+            </div>
+            <div class="row">
+                <div class="col s6 center-align">
+                    <a class="small_btn" type="button" href="{{ url_for('search_passive') }}">Reset</a>
+                </div>
+                <div class="col s6 center-align">
+                    <button type="submit" class="small_btn">
                         <i class="fas fa-search left"></i> Search
                     </button>
                 </div>
+                
             </div>
         </form>
     </div>
@@ -27,27 +32,25 @@
         {% for box in boxes %}
             <div class="col s12">
                 <div class="card">
-                    <!-- <div class="card-image">
-                      <img src="#">
-                      <span class="card-title center-align">{{box[0].company_name}}</span>
-                    </div> -->
-                    <div class="card-content">
-                        <h4 class="card-title center-align">{{box[0].company_name}}</h4>
-                        <h5 class="card-title center-align">{{box[0].company_name}} Inventory Entery</h5>
+                    <div class="card-content result_card_header">
+                        <h4 class="card-title center-align result_card_header_title">{{box[0].company_name}}</h4>
+                        <h5 class="card-title center-align result_card_header_title">{{box[0].company_name}} Inventory Entry</h5>
                     </div>
                   </div>
-                <div class="card-content">
+                <div class="card-content center-align result_card_content">
                     <p><strong>Catergory:</strong> {{box[1].categories_name}}</p><br>
-                    <p><strong>Brand of {{box[1].categories_name}} in stock is:</strong> {{box[1].brand}}</p><br>
-                    <p><strong>Name of {{box[1].brand}} product in stock is:</strong> {{box[1].product}} and they have {{box[1].product_qty}} in stock</p><br>
+                    <p><strong>Brand of  {{box[1].categories_name}} in stock is:</strong> {{box[1].brand}}</p><br>
+                    <p><strong>Name of {{box[1].brand}} product in stock is: </strong>{{box[1].product}} and they have <b>{{box[1].product_qty}}</b> in stock</p><br>
+                </div>
+                <div class="card-content">
                     <ul class="collapsible">
                         <li>
-                          <div class="collapsible-header center-align"><h5>{{box[0].company_name}} Contact Information</h5></div>
+                          <div class="collapsible-header result_card_collapsible_title">Click For {{box[0].company_name}} Contact Information</div>
                           <div class="collapsible-body">
                             <h4 class="card-title">Contact Details</h4>
-                            <p><strong>Company Name:</strong>{{box[0].company_name}}</p><br>
+                            <p><strong>Company Name:</strong> {{box[0].company_name}}</p><br>
                             <p><strong>Street Name: </strong>{{box[0].street_name}}</p>
-                            <p><strong>Postcode: </strong>{{box[0].post_code}}</p><br>
+                            <p><strong>Postcode: </strong>{{box[0].postcode}}</p><br>
                             <p><strong>City: </strong>{{box[0].city}}</p><br>
                             <p><strong>Phone:</strong>{{box[0].phone}}</p><br>
                           </div>
