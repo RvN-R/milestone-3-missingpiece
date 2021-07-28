@@ -123,13 +123,6 @@ def profile(username):
     return render_template("profile.html", companies=companies)
 
 
-@app.route("/contact_profile/")
-def contact_profile():
-    inventory_item = mongo.db.inventories.find_one()
-    print(inventory_item, file=sys.stderr)
-    return render_template("contact_profile.html")
-
-
 @app.route("/logout")
 def logout():
     # remove user from session cookies
