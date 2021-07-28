@@ -1,6 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="divider"></div>
+    {% if session.user %}
+    <section class="container" id="about_us_section">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h2>About Us</h2>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col s12">
+                <p>Missing Piece is exactly that, the missing piece of the puzzle. We wanted to improve the crosshire experience for UK based rental companies. There's a long way still to go, but we feel we have made an excellent start to the journey. </p>
+
+                <p>How many times have you found yourself wasting valuable time searching for additional PA, Microphones or Mixing Consoles after stretching whats possible with your exisitng inventory?</p>
+
+                <p>Instead of calling around looking for possible crosshire solutions, now you can turn to Missing Piece. Search through the hundreds of inventory entries on from our database by hundreds of different rental companies from all over the country. Build relationships, partnerships and allow yourself to accept more projects to help grow your company to the next level</p>
+
+                <p>Productions are stressful enough to exicute and plan, rely on Missing Piece and have one less thing to worry about!</p> 
+            </div>
+            <div class="divider"></div>
+        </div>
+    </section>
+    <div class="divider"></div>
+    {% else %}
+    <section class="container" id="about_us_section">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h2>About Us</h2>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col s12">
+                <p>Missing Piece is exactly that, the missing piece of the puzzle. We wanted to improve the crosshire experience for UK based rental companies. There's a long way still to go, but we feel we have made an excellent start to the journey. </p>
+
+                <p>How many times have you found yourself wasting valuable time searching for additional PA, Microphones or Mixing Consoles after stretching whats possible with your exisitng inventory?</p>
+
+                <p>Instead of calling around looking for possible crosshire solutions, now you can turn to Missing Piece. Search through the hundreds of inventory entries on from our database by hundreds of different rental companies from all over the country. Build relationships, partnerships and allow yourself to accept more projects to help grow your company to the next level</p>
+
+                <p>Productions are stressful enough to exicute and plan, rely on Missing Piece and have one less thing to worry about!</p> 
+            </div>
+            <div class="divider"></div>
+        </div>
+    </section>
+    <div class="divider"></div>
     <section class="container" id="how_does_this_work_section">
         <div class="row">
             <div class="col s12 center-align">
@@ -23,7 +69,6 @@
                 <p>Click the <i class="fas fa-arrow-circle-up"></i> "Create Account" below to get going.</p><br>
                 <p>When registering an account make sure to put accurate company information, as this information will be used by those looking to contact you</p>
                 <p>Once registered, got to "Add To Inventory" to upload what you have avaliable!</p>
-
             </div>
         </div>
     </section>
@@ -38,25 +83,5 @@
         </div>
     </section>
     <div class="divider"></div>
-    <section class="container" id="about_us_section">
-        <div class="row">
-            <div class="col s12 center-align">
-                <h2>About Us</h2>
-            </div>
-        </div>
-    </section>
-    <section class="container">
-        <div class="row">
-            <div class="col s12">
-                <p>Missing Piece is exactly that, the missing piece of the puzzle. We wanted to improve the crosshire experience for UK based rental companies. There's a long way still to go, but we feel we have made an excellent start to the journey. </p>
-
-                <p>How many times have you found yourself wasting valuable time searching for additional PA, Microphones or Mixing Consoles after stretching whats possible with your exisitng inventory?</p>
-
-                <p>Instead of calling around looking for possible crosshire solutions, now you can turn to Missing Piece. Search through the hundreds of inventory entries on from our database by hundreds of different rental companies from all over the country. Build relationships, partnerships and allow yourself to accept more projects to help grow your company to the next level</p>
-
-                <p>Productions are stressful enough to exicute and plan, rely on Missing Piece and have one less thing to worry about!</p> 
-            </div>
-            <div class="divider"></div>
-        </div>
-    </section>
+    {% endif %}
 {% endblock %}
