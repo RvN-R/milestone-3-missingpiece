@@ -4,21 +4,21 @@
         {% for company in companies if session.user == company.username %}
             <div class="row">
                 <div class ="col s12 m8 offset-m2">
-                    <h3 class="center-align">
+                    <h2 class="center-align">
                         {{ company.company_name
                         }}'s Profile
-                    </h3>
+                    </h2>
                 </div>
                 <div class="col s12 m8 offset-m2 center-align">
                     <div class="card">
                         <div>
-                          <h4 class="card-title">Company Addess</h4>
+                          <h4 class="card-title profile_card_title">Company Addess</h4>
                         </div>
                         <div class="card-content">
-                          <p>{{ company.street_name }}</p><br>
-                          <p>{{ company.city }}</p><br>
-                          <p>{{ company.postcode }}</p><br>
-                          <p>{{ company.phone }}</p><br>
+                          <p><strong>Street Name: </strong> {{ company.street_name }}</p><br>
+                          <p><strong>Postcode: </strong>{{ company.postcode }}</p><br>
+                          <p><strong>City: </strong>{{ company.city }}</p><br>
+                          <p><strong>Phone: </strong>{{ company.phone }}</p><br>
                         </div>
                         <div class="card-action">
                           <a href="{{ url_for('edit_company_address', company_id=company._id) }}" class="btn btn-primary">Update Info</a>

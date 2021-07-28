@@ -206,6 +206,11 @@ nav ul a:active{
     text-align: center;
 }
 
+/*Profile*/
+.profile_card_title{
+    padding-top: 20px;
+}
+
 
 /*Footer*/
 
