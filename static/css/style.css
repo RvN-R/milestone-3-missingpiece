@@ -171,6 +171,10 @@ nav ul a:active{
     text-decoration: underline;
 }
 
+.about_us_col{
+    padding-bottom: 25px;
+}
+
 /* Search */
 .result_card_header{
     background-color: #1b1a18;
