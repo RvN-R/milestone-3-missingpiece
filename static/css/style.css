@@ -26,6 +26,7 @@ p{
     padding: 5px 0 5px 0;
 }
 
+/* Button CSS Formatting - site wide */
 .small_btn{
     border: none;
     color: #1b1a18;
@@ -88,6 +89,8 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Header */
 header{
     background: url(/static/assets/images/header_hero_image.png)no-repeat center center;
     height: 500px;
@@ -102,8 +105,7 @@ header{
 
 }
 
-/*Navigation*/
-
+/* Navigation */
 nav .brand-logo{
     color: #fee602;
     padding: 0 25px;
@@ -152,14 +154,14 @@ nav ul a:hover{
 nav ul a:active{
     color: #96B0D1;
 }
-/*Index*/
+
+/* Index */
 .index_button_row{
     padding-bottom: 20px;
 }
 
-/*My Inventory*/
+/* My Inventory */
 .modal-body {
-    /* font-weight: 500; */
     font-size: 1.5rem;
 }
 
@@ -169,8 +171,7 @@ nav ul a:active{
     text-decoration: underline;
 }
 
-/*Search*/
-
+/* Search */
 .result_card_header{
     background-color: #1b1a18;
 }
@@ -202,13 +203,16 @@ nav ul a:active{
     text-align: center;
 }
 
-/*Profile*/
+/* Profile */
 .profile_card_title{
     padding-top: 20px;
 }
 
-/*Footer*/
+.profile_button_row{
+    padding-bottom: 25px;
+}
 
+/* Footer */
 .footer_icon{
     color:#fee602;
     font-size: 3rem;
@@ -218,9 +222,10 @@ nav ul a:active{
     color: #fee602;
 }
 
-/*Footer* Hover*/
-
+/* Footer Hover */
 .footer_icon:hover{
     text-shadow: 0 0 10px #fee602;
     color: #fdfdfd;
 }
+
+
