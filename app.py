@@ -73,11 +73,11 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "company_name": request.form.get("company_name").lower(),
-            "street_name": request.form.get("street_name").lower(),
-            "postcode": request.form.get("postcode").lower(),
-            "city": request.form.get("city").lower(),
-            "phone": request.form.get("phone").lower()
+            "company_name": request.form.get("company_name"),
+            "street_name": request.form.get("street_name"),
+            "postcode": request.form.get("postcode"),
+            "city": request.form.get("city"),
+            "phone": request.form.get("phone")
         }
         mongo.db.users.insert_one(register)
         
@@ -175,11 +175,11 @@ def edit_company_address(company_id):
 
     if request.method == "POST":
         submit = { "$set":{
-            "company_name": request.form.get("company_name").lower(),
-            "street_name": request.form.get("street_name").lower(),
-            "postcode": request.form.get("postcode").lower(),
-            "city": request.form.get("city").lower(),
-            "phone": request.form.get("phone").lower()
+            "company_name": request.form.get("company_name"),
+            "street_name": request.form.get("street_name"),
+            "postcode": request.form.get("postcode"),
+            "city": request.form.get("city"),
+            "phone": request.form.get("phone")
         }}
         mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
         companies = list(mongo.db.users.find())
