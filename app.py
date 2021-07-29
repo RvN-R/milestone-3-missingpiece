@@ -27,21 +27,33 @@ mongo = PyMongo(app)
 
 @app.route("/home")
 def home():
+    # Function renders index.html
     return render_template("index.html")
 
 
 @app.route("/get_inventory")
 def get_inventory():
+    # Function returns a list of all the items found in Monogo DB collection
+    # Assigns results to a variable called inventories.
+    # Renders search_inventory.html.
     inventories = list(mongo.db.inventories.find())
     return render_template("search_inventory.html", inventories=inventories)
 
 @app.route("/search_passive")
 def search_passive():
+    # Function renders search_passive.html
     return render_template("search_passive.html")
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # Function searches Mongo DB collection using a varaible called query
+    # Assigns result of that search to inventories variable
+    # Repeats search using varaible called query and returns "created_by" data
+    # Assigns result of that search to created_by variable
+    # Searches Mongo DB collection "users" for data matching created_by variable
+    # Zips "users" and "inventories" and assigns to variable boxes
+    # renders serach_inventory.html
     if request.method == "POST":
         query = request.form.get("query")
         inventories = list(mongo.db.inventories.find({"$text": {"$search": query}}))
@@ -53,6 +65,7 @@ def search():
 
 
 class RegistrationForm(FlaskForm):
+    # uses FlaskForm to create username and password variables
     username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message='Username must be between 10 and 15 Characters')])
     password = PasswordField('password', validators=[InputRequired()])
 
@@ -60,9 +73,15 @@ class RegistrationForm(FlaskForm):
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # Function rendeers register.html
+    # Takes data from HTML form and inserts it to Mongo DB users
+    # collection.
+    # existing_user variable cross checks username with users collection.
+    # Returns user to profile page if form is successfully filled out correctly.
     form = RegistrationForm()
     if request.method == "POST" and form.validate_on_submit():
-        # check if username already exists in db and whether validatiors have been met
+        # check if username already exists in db and whether validatiors have
+        # been met
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -88,12 +107,16 @@ def register():
 
 
 class LoginForm(FlaskForm):
+     # uses FlaskForm Validators to confirm log in is correct
     username = StringField('username', validators=[InputRequired()])
     password = PasswordField('password', validators=[InputRequired()])
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # Function renders login.html
+    # existing_user variable cross checks username with users collection
+    # If it finds a match then checks password using FlaskForm Validators
     form = LoginForm()
     if request.method == "POST" and form.validate():
         existing_user = mongo.db.users.find_one(
@@ -119,13 +142,16 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # Function searches users collection in Mongo DB.
+    # Assigns results to varaible called companies
+    # Renders profile.html and data from companies variable
     companies = list(mongo.db.users.find())
     return render_template("profile.html", companies=companies)
 
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
+    # Function removes user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -133,6 +159,9 @@ def logout():
 
 @app.route("/add_inventory", methods=["GET", "POST"])
 def add_inventory():
+    # Function renders add_inventory.html
+    # Inserts data from inventory variable to inventories collection
+    # Categories varible returns data from categories collection
     if request.method == "POST":
         inventory = {
             "created_by": session["user"],
@@ -144,7 +173,7 @@ def add_inventory():
         mongo.db.inventories.insert_one(inventory)
         categories = mongo.db.categories.find().sort("categories_name", 1)
         flash("Inventory Successfully Added")
-        return render_template("add_inventory.html",categories=categories)
+        return render_template("add_inventory.html", categories=categories)
     
     categories = mongo.db.categories.find().sort("categories_name", 1)
     return render_template("add_inventory.html", categories=categories)
@@ -152,6 +181,13 @@ def add_inventory():
 
 @app.route("/edit_inventory/<inventory_id>", methods=["GET", "POST"])
 def edit_inventory(inventory_id):
+    # Function searches inventories collection for data that matches _id
+    # Assigns results to variable inventory
+    # Searches categories collection
+    # Assigns results to varibale categories
+    # Renders edit_inventory
+    # If recieves a POST request function inserts data from submit varibale 
+    # to inventories collection and updates collection.
 
     if request.method == "POST":
         submit = {
@@ -172,7 +208,12 @@ def edit_inventory(inventory_id):
 
 @app.route("/edit_company_address/<company_id>", methods=["GET", "POST"])
 def edit_company_address(company_id):
-
+    # Function searches users collection for data that matches _id
+    # Assigns results to variable company
+    # Returns list from users collection and assigns to companies variable
+    # Renders edit_company_address.html
+    # If recieves post request, updates users collection with submit variable
+    # Returns to profile.html
     if request.method == "POST":
         submit = { "$set":{
             "company_name": request.form.get("company_name"),
@@ -193,6 +234,8 @@ def edit_company_address(company_id):
 
 @app.route("/delete_inventory/<inventory_id>")
 def delete_inventory(inventory_id):
+    # Function removes data matching _id from inventories collection
+    # returns to my_inventory function
     mongo.db.inventories.remove({"_id": ObjectId(inventory_id)})
     flash("Inventory Successfully Deleted")
     return my_inventory()
@@ -201,10 +244,14 @@ def delete_inventory(inventory_id):
 
 @app.route("/my_inventory")
 def my_inventory():
+    # Function returns list of inventories collection
+    # Assigns results to inventories variable
+    # Renders my_inventory.html and inventories variable#
     inventories = list(mongo.db.inventories.find())
     return render_template("my_inventory.html", inventories=inventories)
 
 if __name__ == "__main__":
+    # If __name__ is equal to __main__ runs app
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
