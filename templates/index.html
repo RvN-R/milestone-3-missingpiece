@@ -2,6 +2,7 @@
 {% block content %}
     <div class="divider"></div>
     {% if session.user %}
+    <!-- About Us Section Only User View -->
     <section class="container" id="about_us_section">
         <div class="row">
             <div class="col s12 center-align">
@@ -25,6 +26,7 @@
     </section>
     <div class="divider"></div>
     {% else %}
+    <!-- About Us Section Only None User View -->
     <section class="container" id="about_us_section">
         <div class="row">
             <div class="col s12 center-align">
@@ -47,6 +49,7 @@
         </div>
     </section>
     <div class="divider"></div>
+    <!-- How Does This Work Section Only None User View -->
     <section class="container" id="how_does_this_work_section">
         <div class="row">
             <div class="col s12 center-align">
@@ -72,6 +75,7 @@
             </div>
         </div>
     </section>
+    <!-- Search Inventory and Create Account Buttons -->
     <section class="container">
         <div class="row index_button_row">
             <div class="col s6 center-align">

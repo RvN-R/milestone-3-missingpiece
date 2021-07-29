@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <!--top navbar-->
+        <!--Top Navbar-->
         <nav>
             <div class="nav-wrapper #1b1a18 black">
               <a href="{{ url_for('home') }}" class="brand-logo"><i class=" home_puzzle_link fas fa-puzzle-piece"></i></a>
@@ -35,7 +35,7 @@
               </ul>
             </div>
         </nav>
-        <!--mobile side navbar-->
+        <!--Mobile Side Navbar-->
         <ul class="sidenav" id="mobile-demo">
           <li><a href="{{ url_for('home') }}">Home</a></li>
                 {% if session.user %}
@@ -59,7 +59,7 @@
     </div>
     </header>
     <section>
-      <!-- flash messages -->
+      <!-- Flash Messages -->
       {% with messages = get_flashed_messages() %}
           {% if messages %}
               {% for message in messages %}

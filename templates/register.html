@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <form class ="col s12 m8 offset-m2" method= "POST" action = "{{ url_for('register') }}">
-            <!--username-->
+            <!--Username-->
             <div class="row">
                 <div class="col s12">
                 {{ form.csrf_token}}
@@ -21,7 +21,7 @@
                 {% endfor %}
                 </div>
             </div>
-            <!--password-->
+            <!--Password-->
             <div class="row">
                 <div class="col s12">
                     <i class="fas fa-user-lock"></i>
@@ -71,15 +71,15 @@
                     <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
                 </div>
             </div>
-            <!--submit button-->
+            <!--Submit Button-->
             <div class="row">
                 <div class="col s12 center-align">
                     <button class="small_btn" type="submit" value="Submit">Submit
-                        <!-- <input type=submit value="Submit"> -->
                 </div>
             </div>
             </form>
         </div>
+        <!--Already Registered Link-->
         <div class="row">
             <div class="col s12">
                 <p class="center-align">
