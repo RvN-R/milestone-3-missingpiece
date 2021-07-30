@@ -31,3 +31,27 @@ The primary goal of this website is to provide visitors the opportunity to searc
 * We need a platform that allows a user to upload there companies contact information, in order for companies searching the database to contact they relating to there inventories. 
 * We need a platform that allows a user to edit there contact information once uploaded to our database.  
 
+## User Experience (UX) 
+
+### User Stories
+#### First Time Visitor Goals
+1.  As a First Time Visitor, I want to easily understand the main purpose of the site, and learn more about the company.
+2. As a First Time Visitor, I want to be able to easily navigate through the site to find key content
+3. As a First Time Visitor, I want to clearly find out how to search the database for possible avalaible equipment.
+4. As a First Time Visitor, I want to clearly find out how to register an account with the website.
+5. As a First Time Visitor, I want to source information that validates the organisation's legitimacy. For example, are they a respected company within the UK Live Sound Community. 
+
+#### Returning Visitor Goals
+1. As a Returning Visitor, I want to be able to navigate to the search page quickly
+2. As a Returning Visitor, I want to be able to log in to my account quickly
+3. As a Returning Visitor, I want to be able to register an account quickly
+4. As a Returning Visitor, I want to be able upload my inventory to my account easily. 
+5. As a Returning Visitor,  I want to be able to see what inventories I have already uploaded to my account.
+6. As a Returning Visitor, I want to be able to see what address information I have linked to my profile. 
+
+#### Frequent User Goals
+1. As a Frequent User, I want to be able to navigate to the search page quickly.
+2. As a Frequent User, I want to be able to edit my inventories that I have uploaded to my account. 
+3. As a Frequent User, I want to be able to delete my inventories that I have uploaded to my account. 
+4. As a Frequent User, I want to be able to edit my companies address details.
+5. As a Frequent User, I want to be able upload my inventory to my account easily. 
