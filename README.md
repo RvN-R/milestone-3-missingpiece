@@ -19,3 +19,15 @@ This site is for a new and emerging company called the Missing Piece. Its design
 Missing Piece prime mission statement is to bring the UK's Live Sound Rental companies closer together, by offering a cross hire platform to aid in increased communication and clarity between all companies. Rental companies have production inventories containing loudspeakers, mixing consoles, microphones, monitor systems any and all equipment required to execute a production. Productions can range from music festivals, major touring artists headline shows, product launches or fashion shows to name but a few. In order to be in a position to cater for any and all potential productions a rental company would have to invest millions of pounds on equipment. This is obviously a massive financial investment that not all rental companies are in a position to do this. Therefore, it's common for number of rental companies in the UK to hold the same stock, that way they can hire stock off one and other in order to cover productions should they not have enough equipment on hand. Up until this point cross hiring has been a laborious task, phoning around different companies to see if they have spare stock. It stressful and time consuming, Missing Piece is offering an alternative. 
 
 The primary goal of this website is to provide visitors the opportunity to search the Missing Piece database for avalaible equipment or register an account with Missing Piece to upload there production inventories. The website features an "About Us" section, "So How Does This Work?" section, "Search Inventory" section and "Register" section. Once an account has been registered a user can upload there inventories, once uploaded these inventories can be edited or deleted. Once uploaded they will appear on the Missing Piece database and can be seen by those using the search to find avalaible production stock.   
+
+## Client Requirements
+* We need a platform that illustrates and shares our key values
+* We need a platform that succinctly explains who we are and the function of the company. 
+*  We Need a platform that succinctly explains how use the website key functions, that of searching the database or uploading there production inventories
+* We need a platform that allows those visiting to register an account with us. 
+* We need a platform that allows those who have registered an account to log in and log out freely.
+* We need a platform that allows those who have registered to upload there production inventories to the websites database. To be able to edit, or delete inventories once uploaded. 
+* We need a platform that informs a user what inventories they have already uploaded. 
+* We need a platform that allows a user to upload there companies contact information, in order for companies searching the database to contact they relating to there inventories. 
+* We need a platform that allows a user to edit there contact information once uploaded to our database.  
+
