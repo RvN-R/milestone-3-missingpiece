@@ -66,4 +66,7 @@ During my journey trying to find inspiration for the overall aesthetic of this w
  * #fdfdfd - White
  
  ### Typography
- Rubik is the font chosen fro use across the site, with Sans Serif as the back up font in case there are any issues importing into the site correctly from Google Fonts. During my research into possible font choices I came across a great article on the <a  href="https://www.awwwards.com/">awwwards</a> website called the <a  href="https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html">20 Best Google Web Fonts</a>. Some really great font's but Rubik caught my eye due its bold yet modern appearance. I felt once again that this font worked well with the overall image I wanted the websites design to possess. 
+ Rubik is the font chosen fro use across the site, with Sans Serif as the back up font in case there are any issues importing into the site correctly from Google Fonts. During my research into possible font choices I came across a great article on the <a  href="https://www.awwwards.com/">awwwards</a> website called the <a  href="https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html">20 Best Google Web Fonts</a>. Some really great font's but Rubik caught my eye due its bold yet modern appearance. I felt once again that this font worked well with the overall image I wanted the websites design to possess.
+
+ ### Wireframe Site Map
+ * <a href="static/assets/images/README_images/site_map.png" target="_blank"> Site Map</a>
