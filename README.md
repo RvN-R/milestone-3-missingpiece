@@ -70,3 +70,22 @@ During my journey trying to find inspiration for the overall aesthetic of this w
 
  ### Wireframe Site Map
  * <a href="static/assets/images/README_images/site_map.png" target="_blank"> Site Map</a>
+
+ ### Wireframe Mockups - Desktop
+ * <a href="static/assets/images/README_images/home_desktop.png" target="_blank">Home</a>
+ * <a href="static/assets/images/README_images/home_desktop_scrolled.png" target="_blank">Home scrolled</a>
+ * <a href="static/assets/images/README_images/add_inventory_desktop.png" target="_blank">Add Inventory</a>
+ * <a href="static/assets/images/README_images/login_desktop.png" target="_blank">Log In</a>
+ * <a href="static/assets/images/README_images/my_inventory_desktop.png" target="_blank">My Inventory</a>
+ * <a href="static/assets/images/README_images/profile_desktop.png" target="_blank">Profile</a>
+ * <a href="static/assets/images/README_images/register_desktop.png" target="_blank">Register</a>
+ * <a href="static/assets/images/README_images/search_inventory_desktop.png" target="_blank">Serach Inventory</a>
+
+ ### Wireframe Mockups - Mobile
+ * <a href="static/assets/images/README_images/home_mobile.png" target="_blank">Home</a>
+ * <a href="static/assets/images/README_images/add_inventory_mobile.png" target="_blank">Add Inventory</a>
+ * <a href="static/assets/images/README_images/login_mobile.png" target="_blank">Log In</a>
+ * <a href="static/assets/images/README_images/my_inventory_mobile.png" target="_blank">My Inventory</a>
+ * <a href="static/assets/images/README_images/profile_mobile.png" target="_blank">Profile</a>
+ * <a href="static/assets/images/README_images/register_mobile.png" target="_blank">Register</a>
+ * <a href="static/assets/images/README_images/search_mobile.png" target="_blank">Serach Inventory</a>
