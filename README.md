@@ -55,3 +55,15 @@ The primary goal of this website is to provide visitors the opportunity to searc
 3. As a Frequent User, I want to be able to delete my inventories that I have uploaded to my account. 
 4. As a Frequent User, I want to be able to edit my companies address details.
 5. As a Frequent User, I want to be able upload my inventory to my account easily. 
+
+## Design 
+### Colour Scheme
+During my journey trying to find inspiration for the overall aesthetic of this website I came across a fantastic image on <a  href="https://unsplash.com/">Unsplashed</a> and a photographer called <a href ="https://unsplash.com/@nainoa">Nainoa Shizuru</a>. The image was taken from the perspective of someone attending a gig, and I felt met the clients brand image and also would connect with the clients key demographic. I decided to use this image as the main hero image spanning across the length of each page of the website. I then used a website called  <a  href="https://coolors.co/">Coolors</a> and using there "create palette from photo" feature I uploaded the image from Nainoa Shizuru. I was able to pick out colours from the image that I felt would compliment the image, and reinforce the overall design to connect with the key demographic. I've included a list below of colours I ended up settling on: 
+ * #fcc000  - Amber
+ * #96b0d1 - Wild Blue Yonder
+ * #1b1a18 - Eerie Black
+ * #fee602 - Middle Yellow
+ * #fdfdfd - White
+ 
+ ### Typography
+ Rubik is the font chosen fro use across the site, with Sans Serif as the back up font in case there are any issues importing into the site correctly from Google Fonts. During my research into possible font choices I came across a great article on the <a  href="https://www.awwwards.com/">awwwards</a> website called the <a  href="https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html">20 Best Google Web Fonts</a>. Some really great font's but Rubik caught my eye due its bold yet modern appearance. I felt once again that this font worked well with the overall image I wanted the websites design to possess. 
