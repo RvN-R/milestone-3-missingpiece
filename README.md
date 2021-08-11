@@ -244,6 +244,16 @@ Testing information can be found on a separate <a href="#">Testing Readme</a>
 
 * I used a Materalize component called <a href="https://materializecss.com/cards.html">"Cards"</a> for the "My Inventory", "Search Inventory" and "Profile" 
 
-* I used various Materalize Forms including <a href="https://materializecss.com/select.html">"Select"</a>  and <a href="https://materializecss.com/select.html">"Text Inputs"</a>, which can be found on the "Register", "Log In", and "Add Inventory" pages. 
+* I used various Materalize Forms including <a href="https://materializecss.com/select.html">"Select"</a>  and <a href="https://materializecss.com/text-inputs.html">"Text Inputs"</a>, which can be found on the "Register", "Log In", and "Add Inventory" pages. 
 
-* I used <a href="https://getbootstrap.com/docs/5.0/components/modal/">Bootstrap Modal</a> component to create a delete inventory entry modal, which added another level of security to prevent a user from accidentally deleting an entry.  
+* I used <a href="https://getbootstrap.com/docs/5.0/components/modal/">Bootstrap Modal</a> component to create a delete inventory entry modal, which added another level of security to prevent a user from accidentally deleting an entry.
+
+## Content
+All text content on this site including "About Us" and "So, How Does This Work" have been written by me. 
+
+## Media
+Images used on this website were sourced from a website called <a href="https://unsplash.com">Unsplashed</a>.
+
+Images Used
+
+* <a href="https://unsplash.com/photos/NcdG9mK3PBY">Header Background Hero Image</a>
