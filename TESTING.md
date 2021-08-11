@@ -60,3 +60,31 @@ Once a visitor has successfully registered an account on the website, or when th
 5. <b>As a First Time Visitor, I want to source information that validates the organisation's legitimacy. For example, are they a respected company within the UK Live Sound Community.</b></br>
 
 * At the bottom of every page is the footer the visitor will find three social media icons. These three icons will link the visitor all of the Missing Piece social medias. The sites open up in a different tab, so the visitor can continue their journey though the website without being diverted to a different website.However, they should also confirm the validity of the Missing Piece withing the UK Live Sound Community. 
+
+### Testing Returning Visitor Goals
+
+1. <b>As a Returning Visitor, I want to be able to navigate to the search page quickly.</b></br>
+
+* The navigation bar spans with the width of the top of every page, and has a link to the "Search Inventory" page allowing a visitior to navigate there quickly. Alternativley the "So How Does This Work?" section has a button labelled "Search Inventory" that links the visitor to the "Search Inventory" page. 
+
+2. <b>As a Returning Visitor, I want to be able to log in to my account quickly</b></br>
+
+* At the top of every page the visitor will see a navigation bar that spans with width of the top of every page. In the navigation bar they should see "Log In", once clicked it will send them to the "Log In" page. Providing they have previously registered an account on the site they will be able to log in. 
+
+3. <b>As a Returning Visitor, I want to be able to register an account quickly</b></br>
+
+* At the top of every page the visitor will see a navigation bar that spans with width of the top of every page. In the navigation bar they should see "Register", once clicked it will send them to the "Register" page and a form will appear. Once filled out and providing the informatiom meets the form validators requirements, they can click the "Submit" button to register an account. 
+
+4. <b>As a Returning Visitor, I want to be able upload my inventory to my account easily.</b></br>
+
+Once a visitor has registed or logged into there account in the navigation bar at the top of the screen, a option entitled "Add to Inventory" will appear. Once clicked it takes the visitor to the "Add to Inventory" page. The page has a form with a drop down select component and three text inputs. The form will promopt the visitor to choose a category from the drop down list, input the brand name, product name and quantity of the said product they have in there rental inventories, that they want to advertise on the Missing Piece website. Once the form has been filled out, and form validators met then the visitor can click the call to action button at the bottom of the page entitled "Add to Inventory" and the inventory entry will be uploaded to the site. 
+
+5. <b>As a Returning Visitor, I want to be able to see what inventories I have already uploaded to my account.</b></br>
+
+Once a visitor has registed or logged into there account in the navigation bar at the top of the screen, a option entitled "My Inventory" will appear. Once clicked it takes the visitor to the "My Inventory" page. On the page the visitor will see any and all inventory entries they have made to the site up until that point. 
+
+6. <b>As a Returning Visitor, I want to be able to see what address information I have linked to my profile.</b></br>
+
+Once a visitor has registed or logged into there account in the navigation bar at the top of the screen, a option entitled "Profile" will appear. Once clicked it takes the visitor to the "Profile" page. On the page the visitor will see all of the company information they submitted when they registered an account with the site including address informatiom. 
+
+
