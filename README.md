@@ -233,3 +233,17 @@ Testing information can be found on a separate <a href="#">Testing Readme</a>
 21. Heroku will recieve the code from GitHub, and start building the app. This could take a few minutes.
 
 22. Once successful Heroku will notify you, click "View: to view the app and copy the domain link. 
+
+## Credits
+### Code 
+* I used an interesting Stack Overflow thread on <a href="https://stackoverflow.com/questions/50002386/iterating-multiple-lists-in-parallel-with-python-inside-html-flask?noredirect=1&lq=1">Iterating multiple lists in parallel with Python inside HTML(Flask)</a>, as inspiration when it came to iterating over my "inventories" and "users" database. When a user runs a search on the "Search Inventory" page, I wanted not only inventory entries that matched the search query to appear, but also company information of the company that uploaded said inventory entry. This article helped me achieve this. 
+
+* I found another interesting Stack Overflow thread on  <a href="https://stackoverflow.com/questions/30056622/how-to-iterate-over-a-list-of-list-in-jinja"> how to iterate over a list of list in Jinja</a>. I used this technique to help make the inventory entry's appear when searched on the "Search Inventory" page as well as the company information. 
+
+* I watched a YouTube video by <a href="https://www.youtube.com/watch?v=vzaXBm-ZVOQ">Pretty Printed</a> explaining how to install and get started with Flask WTF. This allowed me to quickly setup forms for the websites "Register" and "Log In" pages with effective form validators. 
+
+* I used a Materalize component called <a href="https://materializecss.com/cards.html">"Cards"</a> for the "My Inventory", "Search Inventory" and "Profile" 
+
+* I used various Materalize Forms including <a href="https://materializecss.com/select.html">"Select"</a>  and <a href="https://materializecss.com/select.html">"Text Inputs"</a>, which can be found on the "Register", "Log In", and "Add Inventory" pages. 
+
+* I used <a href="https://getbootstrap.com/docs/5.0/components/modal/">Bootstrap Modal</a> component to create a delete inventory entry modal, which added another level of security to prevent a user from accidentally deleting an entry.  
