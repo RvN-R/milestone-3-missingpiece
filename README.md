@@ -192,24 +192,44 @@ Testing information can be found on a separate <a href="#">Testing Readme</a>
 ## Deployment
 ### Deploy The Application using Heroku
 1. Before creating an account with Heroku you will have needed to created a requirements.txt and Procfile in you application, otherwise Heroku won't know what application and dependencies are required to run the app.
-2. Log in or Register with Heroku
+
+2. Log in or Register with Heroku.
+
 3. Once logged in you will be taken to your Dashboard, at the top right hand corner of the Dashboard you will see New. Click New and select Create New App
-4. You will be prompted to input an App name, this needs to be unique. 
-5. You will then be prompted to "Choose a region" from a drop down list. Once chosen click "Create app"
-6.    Once created the next step is to connect the app. The simplest process is automatic deployment from your Github repository. So in Deployment method click "GitHub - Connect to GitHub"
+4. You will be prompted to input an App name, this needs to be unique.
+
+5. You will then be prompted to "Choose a region" from a drop down list. Once chosen click "Create app".
+
+6.    Once created the next step is to connect the app. The simplest process is automatic deployment from your Github repository. So in Deployment method click "GitHub - Connect to GitHub".
+
 7. Below a "Connect to Github" section will appear. Make sure that your GitHub name appears in the first drop down menu, and then add your repository name and click search. 
+
 8. Once Heroku finds your repository click connect. 
-9. Go up to the top of the page and click "Settings"
-10. Scroll down the page to the "Config Vars"section and click the "Reveal Config Vars" button 
+
+9. Go up to the top of the page and click "Settings".
+
+10. Scroll down the page to the "Config Vars"section and click the "Reveal Config Vars" button.
+
 11. At this point you are going to tell Heroku the variables you have hidden in your env.py in your app, otherwise you could get unwanted application errors. 
+
 12. Input a varible called IP and its value needs to be 0.0.0.0
+
 13. Input a variable called PORT and its value needs to be 5000
+
 14. Input a variable called SECRET_KEY and you need to copy the secret key from you env.py and paste in the value.
-15. Input a variable called MONGO_DBNAME and copy the MONGO_DBNAME value from your env.py and paste in as the value. 
-16. Input a variable called MONGO_URI, once again copying the MONGO_URI value from your env.py and paste in as the value. 
+
+15. Input a variable called MONGO_DBNAME and copy the MONGO_DBNAME value from your env.py and paste in as the value.
+
+16. Input a variable called MONGO_URI, once again copying the MONGO_URI value from your env.py and paste in as the value.
+
 17. Got to the top of the page and click "Deploy"
-18. Before following the next step, go back to your app and make sure any changes have been pushed to your repository
-19. Click "Enable Automatic Deployment" 
+
+18. Before following the next step, go back to your app and make sure any changes have been pushed to your repository.
+
+19. Click "Enable Automatic Deployment"
+
 20. Scroll down to "Manual deploy" section of the Deploy page. Make sure "master" branch is selected and click "Deploy Brand"
-21. Heroku will recieve the code from GitHub, and start building the app. This could take a few minutes. 
+
+21. Heroku will recieve the code from GitHub, and start building the app. This could take a few minutes.
+
 22. Once successful Heroku will notify you, click "View: to view the app and copy the domain link. 
