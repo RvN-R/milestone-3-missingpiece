@@ -115,4 +115,40 @@ The "Add Inventory" page only appears on the "Members Side" of the website, as y
 The "My Inventory" page only appears on the "Members Side" of the website, as you have to have registered an account in order to have a profile to upload too. The navigation bar and footer remain the same location as all of the other pages to ensure consistency throughout the site. When a user first arrives at the "My Inventory" page they will see a card for each inventory entry they have added using the "Add Inventory" page. Each card will inform them on the name of the category, name of the brand, name of the product and how many units of that product the user has in there inventory. Finally there are two call to action buttons labelled "Edit" and "Delete" per card. If a user wants to edit any of the information on the card they can click the "Edit" button. When they do they will be transported to a page identical to the "Add Inventory" page. The form will autofill with the information from that card. There are two call to action buttons labelled "Cancel" and "Confirm Edit" at the bottom of the page. If the user clicks cancel they will be taken page to there "My Inventory" page. However, if the user edits the information of that entry, clicks "Confirm Edit" button then they will be taken back to the "My Inventory" page. They will see a message that says "Inventory Successfully Updated" and they will see the information on the Inventory entry change to match the changes they have just made. Finally should the user want to delete an entry entirely they can click the "Delete" button. In doing so a modal will appear with a warning, it will ask the user if they want to delete the inventory. If they click no then the modal will close, if they click yes then that inventory entry will disappear, and a message "Inventory Successfully Deleted" will appear. The modal adds another level of security, to prevent a user from accidentally deleting an entry. 
 
 ### Log Out
-This isn't a page but it is a feature, and appears on the navigation bar on the "Members Side" of the website. Once clicked the user will be logged out of there account and transported to "Visitors Side" and the "Log In" page. 
+This isn't a page but it is a feature, and appears on the navigation bar on the "Members Side" of the website. Once clicked the user will be logged out of there account and transported to "Visitors Side" and the "Log In" page.
+
+## Existing Features
+* Header Logo - Exists on every page and allows the user to easily recognise the clients brand. Clicking the logo returns the user to the home page. 
+
+* Header Navigation Bar - appears at the top of each page in the same location, ensuring the user knows to where to locate it no matter location on the website. 
+
+* Remote View Navigation Bar - In remote screen sizes a full size navigation bar would get overbearing and take up much needed screen space. Remote view will allow users to toggle to the remote view navigation bar to better navigate around the site. 
+
+* Footer Social Icons - Exist at the bottom of the page and allow the visitor to access the club's social media platforms. 
+
+* Call to Action Buttons - found through out the site. Allows the users to quickly access key information or key features. 
+
+* About Us - This section appears on the home page. Allows visitors to understand the clients journey, brand image and mission statement. 
+
+* "So, How Does This Work ?" - This section appears on the home page. It allows the user to understand the two key uses of the website, and then using call to action buttons help navigate the user to the correct areas of the site depending on what they are looking to achieve. 
+
+* Modal for Deleting Inventory - Protects the user from accidentally deleting an inventory entry, which once deleted can't be undone.
+
+* Search - Allows the user to search the inventory database for other inventories that include product that they would like to rent for an event. 
+
+*  Add Inventory - Allows the user the ability to upload an inventory entry to the database.
+
+* Edit Inventory - Allows the user the ability to edit an of the inventory entries they have uploaded to the database. 
+
+* Edit Profile Information - Allows the user the ability to edit there company information that they previously registered with. 
+
+## Features Left to Implement
+* GDPR Checkbox - Allows the user to approve the use of their email address to inform them of future actions. Also ensures the client complies with EU data protection law. 
+
+* Addition to  category select component in the "Add Inventory" form - This is relatively easy to do as the category select component is linked to a categories database in MongoDB. So all someone has to do is input more category options and these will appear when the user clicks the select component. 
+
+* Add subscription service - As the company grows a subscription service to advertise inventories on the Missing Piece database will be employed. When a user gets to a limit of 5 entries they will have to pay a monthly subscription fee to advertise more inventory entires. 
+
+* Processing Payments - When the subscription service starts a payment processing API will be required in order to process subscription payments. 
+
+* Decrease Manual Element to "Adding Inventory" - At present a user has to input each Inventory entry using the "Add Inventory" page. However, if you are a large rental company with a massive inventory then this process could easily become laborious. A number of these large companies have internal database that they use to manage the incoming and outgoing stock from there rental inventories. Each piece of equipment has a bar code, that bar code is scanned when it leaves the warehouse for productions, and scanned when they are returned. At this point the Missing Piece is still at its initial stages so more research needs to be done into how these databases store this information. However, the long term goal  would be to write some code that dumps the data from this database at the end of everyday and upload to the Missing Piece database. This would keep the users actual rental inventory up to date with there missing piece profile.
