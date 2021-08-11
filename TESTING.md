@@ -36,3 +36,27 @@ When a visitor registers an account on the website they are prompted to not only
 * <b>We need a platform that allows a user to edit there contact information once uploaded to our database.</b></br>
 
 Once a visitor has successfully registered an account on the website, or when they successfully log in they are automatically taken to there "Profile" page. The page displays the visitors companies information and just below that information is a call to action button labelled "Update Info". Once clicked an indentical page to the "Register" page appears, with all of the current company information pre loaded into the form. The visitor is then able to either edit that information and click the "Update" button to update the company information. Alternatively if the visitor decides not to update the information, they can click the "Cancel" button to take them back to there "Profile" page without editing there information. 
+
+## Testing User Stories from UX section in README
+
+### Testing First Time Visitor Goals
+
+1. <b>As a First Time Visitor, I want to easily understand the main purpose of the site, and learn more about the company.</b></br>
+
+* The "About Us" section features 4 paragraphs explaining the companies values, with a main hero image used as a banner on all pages to reinforce those connotations.
+
+2. <b>As a First Time Visitor, I want to be able to easily navigate through the site to find key content.</b></br>
+
+* At the top of each page is a navigation bar that runs the length of the page. Its always at the top of the page and allows the visitor no matter where they are on the website to know the location of the navigation bar. 
+
+3. <b>As a First Time Visitor, I want to clearly find out how to search the database for possible avalaible equipment.</b></br>
+
+* There are two ways for a visitor to search the Missing Piece database. Firstly on the "Home" page (initial page the visitor will arrive at) when they scroll down the page they will arrive at the "So How Does This Work?" section. This section amoungst many other functions clearly explains how the visitor can search the database. It also provides a call to action button labelled "Search Inventory" with spy glass icon, which sends the visitor to the "Search Inventory" page. Alternativley at the top of every page is the navigation bar that can help direct the visitor to the "Search Inventory" page. 
+
+4. <b>As a First Time Visitor, I want to clearly find out how to register an account with the website.</b></br>
+
+* There are two ways for a visitor to register an account on the website.Firstly on the "Home" page (initial page the visitor will arrive at) when they scroll down the page they will arrive at the "So How Does This Work?" section. This section amoungst many other functions clearly explains how the visitor can register an account on the website. It also provides a call to action button labelled "Create Account", which sends the visitor to the "Register" page. Alternativley at the top of every page is the navigation bar that can help direct the visitor to the "Register" page.
+
+5. <b>As a First Time Visitor, I want to source information that validates the organisation's legitimacy. For example, are they a respected company within the UK Live Sound Community.</b></br>
+
+* At the bottom of every page is the footer the visitor will find three social media icons. These three icons will link the visitor all of the Missing Piece social medias. The sites open up in a different tab, so the visitor can continue their journey though the website without being diverted to a different website.However, they should also confirm the validity of the Missing Piece withing the UK Live Sound Community. 
