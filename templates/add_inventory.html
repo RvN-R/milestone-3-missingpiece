@@ -17,7 +17,7 @@
           <div class="row">
             <div class="input-field col s12">
                 <select id="categories_name" name="categories_name" class="validate" required>
-                  <option value="" disabled selected>Choose your option</option>
+                  <option value="" disabled selected>Choose your Category</option>
                   {% for category in categories %}
                     <option value="{{ category.categories_name }}">{{ category.categories_name }}</option>
                   {% endfor %}
