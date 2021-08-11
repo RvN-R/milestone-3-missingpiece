@@ -152,3 +152,36 @@ This isn't a page but it is a feature, and appears on the navigation bar on the 
 * Processing Payments - When the subscription service starts a payment processing API will be required in order to process subscription payments. 
 
 * Decrease Manual Element to "Adding Inventory" - At present a user has to input each Inventory entry using the "Add Inventory" page. However, if you are a large rental company with a massive inventory then this process could easily become laborious. A number of these large companies have internal database that they use to manage the incoming and outgoing stock from there rental inventories. Each piece of equipment has a bar code, that bar code is scanned when it leaves the warehouse for productions, and scanned when they are returned. At this point the Missing Piece is still at its initial stages so more research needs to be done into how these databases store this information. However, the long term goal  would be to write some code that dumps the data from this database at the end of everyday and upload to the Missing Piece database. This would keep the users actual rental inventory up to date with there missing piece profile.
+
+## Technologies Used
+* This website used HTML, CSS, Javascript and Python programming languages
+
+* <a href="https://materializecss.com/">Materialize CDN</a>: This project uses Materialize 1.0.0 to help make the website responsive. 
+
+* <a href="https://getbootstrap.com/">Bootstrap CDN</a>: This project uses Bootstrap5 to help make the website responsive.
+
+* <a href="https://jquery.com/">JQuery</a>: This project uses JQuery to help make the website more interactive.
+
+* <a href="https://popper.js.org/">Popper.js</a>: This project uses Popper.js Javascript for the modal used on the "My Inventory" page.
+
+* <a href="https://fonts.google.com/">Google Fonts</a>: This project uses Google Fonts to style the website's fonts.
+
+* <a href="https://fontawesome.com/">Font Awesome</a>: This project uses Font Awesome in the footer of the website to add social media icons.
+
+* <a href="https://coolors.co/">Coolors</a>: This project uses Coolors to identify which colour palette best meet the client's requirements and brand image.
+
+* <a href="https://balsamiq.com/">Balsamiq</a>: This project uses Balsamiq to create wireframes during the UX stages.
+
+* <a href="https://git-scm.com/">Git</a>: Git was used for version control, using the Gitpod terminal to add, commit to Git and push to Github.
+
+* <a href="https://github.com/">GitHub</a>: Github was used to store the project's code after being pushed from Git.
+
+* <a href="https://stackedit.io/">StackEdit</a>: was used to confirm layout and spell check the README and TESTING md files.
+
+* <a href="https://www.mongodb.com/">MongoDB</a>: was used to create a backend database to store users registration details and inventory entry's. 
+
+* <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask</a>: was used as a frame work to render information MongoDB database to appear on the website. 
+
+* <a href="https://flask-wtf.readthedocs.io/en/0.15.x/">Flask WTF</a>: was used and I imported FlaskForm from it to create some of the forms on the site. 
+
+* <a href="https://wtforms.readthedocs.io/en/2.3.x/">WTF Forms</a>: was used to create the forms for the Register and Log In pages of the site. In addition I also used the validators from WTF Forms for both the Register and Log In form. 
