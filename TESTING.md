@@ -87,4 +87,16 @@ Once a visitor has registed or logged into there account in the navigation bar a
 
 Once a visitor has registed or logged into there account in the navigation bar at the top of the screen, a option entitled "Profile" will appear. Once clicked it takes the visitor to the "Profile" page. On the page the visitor will see all of the company information they submitted when they registered an account with the site including address informatiom. 
 
+### Testing Frequent Visitor Goals
 
+1. <b>As a Frequent User, I want to be able to navigate to the search page quickly.</b></br>
+
+* The navigation bar spans with the width of the top of every page, and has a link to the "Search Inventory" page allowing a visitior to navigate there quickly. Alternativley the "So How Does This Work?" section has a button labelled "Search Inventory" that links the visitor to the "Search Inventory" page. 
+
+2. <b>As a Frequent User, I want to be able to edit my inventories that I have uploaded to my account. </b></br>
+
+* Providing a visitor has registered or logged into there account, in the navigation bar at the top of the screen, an option will appear entitled "My Inventory". Once clicked they will be taken to a page that displays all the inventory entires they have made up until that point. Each entry is displayed in a card and each card has two buttons entitled "Edit" and "Delete". Once the visitor clicks "Edit" a page will appear indentical to that of the "Add To Inventory" page, but the select and text input elements will be autofilled by the information from said inventory entry. The visitor can edit the information on the form and then click the "Confirm Edit" button. Those changes will be made to that inventory entry, and will appear changed in there "My Inventory" page. 
+
+3. <b>As a Frequent User, I want to be able to delete my inventories that I have uploaded to my account.</b></br>
+
+* Providing a visitor has registered or logged into there account, in the navigation bar at the top of the screen, an option will appear entitled "My Inventory". Once clicked they will be taken to a page that displays all the inventory entires they have made up until that point. Each entry is displayed in a card and each card has two buttons entitled "Edit" and "Delete". Once the visitor clicks "Delete" a Modal warning will appear asking the visitor if they really want to delete this inventory entry. If they click "Yes" then the entry will be deleted, if they click "No" they will be taken back to the "My Inventory" page.
