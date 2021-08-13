@@ -145,8 +145,12 @@ def profile(username):
     # Function searches users collection in Mongo DB.
     # Assigns results to varaible called companies
     # Renders profile.html and data from companies variable
-    companies = list(mongo.db.users.find())
-    return render_template("profile.html", companies=companies)
+    if "user" in session:
+        companies = list(mongo.db.users.find())
+        return render_template("profile.html", companies=companies)
+    else:
+        flash("You must be logged in to perform that action")
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
@@ -162,22 +166,25 @@ def add_inventory():
     # Function renders add_inventory.html
     # Inserts data from inventory variable to inventories collection
     # Categories varible returns data from categories collection
-    if request.method == "POST":
-        inventory = {
-            "created_by": session["user"],
-            "categories_name": request.form.get("categories_name"),
-            "brand": request.form.get("brand"),
-            "product": request.form.get("product"),
-            "product_qty": request.form.get("product_qty")
-        }
-        mongo.db.inventories.insert_one(inventory)
+    if "user" in session:
+        if request.method == "POST":
+            inventory = {
+                "created_by": session["user"],
+                "categories_name": request.form.get("categories_name"),
+                "brand": request.form.get("brand"),
+                "product": request.form.get("product"),
+                "product_qty": request.form.get("product_qty")
+            }
+            mongo.db.inventories.insert_one(inventory)
+            categories = mongo.db.categories.find().sort("categories_name", 1)
+            flash("Inventory Successfully Added")
+            return render_template("add_inventory.html", categories=categories)
+       
         categories = mongo.db.categories.find().sort("categories_name", 1)
-        flash("Inventory Successfully Added")
         return render_template("add_inventory.html", categories=categories)
-    
-    categories = mongo.db.categories.find().sort("categories_name", 1)
-    return render_template("add_inventory.html", categories=categories)
-
+    else:
+        flash("You must be logged in to perform that action")
+        return redirect(url_for("login"))
 
 @app.route("/edit_inventory/<inventory_id>", methods=["GET", "POST"])
 def edit_inventory(inventory_id):
@@ -188,22 +195,33 @@ def edit_inventory(inventory_id):
     # Renders edit_inventory
     # If recieves a POST request function inserts data from submit varibale 
     # to inventories collection and updates collection.
+    if "user" in session:
+        inventory_entry = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
+        print(inventory_entry)
+        user = mongo.db.users.find_one({"username": session["user"]})["username"]
+        print(user)
+        if user == inventory_entry.get("created_by"):
+            if request.method == "POST":
+                submit = {
+                    "created_by": session["user"],
+                    "categories_name": request.form.get("categories_name"),
+                    "brand": request.form.get("brand"),
+                    "product": request.form.get("product"),
+                    "product_qty": request.form.get("product_qty")
+                }
+                mongo.db.inventories.update({"_id": ObjectId(inventory_id)}, submit)
+                flash("Inventory Successfully Updated")
+                return my_inventory()
 
-    if request.method == "POST":
-        submit = {
-            "created_by": session["user"],
-            "categories_name": request.form.get("categories_name"),
-            "brand": request.form.get("brand"),
-            "product": request.form.get("product"),
-            "product_qty": request.form.get("product_qty")
-        }
-        mongo.db.inventories.update({"_id": ObjectId(inventory_id)}, submit)
-        flash("Inventory Successfully Updated")
-        return my_inventory()
-
-    inventory = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
-    categories = mongo.db.categories.find().sort("categories_name", 1)
-    return render_template("edit_inventory.html", inventory=inventory, categories=categories)
+            inventory = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
+            categories = mongo.db.categories.find().sort("categories_name", 1)
+            return render_template("edit_inventory.html", inventory=inventory, categories=categories)
+        else:
+            flash("You are not authorsied to perform this action")
+            return redirect(url_for("my_inventory"))
+    else:
+        flash("You must be logged in to perform that action")
+        return redirect(url_for("login"))
 
 
 @app.route("/edit_company_address/<company_id>", methods=["GET", "POST"])
@@ -214,22 +232,26 @@ def edit_company_address(company_id):
     # Renders edit_company_address.html
     # If recieves post request, updates users collection with submit variable
     # Returns to profile.html
-    if request.method == "POST":
-        submit = { "$set":{
-            "company_name": request.form.get("company_name"),
-            "street_name": request.form.get("street_name"),
-            "postcode": request.form.get("postcode"),
-            "city": request.form.get("city"),
-            "phone": request.form.get("phone")
-        }}
-        mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
-        companies = list(mongo.db.users.find())
-        flash("Company Details Updated")
-        return render_template("profile.html", company=company_id, companies=companies)
+    if "user" in session:
+        if request.method == "POST":
+            submit = { "$set":{
+                "company_name": request.form.get("company_name"),
+                "street_name": request.form.get("street_name"),
+                "postcode": request.form.get("postcode"),
+                "city": request.form.get("city"),
+                "phone": request.form.get("phone")
+            }}
+            mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
+            companies = list(mongo.db.users.find())
+            flash("Company Details Updated")
+            return render_template("profile.html", company=company_id, companies=companies)
 
-    company = mongo.db.users.find_one({"_id": ObjectId(company_id)})
-    companies = list(mongo.db.users.find())
-    return render_template("edit_company_address.html", company=company, companies=companies)
+        company = mongo.db.users.find_one({"_id": ObjectId(company_id)})
+        companies = list(mongo.db.users.find())
+        return render_template("edit_company_address.html", company=company, companies=companies)
+    else:
+        flash("You must be logged in to perform that action")
+        return redirect(url_for("login"))
 
 
 @app.route("/delete_inventory/<inventory_id>")
@@ -246,9 +268,13 @@ def delete_inventory(inventory_id):
 def my_inventory():
     # Function returns list of inventories collection
     # Assigns results to inventories variable
-    # Renders my_inventory.html and inventories variable#
-    inventories = list(mongo.db.inventories.find())
-    return render_template("my_inventory.html", inventories=inventories)
+    # Renders my_inventory.html and inventories variable
+    if "user" in session:
+        inventories = list(mongo.db.inventories.find())
+        return render_template("my_inventory.html", inventories=inventories)
+    else:
+        flash("You must be logged in to perform that action")
+        return redirect(url_for("login"))
 
 if __name__ == "__main__":
     # If __name__ is equal to __main__ runs app
