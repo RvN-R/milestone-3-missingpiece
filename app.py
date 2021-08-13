@@ -22,9 +22,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
-
-
 @app.route("/home")
 def home():
     # Function renders index.html
@@ -39,6 +38,7 @@ def get_inventory():
     inventories = list(mongo.db.inventories.find())
     return render_template("search_inventory.html", inventories=inventories)
 
+
 @app.route("/search_passive")
 def search_passive():
     # Function renders search_passive.html
@@ -51,24 +51,32 @@ def search():
     # Assigns result of that search to inventories variable
     # Repeats search using varaible called query and returns "created_by" data
     # Assigns result of that search to created_by variable
-    # Searches Mongo DB collection "users" for data matching created_by variable
+    # Searches Mongo DB collection "users"
+    # For data matching created_by variable
     # Zips "users" and "inventories" and assigns to variable boxes
     # renders serach_inventory.html
     if request.method == "POST":
         query = request.form.get("query")
-        inventories = list(mongo.db.inventories.find({"$text": {"$search": query}}))
-        created_by = list(mongo.db.inventories.find({"$text": {"$search": query}}, {"created_by": 1}))
+        inventories = list(mongo.db.inventories.find(
+            {"$text": {"$search": query}}))
+        created_by = list(mongo.db.inventories.find(
+            {"$text": {"$search": query}}, {"created_by": 1}))
         users = []
         for i in created_by:
-            users.append((mongo.db.users.find_one({"username": i.get("created_by")})))
-        return render_template("search_inventory.html", inventories=inventories,boxes=zip(users, inventories))
+            users.append((mongo.db.users.find_one(
+                {"username": i.get("created_by")})))
+        return render_template(
+            "search_inventory.html", inventories=inventories, boxes=zip(
+                users, inventories))
 
 
 class RegistrationForm(FlaskForm):
     # uses FlaskForm to create username and password variables
-    username = StringField('username', validators=[InputRequired(), Length(min=10, max=15, message='Username must be between 10 and 15 Characters')])
+    username = StringField(
+        'username', validators=[InputRequired(), Length(
+            min=10, max=15,
+            message='Username must be between 10 and 15 Characters')])
     password = PasswordField('password', validators=[InputRequired()])
-
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -77,7 +85,8 @@ def register():
     # Takes data from HTML form and inserts it to Mongo DB users
     # collection.
     # existing_user variable cross checks username with users collection.
-    # Returns user to profile page if form is successfully filled out correctly.
+    # Returns user to profile page if
+    # The form is successfully filled out correctly.
     form = RegistrationForm()
     if request.method == "POST" and form.validate_on_submit():
         # check if username already exists in db and whether validatiors have
@@ -88,7 +97,6 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-            
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -99,15 +107,16 @@ def register():
             "phone": request.form.get("phone")
         }
         mongo.db.users.insert_one(register)
-        
+
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful {}!".format(request.form.get("company_name")))
-        return redirect(url_for("profile", username=session["user"])) 
+        flash("Registration Successful {}!".format(
+            request.form.get("company_name")))
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html", form=form)
 
 
 class LoginForm(FlaskForm):
-     # uses FlaskForm Validators to confirm log in is correct
+    # uses FlaskForm Validators to confirm log in is correct
     username = StringField('username', validators=[InputRequired()])
     password = PasswordField('password', validators=[InputRequired()])
 
@@ -121,15 +130,15 @@ def login():
     if request.method == "POST" and form.validate():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                existing_user["password"], request.form.get("password")
+            ):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for(
-                "profile", username=session["user"]))
-            
+                return redirect(url_for("profile", username=session["user"]))
+
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -139,6 +148,7 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html", form=form)
+
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -179,12 +189,13 @@ def add_inventory():
             categories = mongo.db.categories.find().sort("categories_name", 1)
             flash("Inventory Successfully Added")
             return render_template("add_inventory.html", categories=categories)
-       
+
         categories = mongo.db.categories.find().sort("categories_name", 1)
         return render_template("add_inventory.html", categories=categories)
     else:
         flash("You must be logged in to perform that action")
         return redirect(url_for("login"))
+
 
 @app.route("/edit_inventory/<inventory_id>", methods=["GET", "POST"])
 def edit_inventory(inventory_id):
@@ -193,11 +204,13 @@ def edit_inventory(inventory_id):
     # Searches categories collection
     # Assigns results to varibale categories
     # Renders edit_inventory
-    # If recieves a POST request function inserts data from submit varibale 
+    # If recieves a POST request function inserts data from submit varibale
     # to inventories collection and updates collection.
     if "user" in session:
-        inventory_entry = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
-        user = mongo.db.users.find_one({"username": session["user"]})["username"]
+        inventory_entry = mongo.db.inventories.find_one(
+            {"_id": ObjectId(inventory_id)})
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
         if user == inventory_entry.get("created_by"):
             if request.method == "POST":
                 submit = {
@@ -207,13 +220,17 @@ def edit_inventory(inventory_id):
                     "product": request.form.get("product"),
                     "product_qty": request.form.get("product_qty")
                 }
-                mongo.db.inventories.update({"_id": ObjectId(inventory_id)}, submit)
+                mongo.db.inventories.update(
+                    {"_id": ObjectId(inventory_id)}, submit)
                 flash("Inventory Successfully Updated")
                 return my_inventory()
 
-            inventory = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
+            inventory = mongo.db.inventories.find_one(
+                {"_id": ObjectId(inventory_id)})
             categories = mongo.db.categories.find().sort("categories_name", 1)
-            return render_template("edit_inventory.html", inventory=inventory, categories=categories)
+            return render_template(
+                "edit_inventory.html",
+                inventory=inventory, categories=categories)
         else:
             flash("You are not authorsied to perform this action")
             return redirect(url_for("my_inventory"))
@@ -233,11 +250,12 @@ def edit_company_address(company_id):
     if "user" in session:
         company_info = mongo.db.users.find_one({"_id": ObjectId(company_id)})
         print(company_info)
-        user = mongo.db.users.find_one({"username": session["user"]})["username"]
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
         print(user)
         if user == company_info.get("username"):
             if request.method == "POST":
-                submit = { "$set":{
+                submit = {"$set": {
                     "company_name": request.form.get("company_name"),
                     "street_name": request.form.get("street_name"),
                     "postcode": request.form.get("postcode"),
@@ -247,11 +265,14 @@ def edit_company_address(company_id):
                 mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
                 companies = list(mongo.db.users.find())
                 flash("Company Details Updated")
-                return render_template("profile.html", company=company_id, companies=companies)
+                return render_template(
+                    "profile.html", company=company_id, companies=companies)
 
             company = mongo.db.users.find_one({"_id": ObjectId(company_id)})
             companies = list(mongo.db.users.find())
-            return render_template("edit_company_address.html", company=company, companies=companies)
+            return render_template(
+                "edit_company_address.html", company=company,
+                companies=companies)
         else:
             flash("You are not authorised to perfom this action")
             return redirect(url_for("profile", username=session["user"]))
@@ -267,7 +288,6 @@ def delete_inventory(inventory_id):
     mongo.db.inventories.remove({"_id": ObjectId(inventory_id)})
     flash("Inventory Successfully Deleted")
     return my_inventory()
-
 
 
 @app.route("/my_inventory")
