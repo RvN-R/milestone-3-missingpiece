@@ -197,9 +197,7 @@ def edit_inventory(inventory_id):
     # to inventories collection and updates collection.
     if "user" in session:
         inventory_entry = mongo.db.inventories.find_one({"_id": ObjectId(inventory_id)})
-        print(inventory_entry)
         user = mongo.db.users.find_one({"username": session["user"]})["username"]
-        print(user)
         if user == inventory_entry.get("created_by"):
             if request.method == "POST":
                 submit = {
@@ -233,22 +231,30 @@ def edit_company_address(company_id):
     # If recieves post request, updates users collection with submit variable
     # Returns to profile.html
     if "user" in session:
-        if request.method == "POST":
-            submit = { "$set":{
-                "company_name": request.form.get("company_name"),
-                "street_name": request.form.get("street_name"),
-                "postcode": request.form.get("postcode"),
-                "city": request.form.get("city"),
-                "phone": request.form.get("phone")
-            }}
-            mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
-            companies = list(mongo.db.users.find())
-            flash("Company Details Updated")
-            return render_template("profile.html", company=company_id, companies=companies)
+        company_info = mongo.db.users.find_one({"_id": ObjectId(company_id)})
+        print(company_info)
+        user = mongo.db.users.find_one({"username": session["user"]})["username"]
+        print(user)
+        if user == company_info.get("username"):
+            if request.method == "POST":
+                submit = { "$set":{
+                    "company_name": request.form.get("company_name"),
+                    "street_name": request.form.get("street_name"),
+                    "postcode": request.form.get("postcode"),
+                    "city": request.form.get("city"),
+                    "phone": request.form.get("phone")
+                }}
+                mongo.db.users.update({"_id": ObjectId(company_id)}, submit)
+                companies = list(mongo.db.users.find())
+                flash("Company Details Updated")
+                return render_template("profile.html", company=company_id, companies=companies)
 
-        company = mongo.db.users.find_one({"_id": ObjectId(company_id)})
-        companies = list(mongo.db.users.find())
-        return render_template("edit_company_address.html", company=company, companies=companies)
+            company = mongo.db.users.find_one({"_id": ObjectId(company_id)})
+            companies = list(mongo.db.users.find())
+            return render_template("edit_company_address.html", company=company, companies=companies)
+        else:
+            flash("You are not authorised to perfom this action")
+            return redirect(url_for("profile", username=session["user"]))
     else:
         flash("You must be logged in to perform that action")
         return redirect(url_for("login"))
