@@ -139,5 +139,9 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Right click and select inspection. 
 * Scroll down the page to "About Us" section. 
 * Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy text is appearing as designed. 
-* Scroll down the page to "
+* Scroll down the page to "So How Does This Work?" section. 
+* Repeat steps above for changing screen sizes, to check sections responsiveness. Text and Buttons should remain visable and be unrestricted. 
+* Hover over call to action buttons for both "Search Inventory" and "Create Account", confiming the hover function works properly. When hovered over buttons should go from yellow to black, text should perform the opposite. 
+* Perform the following maunal check <b>HOME > CLICK "Search Inventory" BUTTON</b> you should be transported to the "Search Inventory" Page. 
+* Perform the following maunal check <b>HOME > CLICK "Create Account" BUTTON</b> you should be transported to the "Register" Page. 
 
