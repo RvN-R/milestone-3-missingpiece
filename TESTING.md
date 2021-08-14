@@ -173,3 +173,6 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * The page should refresh and you should see a flash message running across the width of the screen saying "Registration Successful Jacks Sound System!"
 * Below the flash message you should see a heading that says "Jacks Sound Systems Profile" 
 * Below the heading you should see a card with the title "Company Address", which should contain all of the company information you just registered with.
+* Depending on the screen size you are currently viewing the site on, navigate to the navigation bar either at the top of the page or toggle to the remote view navigation bar. The bar should have the following links displayed, "Home", "Profile", "Log Out" "Search" Inventory" "Add to Inventory" and "My Inventory"
+
+### Logout
