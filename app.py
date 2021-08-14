@@ -51,9 +51,9 @@ def search():
     # Assigns result of that search to inventories variable
     # Repeats search using varaible called query and returns "created_by" data
     # Assigns result of that search to created_by variable
-    # Searches Mongo DB collection "users"
+    # Searches Mongo DB users collection
     # For data matching created_by variable
-    # Zips "users" and "inventories" and assigns to variable boxes
+    # Zips "users" and "inventories" and assigns to variable called boxes
     # renders serach_inventory.html
     if request.method == "POST":
         query = request.form.get("query")
@@ -81,12 +81,12 @@ class RegistrationForm(FlaskForm):
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    # Function rendeers register.html
+    # Function renders register.html
     # Takes data from HTML form and inserts it to Mongo DB users
     # collection.
     # existing_user variable cross checks username with users collection.
     # Returns user to profile page if
-    # The form is successfully filled out correctly.
+    # The form isn't successfully filled out correctly.
     form = RegistrationForm()
     if request.method == "POST" and form.validate_on_submit():
         # check if username already exists in db and whether validatiors have
@@ -153,8 +153,10 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Function searches users collection in Mongo DB.
+    # If user is in session.
     # Assigns results to varaible called companies
     # Renders profile.html and data from companies variable
+    # Else it returns flash message and redirects
     if "user" in session:
         companies = list(mongo.db.users.find())
         return render_template("profile.html", companies=companies)
@@ -174,8 +176,10 @@ def logout():
 @app.route("/add_inventory", methods=["GET", "POST"])
 def add_inventory():
     # Function renders add_inventory.html
+    # If user is in session.
     # Inserts data from inventory variable to inventories collection
     # Categories varible returns data from categories collection
+    # Else it returns flash message and redirects
     if "user" in session:
         if request.method == "POST":
             inventory = {
@@ -200,12 +204,14 @@ def add_inventory():
 @app.route("/edit_inventory/<inventory_id>", methods=["GET", "POST"])
 def edit_inventory(inventory_id):
     # Function searches inventories collection for data that matches _id
+    # If user is in session.
     # Assigns results to variable inventory
     # Searches categories collection
     # Assigns results to varibale categories
     # Renders edit_inventory
-    # If recieves a POST request function inserts data from submit varibale
+    # If recieves a POST request function inserts data from submit variable
     # to inventories collection and updates collection.
+    # Else it returns flash message and redirects
     if "user" in session:
         inventory_entry = mongo.db.inventories.find_one(
             {"_id": ObjectId(inventory_id)})
@@ -242,11 +248,13 @@ def edit_inventory(inventory_id):
 @app.route("/edit_company_address/<company_id>", methods=["GET", "POST"])
 def edit_company_address(company_id):
     # Function searches users collection for data that matches _id
+    # If user is in session.
     # Assigns results to variable company
     # Returns list from users collection and assigns to companies variable
     # Renders edit_company_address.html
     # If recieves post request, updates users collection with submit variable
     # Returns to profile.html
+    # Else it returns flash message and redirects
     if "user" in session:
         company_info = mongo.db.users.find_one({"_id": ObjectId(company_id)})
         print(company_info)
@@ -293,8 +301,10 @@ def delete_inventory(inventory_id):
 @app.route("/my_inventory")
 def my_inventory():
     # Function returns list of inventories collection
+    # If user is in session.
     # Assigns results to inventories variable
     # Renders my_inventory.html and inventories variable
+    # Else it returns flash message and redirects
     if "user" in session:
         inventories = list(mongo.db.inventories.find())
         return render_template("my_inventory.html", inventories=inventories)
