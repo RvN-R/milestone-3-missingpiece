@@ -45,6 +45,8 @@ p{
     -webkit-appearance: button;
     -moz-appearance: button;
     line-height: inherit;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .small_btn:visited{
@@ -62,6 +64,8 @@ p{
     -webkit-appearance: button;
     -moz-appearance: button;
     line-height: inherit;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .small_btn:hover{
@@ -79,6 +83,8 @@ p{
     -webkit-appearance: button;
     -moz-appearance: button;
     line-height: inherit;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .small_btn:active{
@@ -97,6 +103,8 @@ p{
     -webkit-appearance: button;
     -moz-appearance: button;
     line-height: inherit;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 /*.body-style css used to center webite on larger screen sizes*/
@@ -233,6 +241,10 @@ nav ul a:active{
 
 .collapsible-body{
     text-align: center;
+}
+
+#search_btn_container{
+    padding: 25px 0;
 }
 
 /* Profile */
