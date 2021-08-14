@@ -1,5 +1,7 @@
 # Testing
 
+I used <a href="https://validator.w3.org/">Markup Validator Service</a>, <a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a>, <a href="https://jshint.com/">JSHint</a> and <a href="http://pep8online.com/">PEP8 Online</a> to check both HTML, CSS, Javascript and Python using the direct input services of both services. The HTML validator doesn't recognised Jinja formatting, so that will come back as and error. However, apart from those results no other issues where flagged. 
+
 ## Testing client Requirements featured in README
 * <b>We need a platform that illustrates and shares our key values</b></br>
 
