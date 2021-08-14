@@ -142,8 +142,34 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Scroll down the page to "So How Does This Work?" section. 
 * Repeat steps above for changing screen sizes, to check sections responsiveness. Text and Buttons should remain visable and be unrestricted. 
 * Hover over call to action buttons for both "Search Inventory" and "Create Account", confiming the hover function works properly. When hovered over buttons should go from yellow to black, text should perform the opposite. 
-* Perform the following maunal check <b>HOME > CLICK "Search Inventory" BUTTON</b> you should be transported to the "Search Inventory" Page. 
-* Perform the following maunal check <b>HOME > CLICK "Create Account" BUTTON</b> you should be transported to the "Register" Page. 
+* Perform the following manual check <b>HOME > CLICK "Search Inventory" BUTTON</b> you should be transported to the "Search Inventory" Page. 
+* Perform the following manual check <b>HOME > CLICK "Create Account" BUTTON</b> you should be transported to the "Register" Page. 
 
-### Search
-* Load the Website. 
+### Register
+* Load the Website.
+* Right click and select inspection. 
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* Perform the following manual check <b>REGISTER > CLICK "Submit"</b> you should recieve the following prompt above the username field "Please fill in this field". 
+* Fill in the username field and <b>CLICK "Submit</b>, you should recieve the following prompt above the password field "Please fill in this field".
+* Work down the rest of the form, and perform the follwing manual check one field at a time.
+* <b>CLICK FIELD > CLICK "Submit"</b> line below the filed should turn red. Fill in field and the line below the field should turn green. <b>CLICK "Submit</b>, you should recieve the following prompt above the password field "Please fill in this field".
+* Before you get to the last field "Phone Number" make sure you have filled out the form with the following test information and <b>CLICK "Submit</b>: 
+    * <i>Username</i>: Jack
+    * <i> Password</i>: Jack12345
+    * <i>Company Name</i>: Jacks Sound Systems 
+    * <i>Street Name</i>: Jack Street
+    * <i>Postcode</i>: J12 3SL
+    * <i>City Name</i>: Bristol
+    * <i>Phone Number</i>: 020 8888 8888
+* The page should refresh, all of the fields be refreshed and a validator below the username field that says "Username must be between 10 and 15 Characters"
+* Fill out the registration from with the following informaiton and <b>CLICK "Submit</b>:
+    * <i>Username</i>: JackSoundSystem
+    * <i> Password</i>: Jack12345
+    * <i>Company Name</i>: Jacks Sound Systems 
+    * <i>Street Name</i>: Jack Street
+    * <i>Postcode</i>: J12 3SL
+    * <i>City Name</i>: Bristol
+    * <i>Phone Number</i>: 020 8888 8888
+* The page should refresh and you should see a flash message running across the width of the screen saying "Registration Successful Jacks Sound System!"
+* Below the flash message you should see a heading that says "Jacks Sound Systems Profile" 
+* Below the heading you should see a card with the title "Company Address", which should contain all of the company information you just registered with.
