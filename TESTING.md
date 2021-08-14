@@ -1,6 +1,16 @@
 # Testing
 
-I used <a href="https://validator.w3.org/">Markup Validator Service</a>, <a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a>, <a href="https://jshint.com/">JSHint</a> and <a href="http://pep8online.com/">PEP8 Online</a> to check both HTML, CSS, Javascript and Python using the direct input services of both services. The HTML validator doesn't recognised Jinja formatting, so that will come back as and error. However, apart from those results no other issues where flagged. 
+I used <a href="https://validator.w3.org/">Markup Validator Service</a>, <a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a>, <a href="https://jshint.com/">JSHint</a> and <a href="http://pep8online.com/">PEP8 Online</a> to check both HTML, CSS, Javascript and Python using the direct input services of both services. The HTML validator doesn't recognised Jinja formatting, so that will come back as and error. However, apart from those results no other issues where flagged.
+
+I used Chrome's inspect feature Lighthouse on my page, to improve the site's performance. The report found the following:
+
+* Performance - Scored 82 for Desktop and 71 for Mobile - The main points of criticism were "Largest Contentful Paint". I was expecting that the creative decision to have a large image within the header would cause the website to score low when it came to load time. Following the test I experimented with different codecs and replaced a number of PNG's with compressed JPEG's in an attempt to improve this score. 
+
+* Accessibility - Scored 89 respectively for both Desktop and Mobile - The test flagged up small issues like "Heading elements are not in a sequentially-descending order" and "Links do not have a discernible name". However, all of these comments do not negatively impact the overall performance of the site. They are linked to creative decisions used to prioritise the aesthetic design by positioning the navigation bar at the top of the header, and using Font Awesome icons as an alternative to text in the social media footer links.
+
+* Best Practices - Scored 87 respectively for both Desktop and Mobile - Another high scoring section of the Lighthouse test, two significant suggestion flagged was "Links to cross-origin destinations are unsafe" and "Does nto use HTTPS". Regardin the first point when you link to a page on another site using the target="_blank" attribute, you can expose your site to performance and security issues. It's suggested to use "<rel="noopener">" in the social media icon links. With regard to HTTPS comment that is more conerning and before presenting the finished product to the end client this would need to be amended. To do that I would need contact a certifaction authority and request a HTTPS certification.
+
+* SEO - Scored 90 for Desktop and 89 for Mobile - Again another high scoring section of the Lighthouse test, and only received limited suggestions, none of which were applicable to the improved running of the site.
 
 ## Testing client Requirements featured in README
 * <b>We need a platform that illustrates and shares our key values</b></br>
