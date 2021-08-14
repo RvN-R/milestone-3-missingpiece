@@ -120,3 +120,17 @@ Once a visitor has successfully registered an account on the website, or when th
 5. <b>As a Frequent User, I want to be able upload my inventory to my account easily.</b></br>
 
 * Once a visitor has registed or logged into there account in the navigation bar at the top of the screen, a option entitled "Add to Inventory" will appear. Once clicked the visitor will be transported to the "Add to Inventory" page, with a form containing a one select and three text input components. The visitor will be prompted to choose a category for the select drop down menu, fill in the brand name of the equipment, the product name and the quantity that they have in there rental inventory. Providing all the elements of the form are filled out, the visitor can click the "Add to Inventory" button and there inventory entry will be uploaded to the database. Once uploaded the "Add to Invenotry" page refreshs and the visitor can repeat the process as many times as they would like. 
+
+## Manually Testing Website Features
+### Navigation
+* Load the Website. 
+* Right click and select inspection.
+* Change the screen size from desktop to tablet, then change from tablet to smaller devices and verify that the navigation bar is responsive. 
+* Confirm that the text in the navigation buttons is unrestricted by differing screen sizes. 
+Verify that small screen sizes activate the toggle feature, activating the navigation bar remote view nav button. 
+* Click each link in turn and confirm that you are transported to the relative section of the website.
+* Confirm that the hover function is operational. 
+* Return to desktop view and hover over the navigation links, make sure the hover selection function works for each link. 
+* Click each link and make sure you are transported to the correct section of the site. 
+* Repeat verification of functionality and responsiveness on iPhone and iPad. 
+
