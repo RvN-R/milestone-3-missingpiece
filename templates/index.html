@@ -62,27 +62,18 @@
             <div class="col s12">
                 <p>We connect those companies <strong>Searching</strong> for avalaible rental stock, with those companies looking to <strong>Advertise</strong> rental stock sitting in the warehouse ready to use.</p>
             </div>
-            <div class="col s6">
+            <div class="col m6">
                 <h4 class="center-align">How do I <strong>Search</strong>?</h4>
                 <p>Click the <i class="fas fa-search"></i> "Search Inventory" below to get going.</p><br>
                 <p>Search using brand name, product name or through various different categories "Loudspeakers", "Mixing Consoles" "Microphones" and "Monitors" to see whose got what! Once you find what you are looking for click "Contact Information" and then reach out.</p>
+                <p class="center-align btn_container"><a class="small_btn" href="{{ url_for('search_passive') }}"><i class="fas fa-search"></i> Search Inventory</a></p>
             </div>
-            <div class="col s6">
+            <div class="col m6">
                 <h4 class="center-align">How do I <strong>Advertise</strong>?</h4>
                 <p>Click the <i class="fas fa-arrow-circle-up"></i> "Create Account" below to get going.</p><br>
                 <p>When registering an account make sure to put accurate company information, as this information will be used by those looking to contact you</p>
                 <p>Once registered, got to "Add To Inventory" to upload what you have avaliable!</p>
-            </div>
-        </div>
-    </section>
-    <!-- Search Inventory and Create Account Buttons -->
-    <section class="container">
-        <div class="row index_button_row">
-            <div class="col s6 center-align">
-                <a class="small_btn" href="{{ url_for('search_passive') }}"><i class="fas fa-search"></i> Search Inventory</i></a>
-            </div>
-            <div class="col s6 center-align">
-                <a class="small_btn" href="{{ url_for('register') }}"><i class="fas fa-arrow-circle-up"></i></i> Create Account</i></a>
+                <p class="center-align btn_container"><a class="small_btn" href="{{ url_for('register') }}"><i class="fas fa-arrow-circle-up"></i> Create Account</a></p>
             </div>
         </div>
     </section>

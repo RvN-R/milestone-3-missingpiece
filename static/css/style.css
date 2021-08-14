@@ -156,6 +156,10 @@ nav ul a:active{
     padding-bottom: 20px;
 }
 
+.btn_container{
+    padding: 25px 0 25px 0;
+}
+
 /* My Inventory */
 .modal-body {
     font-size: 1.5rem;
