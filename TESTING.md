@@ -145,3 +145,5 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Perform the following maunal check <b>HOME > CLICK "Search Inventory" BUTTON</b> you should be transported to the "Search Inventory" Page. 
 * Perform the following maunal check <b>HOME > CLICK "Create Account" BUTTON</b> you should be transported to the "Register" Page. 
 
+### Search
+* Load the Website. 
