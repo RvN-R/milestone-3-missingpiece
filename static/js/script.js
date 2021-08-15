@@ -8,7 +8,6 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
-validateMaterializeSelect();
 
 function validateMaterializeSelect() {
   let classValid = {
@@ -29,6 +28,7 @@ function validateMaterializeSelect() {
     });
   }
   $(".select-wrapper input.select-dropdown").on("focusin", function () {
+    console.log("focusin")
     $(this).parent(".select-wrapper").on("change", function () {
       if ($(this).children("ul").children("li.selected:not(.disabled)").on("click", function () {})) {
         $(this).children("input").css(classValid);
@@ -39,6 +39,7 @@ function validateMaterializeSelect() {
       $(this).parent(".select-wrapper").children("input").css(classValid);
     } else {
       $(".select-wrapper input.select-dropdown").on("focusout", function () {
+        console.log("focusout")
         if ($(this).parent(".select-wrapper").children("select").prop("required")) {
           if ($(this).css("border-bottom") != "1px solid rgb(244, 67, 54)") {
             $(this).parent(".select-wrapper").children("input").css(classInvalid);
@@ -47,4 +48,14 @@ function validateMaterializeSelect() {
       });
     }
   });
+
+
+  $(".select-wrapper input.select-dropdown").on("focusin", function () {
+    if ($(this).parent(".select-wrapper").children("select").prop("required")) {
+      console.log(true)
+    }
+  })
 }
+
+setTimeout(() => validateMaterializeSelect(), 1000);
+

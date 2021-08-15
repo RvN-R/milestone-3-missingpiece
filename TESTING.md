@@ -231,22 +231,30 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 ### Add Inventory
 * Load the Website. 
 * Right click and select inspection.
-* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
 * Follow the Log In steps to log into JackSoundSystem profile. 
-* Using either the navigation bar or remote view navigation bar <b>CLICK "Add to Inventory"</b>. You should be transported to the "Add Iventory" page.
-* The page will refresh and you should see the title "Add Inventory" and a sub heading saying "Fill out information below to add to your inventory". 
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Add to Inventory"</b>. You should be transported to the "Add Inventory" page.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* When you arrive at the "Add Inventory" page you will see a title that says "Add Inventory" and a sub heading saying "Fill out information below to add to your inventory". 
 * Below that you will notice a form, containg a select field and three text input fields. 
 * Scroll down the page and <b>CLICK "Add To Inventory"</b>, you should get a prompt just below the Category field that says "Please select an item in the list". 
 * Perform the following manual check <b>SELECT "Monitors"</b> from the select drop down menu. 
 * Scroll down the page and <b>CLICK "Add To Inventory"</b>, you should get a prompt just below the Brand Name field that says "Please fill in this field". The line underneath that field should go red. 
-* Fill in the field with the following information and <b>CLICK "Add To Inventory"</b>:
+* Fill in the field with the following information and the line underneath that field should go green, <b>CLICK "Add To Inventory"</b>:
     * Martin Audio
 * You should get a prompt just below the Product Name field that says "Please fill in this field". The line underneath that field should go red.
-* Fill in the field with the following information and <b>CLICK "Add To Inventory"</b>:
+* Fill in the field with the following information and the line underneath that field should go green, <b>CLICK "Add To Inventory"</b>:
     * LE200
 * You should get a prompt just below the Quantity field that says "Please fill in this field". The line underneath that field should go red.
-* Fill in the field with the following information and <b>CLICK "Add To Inventory"</b>:
+* Fill in the field with the following information and the line underneath that field should go green, <b>CLICK "Add To Inventory"</b>:
     * 2
-* The page will refresh and the form will refresh and appear blank, a flash message will appear across the top of the page with "Inventory Successfully Added"
+* The page will refresh and the form will refresh and appear blank, a flash message will appear across the top of the page with "Inventory Successfully Added". That inventory entry will have been uploaded to the MongoDB database. The form is now ready to be filled out again should a user want to upload more than one inventory entry to the database.
+
+### Edit Inventory
+* Load the Website. 
+* Right click and select inspection.
+* Follow the Log In steps to log into JackSoundSystem profile. 
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Add to Inventory"</b>. You should be transported to the "My Inventory" page.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* When you arrive at the "My Inventory" page you will see a title that says "My Inventory" and below that will be a card with the inventory entry you just created when you tested the "Add Inventory" function. 
 
 
