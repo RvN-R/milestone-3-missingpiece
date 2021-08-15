@@ -11,12 +11,12 @@ $(document).ready(function () {
 
 function validateMaterializeSelect() {
   let classValid = {
-    "border-bottom": "1px solid #f44336",
-    "box-shadow": "0 1px 0 0 #f44336"
+    "border-bottom": "1px solid green",
+    "box-shadow": "0 1px 0 0 green"
   };
   let classInvalid = {
-    "border-bottom": "1px solid #f44336",
-    "box-shadow": "0 1px 0 0 #f44336"
+    "border-bottom": "1px solid red",
+    "box-shadow": "0 1px 0 0 red"
   };
   if ($("select.validate").prop("required")) {
     $("select.validate").css({
@@ -28,32 +28,8 @@ function validateMaterializeSelect() {
     });
   }
   $(".select-wrapper input.select-dropdown").on("focusin", function () {
-    console.log("focusin")
-    $(this).parent(".select-wrapper").on("change", function () {
-      if ($(this).children("ul").children("li.selected:not(.disabled)").on("click", function () {})) {
-        $(this).children("input").css(classValid);
-      }
-    });
-  }).on("click", function () {
-    if ($(this).parent(".select-wrapper").children("ul").children("li.selected:not(.disabled)").css("background-color") === "rgba(244, 67, 54)") {
-      $(this).parent(".select-wrapper").children("input").css(classValid);
-    } else {
-      $(".select-wrapper input.select-dropdown").on("focusout", function () {
-        console.log("focusout")
-        if ($(this).parent(".select-wrapper").children("select").prop("required")) {
-          if ($(this).css("border-bottom") != "1px solid rgb(244, 67, 54)") {
-            $(this).parent(".select-wrapper").children("input").css(classInvalid);
-          }
-        }
-      });
-    }
-  });
-
-
-  $(".select-wrapper input.select-dropdown").on("focusin", function () {
-    if ($(this).parent(".select-wrapper").children("select").prop("required")) {
-      console.log(true)
-    }
+    if ($(this).val() == 'Choose your Category') $(this).css(classInvalid);
+    else $(this).css(classValid);
   })
 }
 
