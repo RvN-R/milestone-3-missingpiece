@@ -12,8 +12,8 @@ validateMaterializeSelect();
 
 function validateMaterializeSelect() {
   let classValid = {
-    "border-bottom": "1px solid #4caf50",
-    "box-shadow": "0 1px 0 0 #4caf50"
+    "border-bottom": "1px solid #f44336",
+    "box-shadow": "0 1px 0 0 #f44336"
   };
   let classInvalid = {
     "border-bottom": "1px solid #f44336",
@@ -35,7 +35,7 @@ function validateMaterializeSelect() {
       }
     });
   }).on("click", function () {
-    if ($(this).parent(".select-wrapper").children("ul").children("li.selected:not(.disabled)").css("background-color") === "rgba(0, 0, 0, 0.03)") {
+    if ($(this).parent(".select-wrapper").children("ul").children("li.selected:not(.disabled)").css("background-color") === "rgba(244, 67, 54)") {
       $(this).parent(".select-wrapper").children("input").css(classValid);
     } else {
       $(".select-wrapper input.select-dropdown").on("focusout", function () {

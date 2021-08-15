@@ -236,6 +236,17 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Using either the navigation bar or remote view navigation bar <b>CLICK "Add to Inventory"</b>. You should be transported to the "Add Iventory" page.
 * The page will refresh and you should see the title "Add Inventory" and a sub heading saying "Fill out information below to add to your inventory". 
 * Below that you will notice a form, containg a select field and three text input fields. 
-* Scroll down the page and <b>CLICK "Add To Inventory"</b>, you should get a prompt above the "Please Input the Brand Name" field saying "Please fill in this field". 
-* Click this field the line below the field should go Red, <b>CLICK "Add To Inventory"</b>, you should get a prompt above the field once again saying "Please fill in this field".
-Fill in 
+* Scroll down the page and <b>CLICK "Add To Inventory"</b>, you should get a prompt just below the Category field that says "Please select an item in the list". 
+* Perform the following manual check <b>SELECT "Monitors"</b> from the select drop down menu. 
+* Scroll down the page and <b>CLICK "Add To Inventory"</b>, you should get a prompt just below the Brand Name field that says "Please fill in this field". The line underneath that field should go red. 
+* Fill in the field with the following information and <b>CLICK "Add To Inventory"</b>:
+    * Martin Audio
+* You should get a prompt just below the Product Name field that says "Please fill in this field". The line underneath that field should go red.
+* Fill in the field with the following information and <b>CLICK "Add To Inventory"</b>:
+    * LE200
+* You should get a prompt just below the Quantity field that says "Please fill in this field". The line underneath that field should go red.
+* Fill in the field with the following information and <b>CLICK "Add To Inventory"</b>:
+    * 2
+* The page will refresh and the form will refresh and appear blank, a flash message will appear across the top of the page with "Inventory Successfully Added"
+
+
