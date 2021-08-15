@@ -149,7 +149,8 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Load the Website.
 * Right click and select inspection. 
 * Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
-* Perform the following manual check <b>REGISTER > CLICK "Submit"</b> you should recieve the following prompt above the username field "Please fill in this field". 
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Register"</b>. You should be transported to the "Register" page. 
+* Scroll down the page and perform the following manual check <b>REGISTER > CLICK "Submit"</b> you should recieve the following prompt above the username field "Please fill in this field". 
 * Fill in the username field and <b>CLICK "Submit</b>, you should recieve the following prompt above the password field "Please fill in this field".
 * Work down the rest of the form, and perform the follwing manual check one field at a time.
 * <b>CLICK FIELD > CLICK "Submit"</b> line below the filed should turn red. Fill in field and the line below the field should turn green. <b>CLICK "Submit</b>, you should recieve the following prompt above the password field "Please fill in this field".
@@ -174,5 +175,38 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Below the flash message you should see a heading that says "Jacks Sound Systems Profile" 
 * Below the heading you should see a card with the title "Company Address", which should contain all of the company information you just registered with.
 * Depending on the screen size you are currently viewing the site on, navigate to the navigation bar either at the top of the page or toggle to the remote view navigation bar. The bar should have the following links displayed, "Home", "Profile", "Log Out" "Search" Inventory" "Add to Inventory" and "My Inventory"
+* Perform the following manual check <b>CLICK "Log Out"</b> link in the navigation bar. 
+* Once clicked the website should refresh, a flash message should appear saying "You have been logged out" and you will have been transfered to the "Log In" page. 
+* Using the navigation bar or remote view navigation bar and perform the following manual check <b>CLICK "Register"</b>. 
+* Fill out all registration form with the same information that you registered with and <b>CLICK "Submit</b>, for a reminder I have included it below: 
+    * <i>Username</i>: JackSoundSystem
+    * <i> Password</i>: Jack12345
+    * <i>Company Name</i>: Jacks Sound Systems 
+    * <i>Street Name</i>: Jack Street
+    * <i>Postcode</i>: J12 3SL
+    * <i>City Name</i>: Bristol
+    * <i>Phone Number</i>: 020 8888 8888
+* The page will refresh and a flasy message will appear saying "Username already exists. 
+* Scroll down to the bottom of the page, below you "Submit" call to action button you should see an anchor link which says "Already Registered ? Log In" and perform the following manual check <b>CLICK "Log In"</b>. You should be transported to the "Log In" page. 
 
 ### Logout
+* Load the Website. 
+* Right click and select inspection.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Log In"</b>. You should be transported to the "Log In" page. 
+* You should see a form with two text inputs, and a call to action button labelled "Log In". 
+* Perform the following manual check <b>CLICK "Log In"</b>, you should recieve the following prompt above the username field "Please fill in this field".
+* Fill in the username field with the following and <b>CLICK "Log In"</b>: 
+    * <i>Username</i>: Jack
+* You should recieve the following prompt above the password field "Please fill in this field".
+* Fill in the username field with the following and <b>CLICK "Log In"</b>: 
+    * <i>Password</i>: password.
+* The page will refresh, the form fields will also refresh and a flash message appear saying "Incorrect Username and / or Password". 
+* Scroll down to the bottom of the page, below you "Submit" call to action button you should see an anchor link which says "New Here? Register Account" and perform the following manual check <b>CLICK "Register Account"</b>. You should be transported to the "Register" page.
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Log In"</b>. You should be transported to the "Log In" page. 
+* Using the information you previously used to register an account on the website, fill out the form with the following information and <b>CLICK "Log In"</b>: 
+    * <i>Username</i>: JackSoundSystem
+    * <i> Password</i>: Jack12345
+* You will be transported to Jacks Sound System's Profile page, you will see a flash message that says Welcome, JackSoundSystem. 
+
+### Edit Company Address
