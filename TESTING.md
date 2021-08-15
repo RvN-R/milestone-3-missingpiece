@@ -210,3 +210,20 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * You will be transported to Jacks Sound System's Profile page, you will see a flash message that says Welcome, JackSoundSystem. 
 
 ### Edit Company Address
+* Load the Website. 
+* Right click and select inspection.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Log In"</b>. You should be transported to the "Log In" page.
+* Using the information you previously used to register an account on the website, fill out the form with the following information and <b>CLICK "Log In"</b>: 
+    * <i>Username</i>: JackSoundSystem
+    * <i> Password</i>: Jack12345
+* Now you should be transported to JackSoundSystem's profile page. 
+* Scroll down the page and <b>CLICK "Update Info"</b>
+* The page will refresh and you should see the title "Edit Company Address" and below that will be a form with the title "Input Company Details" 
+* Scroll down the page and <b>CLICK "Cancel"</b>, you should be transported back to the "Profile" page.
+* Scroll down the page and <b>CLICK "Update Info"</b>, you will be transported back to the "Edit Company Address" page.
+* You will see a from prefilled in with current company details.
+* Delete "Bristol" from the city name field, <b>CLICK "Update"</b>, you should get a prompt saying "Please fill in this field". 
+* Repeat process this process with all the fields, to make sure you can't submit the form without filling in all of input fields. 
+* Make sure all fields contain the same original company details that you registered the account with. Replace the city name field with "London" and <b>CLICK "Update"</b>
+* The "Profile" page will refresh and you should see that the edit you make to the company information will appear within the Company Address card. 
