@@ -224,6 +224,18 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Scroll down the page and <b>CLICK "Update Info"</b>, you will be transported back to the "Edit Company Address" page.
 * You will see a from prefilled in with current company details.
 * Delete "Bristol" from the city name field, <b>CLICK "Update"</b>, you should get a prompt saying "Please fill in this field". 
-* Repeat process this process with all the fields, to make sure you can't submit the form without filling in all of input fields. 
+* Repeat this process with all the fields, to make sure you can't submit the form without filling in all of input fields. 
 * Make sure all fields contain the same original company details that you registered the account with. Replace the city name field with "London" and <b>CLICK "Update"</b>
-* The "Profile" page will refresh and you should see that the edit you make to the company information will appear within the Company Address card. 
+* The "Profile" page will refresh and you should see that the edit you made to the company information will appear within the Company Address card. 
+
+### Add Inventory
+* Load the Website. 
+* Right click and select inspection.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* Follow the Log In steps to log into JackSoundSystem profile. 
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Add to Inventory"</b>. You should be transported to the "Add Iventory" page.
+* The page will refresh and you should see the title "Add Inventory" and a sub heading saying "Fill out information below to add to your inventory". 
+* Below that you will notice a form, containg a select field and three text input fields. 
+* Scroll down the page and <b>CLICK "Add To Inventory"</b>, you should get a prompt above the "Please Input the Brand Name" field saying "Please fill in this field". 
+* Click this field the line below the field should go Red, <b>CLICK "Add To Inventory"</b>, you should get a prompt above the field once again saying "Please fill in this field".
+Fill in 
