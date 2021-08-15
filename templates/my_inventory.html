@@ -12,19 +12,19 @@
         <!--Card Containing Inventory Information-->
         <div class="row">
             {% for inventory in inventories if session.user == inventory.created_by %}
-            <div class="col s12 m6">
+            <div class="col s12 m12 l6">
                 <div class="card">
                     <div class="card-content">
                         <p><strong>Catergory:</strong> {{ inventory.categories_name }}</p><br>
                         <p><strong>Brand of {{ inventory.categories_name }} in stock is:</strong> {{ inventory.brand }}</p><br>
                         <p><strong>Name of {{ inventory.brand }} product in stock is:</strong> {{ inventory.product }} and they have <b>{{ inventory.product_qty }}</b> in stock</p><br>
                         <div class="row">
-                            <div class="col s6">
+                            <div class="col l12 m12 s12 center-align" id="edit_inventory_btn_container">
                                 <!--Edit Button-->
                                 <a type ="button" href="{{ url_for('edit_inventory',inventory_id=inventory._id) }}" class="small_btn"><strong>Edit</strong></a>
                             </div>
                             <!--Delete Button-->
-                            <div class="col s6">
+                            <div class="col l12 m12 s12 center-align" id="edit_inventory_btn_container">
                                 <a type="button" class="small_btn" data-bs-toggle="modal" data-bs-target="#modal{{ inventory.inventory_id }}">
                                     <strong>Delete</strong>
                                 </a>

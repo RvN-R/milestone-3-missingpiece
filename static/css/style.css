@@ -210,6 +210,14 @@ nav ul a:active{
     position: static;
 }
 
+#edit_inventory_btn_container{
+    padding: 25px;
+}
+
+#delete_inventory_btn_container{
+    padding: 25px;
+}
+
 /* Search */
 .result_card_header{
     background-color: #1b1a18;
