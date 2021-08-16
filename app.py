@@ -309,6 +309,7 @@ def my_inventory():
         flash("You must be logged in to perform that action")
         return redirect(url_for("login"))
 
+
 if __name__ == "__main__":
     # If __name__ is equal to __main__ runs app
     app.run(host=os.environ.get("IP"),
