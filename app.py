@@ -229,8 +229,8 @@ def edit_inventory(inventory_id):
                     {"_id": ObjectId(inventory_id)}, submit)
                 flash("Inventory Successfully Updated")
                 return my_inventory()
-
-            inventory = mongo.db.inventories.find_one(
+            else:
+                inventory = mongo.db.inventories.find_one(
                 {"_id": ObjectId(inventory_id)})
             categories = mongo.db.categories.find().sort("categories_name", 1)
             return render_template(
@@ -256,10 +256,8 @@ def edit_company_address(company_id):
     # Else it returns flash message and redirects
     if "user" in session:
         company_info = mongo.db.users.find_one({"_id": ObjectId(company_id)})
-        print(company_info)
         user = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-        print(user)
         if user == company_info.get("username"):
             if request.method == "POST":
                 submit = {"$set": {
