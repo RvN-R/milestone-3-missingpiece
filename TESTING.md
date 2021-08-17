@@ -219,8 +219,10 @@ Verify that small screen sizes activate the toggle feature, activating the navig
     * <i> Password</i>: Jack12345
 * Now you should be transported to JackSoundSystem's profile page. 
 * Scroll down the page and <b>CLICK "Update Info"</b>
-* The page will refresh and you should see the title "Edit Company Address" and below that will be a form with the title "Input Company Details" 
-* Scroll down the page and <b>CLICK "Cancel"</b>, you should be transported back to the "Profile" page.
+* The page will refresh and you should see the title "Edit Company Address" and below that will be a form with the title "Input Company Details"
+* Scroll down the page and <b>CLICK "Update Info"</b>, you will be transported back to the "Edit Company Address" page.
+* You will see a from prefilled in with current company details.
+* Change the city name text input from "Bristol" to "London" <b>CLICK "Cancel"</b>,you should be transported back to the "Profile" page. City name should still be Bristol, as you cancelled the edit. 
 * Scroll down the page and <b>CLICK "Update Info"</b>, you will be transported back to the "Edit Company Address" page.
 * You will see a from prefilled in with current company details.
 * Delete "Bristol" from the city name field, <b>CLICK "Update"</b>, you should get a prompt saying "Please fill in this field". 
@@ -255,6 +257,19 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Follow the Log In steps to log into JackSoundSystem profile. 
 * Using either the navigation bar or remote view navigation bar <b>CLICK "Add to Inventory"</b>. You should be transported to the "My Inventory" page.
 * Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
-* When you arrive at the "My Inventory" page you will see a title that says "My Inventory" and below that will be a card with the inventory entry you just created when you tested the "Add Inventory" function. 
+* When you arrive at the "My Inventory" page you will see a title that says "My Inventory" and below that will be a card with the inventory entry you just created when you tested the "Add Inventory" function.
+* <b>CLICK "Edit"</b> call to action button and a page almost identical to the "Add Inventory" will appear, prefilled with the inventory entry from the card your attempting to edit. 
+* Delete "LE200" from the Product name field and replace with "LE400", then <b>CLICK "Cancel"</b>.
+* You should be transported back to the "My Inventory" page and the product name hasn't been changed to "LE400", it remains "LE200". This proves the cancel edit inventory function works as designed.
+* <b>CLICK "Edit"</b> call to action button and a page almost identical to the "Add Inventory" will appear, prefilled with the inventory entry from the card your attempting to edit. 
+* Delete "LE200" from the Product name field and <b>CLICK "Confirm Edit"</b>, you should get a prompt saying "Please fill in this field". 
+* Repeat previous instruction with all fields of the form to confirm validators are functioning as designed. 
+* Refill all of the fields with orginal information and <b>CLICK "Confirm Edit"</b>, as a reminder I have included the information below: 
+    * Category drop down select - Monitors
+    * Brand Name - Martin Audio 
+    * Product Name - LE200
+    * Quanity 2
+* Delete "LE200" from the Product name field and replace with "LE400" and<b>CLICK "Confirm Edit"</b>.
+* You should be transported back to the "My Inventory" page and the edits you have just made should have been uploaded to the MongoDB database, and be rendered in the card on the page. 
 
 
