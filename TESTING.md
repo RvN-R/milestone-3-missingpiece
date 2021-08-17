@@ -255,7 +255,7 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Load the Website. 
 * Right click and select inspection.
 * Follow the Log In steps to log into JackSoundSystem profile. 
-* Using either the navigation bar or remote view navigation bar <b>CLICK "Add to Inventory"</b>. You should be transported to the "My Inventory" page.
+* Using either the navigation bar or remote view navigation bar <b>CLICK "My Inventory"</b>. You should be transported to the "My Inventory" page.
 * Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
 * When you arrive at the "My Inventory" page you will see a title that says "My Inventory" and below that will be a card with the inventory entry you just created when you tested the "Add Inventory" function.
 * <b>CLICK "Edit"</b> call to action button and a page almost identical to the "Add Inventory" will appear, prefilled with the inventory entry from the card your attempting to edit. 
@@ -271,5 +271,23 @@ Verify that small screen sizes activate the toggle feature, activating the navig
     * Quanity 2
 * Delete "LE200" from the Product name field and replace with "LE400" and<b>CLICK "Confirm Edit"</b>.
 * You should be transported back to the "My Inventory" page and the edits you have just made should have been uploaded to the MongoDB database, and be rendered in the card on the page. 
+
+### Delete Inventory
+* Load the Website. 
+* Right click and select inspection.
+* Follow the Log In steps to log into JackSoundSystem profile. 
+* Using either the navigation bar or remote view navigation bar <b>CLICK "My Inventory"</b>. You should be transported to the "My Inventory" page.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* When you arrive at the "My Inventory" page you will see a title that says "My Inventory" and below that will be a card with the inventory entry you created when you tested the "Add Inventory" function.
+* <b>CLICK "Delete"</b>.
+* A Modal should appear with a title saying "Warning" and just below that a subtitle saying "Are you sure you want to delete this inventory". Below that two call to action buttons titled "No" and "Yes". 
+* <b>CLICK "No"</b>.
+* You will be transported back to the "My Inventory" page. 
+* <b>CLICK "Delete"</b>.
+* The same Modal will appear, this time <b>CLICK "Yes"</b>. 
+* YOu will be transported back to the "My Inventory" page, and the card with the inventory entry you created will have disappeared. This confirms that the delete function is working as designed. 
+
+
+
 
 
