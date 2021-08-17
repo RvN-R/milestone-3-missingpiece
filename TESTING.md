@@ -287,7 +287,19 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * The same Modal will appear, this time <b>CLICK "Yes"</b>. 
 * YOu will be transported back to the "My Inventory" page, and the card with the inventory entry you created will have disappeared. This confirms that the delete function is working as designed. 
 
-
+### Search Function
+* Load the Website. 
+* Right click and select inspection.
+* At this point you could either follow the Log In steps to log into JackSoundSystem profile, go straight onto the following steps. The search function will work on both sides of the website "Visitor Side" and "Members Side". 
+* Using either the navigation bar or remote view navigation bar <b>CLICK "Search Inventory"</b>. You should be transported to the "Search Inventory" page.
+* Once there you should see a main title saying "Search Inventory", just below that a form with a text input with a label saying "Search Inventories", and two call for action buttons one labelled "Rest" and the other "Search". 
+* For this test I have creatd a number of profiles following the "Register" testing steps mentioned prevously in this testing document. I've also added inventory entries to those profiles using the "Add Inventory" testing steps mentioned prevously in this testing document. 
+* Perform the following manual check <b>TYPE "Midas" in Text Input > CLICK "Search" Button</b>. 
+* Below the search form all of inventory entries that include the word "Midas" should appear in there own individual cards. 
+* Each card should have the name of the company, the inventory entry detailing the category, brand name, product name and quantity of that product they have in stock. 
+* Below the inventory entry informatiom you should see a collaposible with "Click for COMPANY NAME Contact Detials, <b>CLICK the collapsible</b>.
+* Once clicked the collapsible should expand, to unvale said companies contact details, so you can call them to discuss renting said equipment featured on that particular inventory entry. 
+* Scrooll up to the top of the page and <b>CLICK "Reset"</b>
 
 
 
