@@ -360,7 +360,11 @@ The site has preventative measures in place to prevent someone from registering 
     * https://missing-piece-rvn.herokuapp.com/edit_inventory/6102b39ebaa914bfec28e9a2
 * You should be redirected to JackSoundSystems "My Inventory" page and a flash message will appear at the top of the screen saying "You are not authorised to perfom this action".
 
-
+### Footer
+* Hover over each social media icons and confirm colour of hover select function is working as designed. Colour should be Middle Yellow and a Yellow back glow should appear behind the icon once mouse hovers over the icon.
+* Perform the following manual check: HOME > SCROLL to FOOTER > CLICK ICON. When you click the icon a new tab should open with the club's relevant social media account. Repeat this check with all three icons. 
+* Reduce screen size to verify that the icon's size is responsive.
+* Also confirm the footer itself is responsive by decreasing and increasing screen sizes.
 
 
 
