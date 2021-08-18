@@ -371,6 +371,10 @@ The site has preventative measures in place to prevent someone from registering 
 * Completed the manual testing steps mentioned above on various browsers, including Safari, Edge, Chrome and Firefox with no issues flagged.
 * Sent link of website to family and friends for them to check over the site. It was reported that the images within the header were slow to load. In addition those looking at it on OS iPhone experienced CSS issue referenced in Known Bugs section of this document.
 
+## Known Bugs 
+
+Across the site I've used a combination of anchor tags and buttons within forms. The buttons would be submit buttons labelled such things as "Confirm Edit" "Update". Once clicked they would submit the form and in many cases upload that information within the form to the MongoDB database. However, in additon to the button I've used anchor tags, to take the user back to a previous page. In order to make buttons and anchor tags look the same I used the same CSS class that I built called small_btn. When you look at the website on Google Chrome inspect view the buttons and anchor tags look the same. I've included a screen shot below:
+
 
 
 
