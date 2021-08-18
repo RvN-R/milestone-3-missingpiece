@@ -189,7 +189,7 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * The page will refresh and a flasy message will appear saying "Username already exists. 
 * Scroll down to the bottom of the page, below you "Submit" call to action button you should see an anchor link which says "Already Registered ? Log In" and perform the following manual check <b>CLICK "Log In"</b>. You should be transported to the "Log In" page. 
 
-### Logout
+### Log in and Log out
 * Load the Website. 
 * Right click and select inspection.
 * Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
@@ -208,6 +208,17 @@ Verify that small screen sizes activate the toggle feature, activating the navig
     * <i>Username</i>: JackSoundSystem
     * <i> Password</i>: Jack12345
 * You will be transported to Jacks Sound System's Profile page, you will see a flash message that says Welcome, JackSoundSystem. 
+
+### Home Visitor Side vs Member Side
+* Load the Website. 
+* Right click and select inspection.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
+* Make sure your not logged into an account. To do this follow the steps to log out mentioned above. 
+* Scroll up to the navigation bar at the top of the page, and perform the following manual check <b>CLICK "Home"</b>. 
+* The page should refresh, scroll down the page and you should see the "About Us" and "So How Does This Work" section. 
+* Follow the "Log In" steps to log into JackSoundSystem profile.
+* Scroll up to the navigation bar at the top of the page, and perform the following manual check <b>CLICK "Home"</b>. 
+* The page should refresh, scroll down the page and you should see the "About Us" and not the "So How Does This Work" section.
 
 ### Edit Company Address
 * Load the Website. 
@@ -292,6 +303,7 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Right click and select inspection.
 * At this point you could either follow the Log In steps to log into JackSoundSystem profile, go straight onto the following steps. The search function will work on both sides of the website "Visitor Side" and "Members Side". 
 * Using either the navigation bar or remote view navigation bar <b>CLICK "Search Inventory"</b>. You should be transported to the "Search Inventory" page.
+* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
 * Once there you should see a main title saying "Search Inventory", just below that a form with a text input with a label saying "Search Inventories", and two call for action buttons one labelled "Rest" and the other "Search". 
 * For this test I have creatd a number of profiles following the "Register" testing steps mentioned prevously in this testing document. I've also added inventory entries to those profiles using the "Add Inventory" testing steps mentioned prevously in this testing document. 
 * Perform the following manual check <b>TYPE "Midas" in Text Input > CLICK "Search" Button</b>. 
@@ -300,6 +312,38 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Below the inventory entry informatiom you should see a collaposible with "Click for COMPANY NAME Contact Detials, <b>CLICK the collapsible</b>.
 * Once clicked the collapsible should expand, to unvale said companies contact details, so you can call them to discuss renting said equipment featured on that particular inventory entry. 
 * Scrooll up to the top of the page and <b>CLICK "Reset"</b>
+
+### Force from Visitors Side to Memebers Side
+
+As discussed in the introduction to the README.md, the website in effect has two sides to it. The "Vistor Side" and "Members Side". Visitor side will have limited features, and links to all of these features will appear in either the navigation bar or the remote view navigation. These features are as follows: 
+* Home 
+* Search Inventory 
+* Register
+* Log In
+Memeber side will have a number of additional features, and they won't appear in either the navigation bar or the remote view navigation unless a user has registered an account or logged in. These features are as follows: 
+* Home
+* Profile
+* Log Out
+* Search Inventory
+* Add To Inventory
+* My Inventory
+The following test will confirm that a user on the Visitor side of the website won't be able to access features reserved for the Members side. 
+* Load the Website. 
+* Right click and select inspection.
+* If you are logged to the account you set up in previous testing steps please log out. To do this scroll up to the top of the screen, find "Log In" in the navigation bar or remote navigation bar depending on the screen size you are viewing the site from. 
+* Perform the following manual check <b>CLICK "Log Out"</b>. You should now be vieiwng the site from the "Vistor Side" perspective. 
+* Copy and Paste the following URL into your browser 
+    * https://missing-piece-rvn.herokuapp.com/profile/jacksoundsystem
+* You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action". 
+* Copy and Paste the following URL into your browser 
+    * https://missing-piece-rvn.herokuapp.com/add_inventory
+* You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action".
+* Copy and Paste the following URL into your browser 
+    * https://missing-piece-rvn.herokuapp.com/my_inventory
+* You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action".
+
+
+
 
 
 
