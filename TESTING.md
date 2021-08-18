@@ -313,7 +313,7 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Once clicked the collapsible should expand, to unvale said companies contact details, so you can call them to discuss renting said equipment featured on that particular inventory entry. 
 * Scrooll up to the top of the page and <b>CLICK "Reset"</b>
 
-### Force from Visitors Side to Memebers Side
+### Forcing from Visitors Side to Memebers Side
 
 As discussed in the introduction to the README.md, the website in effect has two sides to it. The "Vistor Side" and "Members Side". Visitor side will have limited features, and links to all of these features will appear in either the navigation bar or the remote view navigation. These features are as follows: 
 * Home 
@@ -341,6 +341,25 @@ The following test will confirm that a user on the Visitor side of the website w
 * Copy and Paste the following URL into your browser 
     * https://missing-piece-rvn.herokuapp.com/my_inventory
 * You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action".
+
+### Forcing Profiles
+
+The site has preventative measures in place to prevent someone from registering an account or logging into there account and forcing onto another accounts "Profile", "Edit Inventory" or "Edit Company Address" features. For this test I have created another  profile called "Robert Pro Audio" by following the "Register" steps mentioned prevously in this testing document. I've also added inventory entries to "Robert Pro Audios" profile using the "Add Inventory" steps mentioned prevously in this testing document. 
+
+* Load the Website. 
+* Right click and select inspection.
+* Follow the Log In steps to log into JackSoundSystem profile.
+* Copy and Paste the following URL into your browser. This is the URL for Robert Pro Audios "Profile" page. 
+    * https://missing-piece-rvn.herokuapp.com/profile/robert123%21
+* You should be redirected to JackSoundSystems "Profile" page and unable to access Robert Pro Audios "Profile" page.
+* Copy and Paste the following URL into your browser. This URL is the one that would be generated when a user logged into Robert Pro Audio's profile wants to edit the company information stored. 
+    * https://missing-piece-rvn.herokuapp.com/edit_company_address/6102b14d1ab8c6df31cbf147
+* You should be redirected to JackSoundSystems "Profile" page and a flash message will appear at the top of the screen saying "You are not authorised to perfom this action".
+* This next step you will need to make sure that JackSoundSystem profile has an inventory entry allocated to the profile. To confirm this scroll up to the navigation bar and <b>CLICK "My Inventory"</b>. If there is an inventory entry it will appear in the "My Inventory" page. If there isn't then follow the "Add Inventory" testing steps mentioned previously in this document, before carrying on with the steps below. 
+* Copy and Paste the following URL into your browser. This URL is the one that would be generated when a user logged into Robert Pro Audio's profile wants to edit an inventory entry stored on the profile. 
+    * https://missing-piece-rvn.herokuapp.com/edit_inventory/6102b39ebaa914bfec28e9a2
+* You should be redirected to JackSoundSystems "My Inventory" page and a flash message will appear at the top of the screen saying "You are not authorised to perfom this action".
+
 
 
 
