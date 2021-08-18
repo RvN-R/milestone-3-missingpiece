@@ -366,6 +366,12 @@ The site has preventative measures in place to prevent someone from registering 
 * Reduce screen size to verify that the icon's size is responsive.
 * Also confirm the footer itself is responsive by decreasing and increasing screen sizes.
 
+## Further Testing
+* Viewed this website on various devices including iPhone 11, iPad Pro, Microsoft Surface, iMac Pro, Dell Latitude 5410 and Sony Xperia Andriod Phone. One CSS issue reported on OS devices. I have made reference to in Known Bugs section of this document.
+* Completed the manual testing steps mentioned above on various browsers, including Safari, Edge, Chrome and Firefox with no issues flagged.
+* Sent link of website to family and friends for them to check over the site. It was reported that the images within the header were slow to load. In addition those looking at it on OS iPhone experienced CSS issue referenced in Known Bugs section of this document.
+
+
 
 
 
