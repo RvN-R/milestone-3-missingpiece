@@ -189,7 +189,7 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * The page will refresh and a flasy message will appear saying "Username already exists. 
 * Scroll down to the bottom of the page, below you "Submit" call to action button you should see an anchor link which says "Already Registered ? Log In" and perform the following manual check <b>CLICK "Log In"</b>. You should be transported to the "Log In" page. 
 
-### Log in and Log out
+### Logout
 * Load the Website. 
 * Right click and select inspection.
 * Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
@@ -208,17 +208,6 @@ Verify that small screen sizes activate the toggle feature, activating the navig
     * <i>Username</i>: JackSoundSystem
     * <i> Password</i>: Jack12345
 * You will be transported to Jacks Sound System's Profile page, you will see a flash message that says Welcome, JackSoundSystem. 
-
-### Home Visitor Side vs Member Side
-* Load the Website. 
-* Right click and select inspection.
-* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
-* Make sure your not logged into an account. To do this follow the steps to log out mentioned above. 
-* Scroll up to the navigation bar at the top of the page, and perform the following manual check <b>CLICK "Home"</b>. 
-* The page should refresh, scroll down the page and you should see the "About Us" and "So How Does This Work" section. 
-* Follow the "Log In" steps to log into JackSoundSystem profile.
-* Scroll up to the navigation bar at the top of the page, and perform the following manual check <b>CLICK "Home"</b>. 
-* The page should refresh, scroll down the page and you should see the "About Us" and not the "So How Does This Work" section.
 
 ### Edit Company Address
 * Load the Website. 
@@ -303,7 +292,6 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Right click and select inspection.
 * At this point you could either follow the Log In steps to log into JackSoundSystem profile, go straight onto the following steps. The search function will work on both sides of the website "Visitor Side" and "Members Side". 
 * Using either the navigation bar or remote view navigation bar <b>CLICK "Search Inventory"</b>. You should be transported to the "Search Inventory" page.
-* Change screen size from desktop to tablet, then change from tablet to smaller devices and verfiy form and all of its attributes are appearing as designed.
 * Once there you should see a main title saying "Search Inventory", just below that a form with a text input with a label saying "Search Inventories", and two call for action buttons one labelled "Rest" and the other "Search". 
 * For this test I have creatd a number of profiles following the "Register" testing steps mentioned prevously in this testing document. I've also added inventory entries to those profiles using the "Add Inventory" testing steps mentioned prevously in this testing document. 
 * Perform the following manual check <b>TYPE "Midas" in Text Input > CLICK "Search" Button</b>. 
@@ -311,60 +299,57 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Each card should have the name of the company, the inventory entry detailing the category, brand name, product name and quantity of that product they have in stock. 
 * Below the inventory entry informatiom you should see a collaposible with "Click for COMPANY NAME Contact Detials, <b>CLICK the collapsible</b>.
 * Once clicked the collapsible should expand, to unvale said companies contact details, so you can call them to discuss renting said equipment featured on that particular inventory entry. 
-* Scroll up to the top of the page and <b>CLICK "Reset"</b>
-* Perform the following manual check <b>TYPE "Nexo" in Text Input > CLICK "Search" Button</b>. 
-* The page will refresh and a message will appear just below the search form you should see "No Results Found". 
+* Scroll up to the top of the page and <b>CLICK "Reset"</b>, this should reset the search and transport you back to blank "Search Inventory" page. 
+* Perform the following manual check TYPE "Nexo" in Text Input > CLICK "Search" Button.
+* The page will refresh and a message will appear just below the search form you should see "No Results Found".
 
 ### Forcing from Visitors Side to Memebers Side
+As discussed in the introduction to the README.md, the website in effect has two sides to it. The "Vistor Side" and "Members Side". Visitor side will have limited features, and links to all of these features will appear in either the navigation bar or the remote view navigation. These features are as follows:
 
-As discussed in the introduction to the README.md, the website in effect has two sides to it. The "Vistor Side" and "Members Side". Visitor side will have limited features, and links to all of these features will appear in either the navigation bar or the remote view navigation. These features are as follows: 
-* Home 
-* Search Inventory 
-* Register
-* Log In
-Memeber side will have a number of additional features, and they won't appear in either the navigation bar or the remote view navigation unless a user has registered an account or logged in. These features are as follows: 
 * Home
-* Profile
-* Log Out
 * Search Inventory
-* Add To Inventory
-* My Inventory
-The following test will confirm that a user on the Visitor side of the website won't be able to access features reserved for the Members side. 
-* Load the Website. 
+* Register
+* Log In Memeber side will have a number of additional features, and they won't appear in either the navigation bar or the remote view navigation unless a user has registered an account or logged in. These features are as follows:
+    * Home
+    * Profile
+    * Log Out
+    * Search Inventory
+    * Add To Inventory
+* My Inventory The following test will confirm that a user on the Visitor side of the website won't be able to access features reserved for the Members side.
+Load the Website.
 * Right click and select inspection.
-* If you are logged to the account you set up in previous testing steps please log out. To do this scroll up to the top of the screen, find "Log In" in the navigation bar or remote navigation bar depending on the screen size you are viewing the site from. 
-* Perform the following manual check <b>CLICK "Log Out"</b>. You should now be vieiwng the site from the "Vistor Side" perspective. 
-* Copy and Paste the following URL into your browser 
+* If you are logged to the account you set up in previous testing steps please log out. To do this scroll up to the top of the screen, find "Log In" in the navigation bar or remote navigation bar depending on the screen size you are viewing the site from.
+* Perform the following manual check CLICK "Log Out". You should now be vieiwng the site from the "Vistor Side" perspective.
+* Copy and Paste the following URL into your browser
     * https://missing-piece-rvn.herokuapp.com/profile/jacksoundsystem
-* You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action". 
-* Copy and Paste the following URL into your browser 
+* You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action".
+* Copy and Paste the following URL into your browser
     * https://missing-piece-rvn.herokuapp.com/add_inventory
 * You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action".
-* Copy and Paste the following URL into your browser 
+* Copy and Paste the following URL into your browser
     * https://missing-piece-rvn.herokuapp.com/my_inventory
 * You should be redirected to the "Log In" page and you should see a flash message at the top of the page saying "You must be logged in to perform that action".
 
 ### Forcing Profiles
+The site has preventative measures in place to prevent someone from registering an account or logging into there account and forcing onto another accounts "Profile", "Edit Inventory" or "Edit Company Address" features. For this test I have created another profile called "Robert Pro Audio" by following the "Register" steps mentioned prevously in this testing document. I've also added inventory entries to "Robert Pro Audios" profile using the "Add Inventory" steps mentioned prevously in this testing document.
 
-The site has preventative measures in place to prevent someone from registering an account or logging into there account and forcing onto another accounts "Profile", "Edit Inventory" or "Edit Company Address" features. For this test I have created another  profile called "Robert Pro Audio" by following the "Register" steps mentioned prevously in this testing document. I've also added inventory entries to "Robert Pro Audios" profile using the "Add Inventory" steps mentioned prevously in this testing document. 
-
-* Load the Website. 
+* Load the Website.
 * Right click and select inspection.
 * Follow the Log In steps to log into JackSoundSystem profile.
-* Copy and Paste the following URL into your browser. This is the URL for Robert Pro Audios "Profile" page. 
+Copy and Paste the following URL into your browser. This is the URL for Robert Pro Audios "Profile" page.
     * https://missing-piece-rvn.herokuapp.com/profile/robert123%21
 * You should be redirected to JackSoundSystems "Profile" page and unable to access Robert Pro Audios "Profile" page.
-* Copy and Paste the following URL into your browser. This URL is the one that would be generated when a user logged into Robert Pro Audio's profile wants to edit the company information stored. 
+* Copy and Paste the following URL into your browser. This URL is the one that would be generated when a user logged into Robert Pro Audio's profile wants to edit the company information stored.
     * https://missing-piece-rvn.herokuapp.com/edit_company_address/6102b14d1ab8c6df31cbf147
 * You should be redirected to JackSoundSystems "Profile" page and a flash message will appear at the top of the screen saying "You are not authorised to perfom this action".
-* This next step you will need to make sure that JackSoundSystem profile has an inventory entry allocated to the profile. To confirm this scroll up to the navigation bar and <b>CLICK "My Inventory"</b>. If there is an inventory entry it will appear in the "My Inventory" page. If there isn't then follow the "Add Inventory" testing steps mentioned previously in this document, before carrying on with the steps below. 
-* Copy and Paste the following URL into your browser. This URL is the one that would be generated when a user logged into Robert Pro Audio's profile wants to edit an inventory entry stored on the profile. 
+* This next step you will need to make sure that JackSoundSystem profile has an inventory entry allocated to the profile. To confirm this scroll up to the navigation bar and CLICK "My Inventory". If there is an inventory entry it will appear in the "My Inventory" page. If there isn't then follow the "Add Inventory" testing steps mentioned previously in this document, before carrying on with the steps below.
+* Copy and Paste the following URL into your browser. This URL is the one that would be generated when a user logged into Robert Pro Audio's profile wants to edit an inventory entry stored on the profile.
     * https://missing-piece-rvn.herokuapp.com/edit_inventory/6102b39ebaa914bfec28e9a2
 * You should be redirected to JackSoundSystems "My Inventory" page and a flash message will appear at the top of the screen saying "You are not authorised to perfom this action".
 
 ### Footer
 * Hover over each social media icons and confirm colour of hover select function is working as designed. Colour should be Middle Yellow and a Yellow back glow should appear behind the icon once mouse hovers over the icon.
-* Perform the following manual check: HOME > SCROLL to FOOTER > CLICK ICON. When you click the icon a new tab should open with the club's relevant social media account. Repeat this check with all three icons. 
+* Perform the following manual check: HOME > SCROLL to FOOTER > CLICK ICON. When you click the icon a new tab should open with the club's relevant social media account. Repeat this check with all three icons.
 * Reduce screen size to verify that the icon's size is responsive.
 * Also confirm the footer itself is responsive by decreasing and increasing screen sizes.
 
@@ -373,41 +358,35 @@ The site has preventative measures in place to prevent someone from registering 
 * Completed the manual testing steps mentioned above on various browsers, including Safari, Edge, Chrome and Firefox with no issues flagged.
 * Sent link of website to family and friends for them to check over the site. It was reported that the images within the header were slow to load. In addition those looking at it on OS iPhone experienced CSS issue referenced in Known Bugs section of this document.
 
-## Known Bugs 
+## Known Bugs
+It was reported by a family memeber and later confirmed by testing of the site that anchor tags and buttons don't appear the same when viewing the site on an iPhone. Whether you view the site on a chrome app or safari, the bug is still present. I've included a image below on what the bug looks like:
 
-It was reported by a family memeber and later confirmed by testing of the site that anchor tags and buttons don't appear the same when viewing the site on an iPhone. Whether you view the site on a chrome app or safari, the bug is still present. I've included a image below on what the bug looks like: 
+<p align ="center"><img src="static/assets/images/TESTING_images/ButtonAnchorBugiPhone.jpeg"></p>
 
-<img src="static/assets/images/TESTING_images/ButtonAnchorBugiPhone.jpeg">
+Across the site I've used a combination of anchor tags and buttons within forms. The buttons are submit buttons and there labelled such things as "Confirm Edit", "Update" etc. Once clicked the buttons submit the forms and in many cases upload that information within the form to the MongoDB database. However, in additon to the button I've used anchor tags, in many cases they take the user back to a previous page. For example on the site there is a "Cancel" anchor tag on the edit company address page that cancels the edit and takes ther user back to the "Profile" page. Anchor tags are the best way to do this because they have an attribute called "href". "href" takes a URL as a value, and once the user clicks that anchor tag it will take the user to the page assocaited with that URL. You can't use a button for this application because it will act the same as the submit button in the form. I tried to use two buttons and that resulted in a new bug. For example in the edit inventory form on the edit inventory page, I found that if the user made edits to the form and then clicked the "Cancel" button, it would take the user back to the previous page. However, it would also submit the form (and edits) to the database. So instead of cancelling the edits and taking the user back a step, it would do the opposite and confirm the edit, thus doing exactly the same task as the "Confirm Edit" button on the form. This is because the edit_inventory python function updates to the MongoDB database once it recieves a "POST", and it couldn't distinguish between the two buttons. Therefore, a combination of anchor tags and buttons was the only way I could get the "Cancel" button and "Confirm Edit" button to function properly.
 
+In order to make buttons and anchor tags look the same I used the same CSS class that I built called small_btn on both buttons and anchor tags across the site. When you look at the website on Google Chrome inspect view the buttons and anchor tags look the same. I've included a screen shot below, I was viewing the site in a different screen size so it differs from the view of the previous screenshot:
 
-Across the site I've used a combination of anchor tags and buttons within forms. The buttons are submit buttons and there labelled such things as "Confirm Edit", "Update" etc. Once clicked the buttons submit the forms and in many cases upload that information within the form to the MongoDB database. However, in additon to the button I've used anchor tags, in many cases they take the user back to a previous page. For example on the site there is a "Cancel" anchor tag on the edit company address page that cancels the edit and takes ther user back to the "Profile" page. Anchor tags are the best way to do this because they have an attribute called "href". "href" takes a URL as a value, and once the user clicks that anchor tag it will take the user to the page assocaited with that URL. You can't use a button for this application because it will act the same as the submit button in the form. I tried to use two buttons and that resulted in a new bug. For example in the edit inventory form on the edit inventory page, I found that if the user made edits to the form and then clicked the "Cancel" button, it would take the user back to the previous page. However, it would also submit the form (and edits) to the database. So instead of cancelling the edits and taking the user back a step, it would do the opposite and confirm the edit, thus doing exactly the same task as the "Confirm Edit" button on the form. This is because the edit_inventory python function updates to the MongoDB database once it recieves a "POST", and it couldn't distinguish between the two buttons. Therefore, a combination of anchor tags and buttons was the only way I could get the "Cancel" button and "Confirm Edit" button to function properly.  
+<p align ="center"><img src="static/assets/images/TESTING_images/ButtonAnchorBugChrome.png"></p>
 
- In order to make buttons and anchor tags look the same I used the same CSS class that I built called small_btn on both buttons and anchor tags across the site. When you look at the website on Google Chrome inspect view the buttons and anchor tags look the same. I've included a screen shot below, I was viewing the site in a different screen size so it differs from the view of the previous screenshot:
+I checked the buttons and anchor tags in both Edge and Firefox to see if I could replicate the bug, I've included a screen shot of both below:
 
- <img src="static/assets/images/TESTING_images/ButtonAnchorBugChrome.png" class="center-align">
+### <u>Firefox Screen Shot</u>
+<p align ="center"><img src="static/assets/images/TESTING_images/ButtonAnchorBugFirefox.png"></p>
 
- I checked the buttons and anchor tags in both Edge and Firefox to see if I could replicate the bug, I've included a screen shot of both below: 
+### <u>Edge Screen Shot</u>
+<p align ="center"><img src="static/assets/images/TESTING_images/ButtonAnchorBugEdge.png"></p>
 
-#### <u>Firefox Screen Shot</u>
-<img src="static/assets/images/TESTING_images/ButtonAnchorBugFirefox.png">
+I checked the website on a Sony Xperia Andriod device to see if I could replicate the bug, I've included a screen shot below:
 
-#### <u>Edge Screen Shot</u>
-<img src="static/assets/images/TESTING_images/ButtonAnchorBugEdge.png">
+### <u>Sony Xperia Andriod Screen Shot</u>
+<p align ="center"><img src="static/assets/images/TESTING_images/ButtonAnchorBugSonyXperia.png"></p>
 
-I checked the website on a Sony Xperia Andriod device to see if I could replicate the bug, I've included a screen shot below: 
+To eliminate my CSS small_btn class from being the issue, I decided to try and use Materalize built in CSS to see if the bug would replicate. As you can see from the screen shot below when you view the site on an OS device (I only had access to iPhones so iPad I am unsure), the bug persits:
 
-#### <u>Sony Xperia Andriod Screen Shot</u>
-<img src="static/assets/images/TESTING_images/ButtonAnchorBugSonyXperia.png">
+### <u>Materialize Screen Shot</u>
+<p align ="center"><img src="static/assets/images/TESTING_images/ButtonAnchorBugMateralize.jpeg"></p>
 
-To eliminate my CSS small_btn class from being the issue, I decided to try and use Materalize built in CSS to see if the bug would replicate. As you can see from the screen shot below when you view the site on an OS device (I only had access to iPhones so iPad I am unsure), the bug persits: 
-
-#### <u>Materialize Screen Shot</u>
-<img src="static/assets/images/TESTING_images/ButtonAnchorBugMateralize.jpeg">
-
-From my investigations into this bug I can only conclude that it must be related to OS devices, as its not prevelant any browsers on both PC, Mac or Android devices. Fortunately, the colours of both anchor and buttons remain the same so from a UX and user stand point this bug doesn't effect the overall funciton of the site. Although frustrating its purely an asethetic issue that I hopefully I will be able to solve in the future.  
-
-
-
-
+From my investigations into this bug I can only conclude that it must be related to OS devices, as its not prevelant any browsers on both PC, Mac or Android devices. Fortunately, the colours of both anchor and buttons remain the same so from a UX and user stand point this bug doesn't effect the overall funciton of the site. Although frustrating its purely an asethetic issue that I hopefully I will be able to solve in the future.
 
 
