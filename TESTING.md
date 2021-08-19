@@ -311,7 +311,9 @@ Verify that small screen sizes activate the toggle feature, activating the navig
 * Each card should have the name of the company, the inventory entry detailing the category, brand name, product name and quantity of that product they have in stock. 
 * Below the inventory entry informatiom you should see a collaposible with "Click for COMPANY NAME Contact Detials, <b>CLICK the collapsible</b>.
 * Once clicked the collapsible should expand, to unvale said companies contact details, so you can call them to discuss renting said equipment featured on that particular inventory entry. 
-* Scrooll up to the top of the page and <b>CLICK "Reset"</b>
+* Scroll up to the top of the page and <b>CLICK "Reset"</b>
+* Perform the following manual check <b>TYPE "Nexo" in Text Input > CLICK "Search" Button</b>. 
+* The page will refresh and a message will appear just below the search form you should see "No Results Found". 
 
 ### Forcing from Visitors Side to Memebers Side
 
@@ -375,9 +377,34 @@ The site has preventative measures in place to prevent someone from registering 
 
 It was reported by a family memeber and later confirmed by testing of the site that anchor tags and buttons don't appear the same when viewing the site on an iPhone. Whether you view the site on a chrome app or safari, the bug is still present. I've included a image below on what the bug looks like: 
 
-<img class="center-align"src="static/assets/images/TESTING_images/ButtonAnchorBugiPhone.jpeg" alt="Screen shot of iPhone screen and anchor button bug">
+<img src="static/assets/images/TESTING_images/ButtonAnchorBugiPhone.jpeg">
 
-Across the site I've used a combination of anchor tags and buttons within forms. The buttons would be submit buttons labelled such things as "Confirm Edit" "Update". Once clicked they would submit the form and in many cases upload that information within the form to the MongoDB database. However, in additon to the button I've used anchor tags, to take the user back to a previous page. In order to make buttons and anchor tags look the same I used the same CSS class that I built called small_btn. When you look at the website on Google Chrome inspect view the buttons and anchor tags look the same. I've included a screen shot below:
+
+Across the site I've used a combination of anchor tags and buttons within forms. The buttons are submit buttons and there labelled such things as "Confirm Edit", "Update" etc. Once clicked the buttons submit the forms and in many cases upload that information within the form to the MongoDB database. However, in additon to the button I've used anchor tags, in many cases they take the user back to a previous page. For example on the site there is a "Cancel" anchor tag on the edit company address page that cancels the edit and takes ther user back to the "Profile" page. Anchor tags are the best way to do this because they have an attribute called "href". "href" takes a URL as a value, and once the user clicks that anchor tag it will take the user to the page assocaited with that URL. You can't use a button for this application because it will act the same as the submit button in the form. I tried to use two buttons and that resulted in a new bug. For example in the edit inventory form on the edit inventory page, I found that if the user made edits to the form and then clicked the "Cancel" button, it would take the user back to the previous page. However, it would also submit the form (and edits) to the database. So instead of cancelling the edits and taking the user back a step, it would do the opposite and confirm the edit, thus doing exactly the same task as the "Confirm Edit" button on the form. This is because the edit_inventory python function updates to the MongoDB database once it recieves a "POST", and it couldn't distinguish between the two buttons. Therefore, a combination of anchor tags and buttons was the only way I could get the "Cancel" button and "Confirm Edit" button to function properly.  
+
+ In order to make buttons and anchor tags look the same I used the same CSS class that I built called small_btn on both buttons and anchor tags across the site. When you look at the website on Google Chrome inspect view the buttons and anchor tags look the same. I've included a screen shot below, I was viewing the site in a different screen size so it differs from the view of the previous screenshot:
+
+ <img src="static/assets/images/TESTING_images/ButtonAnchorBugChrome.png" class="center-align">
+
+ I checked the buttons and anchor tags in both Edge and Firefox to see if I could replicate the bug, I've included a screen shot of both below: 
+
+#### <u>Firefox Screen Shot</u>
+<img src="static/assets/images/TESTING_images/ButtonAnchorBugFirefox.png">
+
+#### <u>Edge Screen Shot</u>
+<img src="static/assets/images/TESTING_images/ButtonAnchorBugEdge.png">
+
+I checked the website on a Sony Xperia Andriod device to see if I could replicate the bug, I've included a screen shot below: 
+
+#### <u>Sony Xperia Andriod Screen Shot</u>
+<img src="static/assets/images/TESTING_images/ButtonAnchorBugSonyXperia.png">
+
+To eliminate my CSS small_btn class from being the issue, I decided to try and use Materalize built in CSS to see if the bug would replicate. As you can see from the screen shot below when you view the site on an OS device (I only had access to iPhones so iPad I am unsure), the bug persits: 
+
+#### <u>Materialize Screen Shot</u>
+<img src="static/assets/images/TESTING_images/ButtonAnchorBugMateralize.jpeg">
+
+From my investigations into this bug I can only conclude that it must be related to OS devices, as its not prevelant any browsers on both PC, Mac or Android devices. Fortunately, the colours of both anchor and buttons remain the same so from a UX and user stand point this bug doesn't effect the overall funciton of the site. Although frustrating its purely an asethetic issue that I hopefully I will be able to solve in the future.  
 
 
 
