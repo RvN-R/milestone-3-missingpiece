@@ -1,7 +1,7 @@
 
 # Missing Piece Website
 
-<a  href="http://missing-piece-rvn.herokuapp.com/home">View the live project here...</a>
+<a  href="http://missing-piece-rvn.herokuapp.com">View the live project here...</a>
 
 This site is for a new and emerging company called the Missing Piece. Its designed to be responsive and accessible on a range of devices and have interactive elements to help meet the clients key goals.
 
