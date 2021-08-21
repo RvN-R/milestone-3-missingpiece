@@ -314,4 +314,4 @@ if __name__ == "__main__":
     # If __name__ is equal to __main__ runs app
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
