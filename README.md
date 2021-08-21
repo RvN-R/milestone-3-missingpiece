@@ -262,7 +262,7 @@ This isn't a page but it is a feature, and appears on the navigation bar on the 
 
 * Decrease Manual Element to "Adding Inventory" - At present a user has to input each Inventory entry using the "Add Inventory" page. However, if you are a large rental company with a massive inventory then this process could easily become laborious. A number of large companies have internal databases that they use to manage the incoming and outgoing stock from their rental inventories. Each piece of equipment has a bar code, that bar code is scanned when it leaves the warehouse for productions, and scanned upon it's return. At this point the Missing Piece is still at its initial stages and more research needs to be done into how these databases store this information. However, the long term goal would be to write some code that dumps the data from this database at close of business and upload to the Missing Piece database. This would keep the user's actual rental inventory current within their missing piece profile.
 
-* At present I have included various if statements within each function to verify whether the user is logged in and verify that the user has access to features they are trying to access. To avoid replicating code as I have done in my python, in the future I would like to write a validation function, thus avoiding unnecessary repetition.  
+* At present I have included various if statements within each function to verify whether the user is logged in, and verify that the user has access to features they are trying to access. You will notice that I have replicated code. In the future I would like to write a validation function, thus avoiding unnecessary repetition.  
 
   
 
