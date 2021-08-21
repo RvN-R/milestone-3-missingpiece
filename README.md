@@ -426,7 +426,31 @@ Testing information can be found on a separate <a  href="https://github.com/RvN-
 
 22. Once successful Heroku will notify you, click "View: to view the app and copy the domain link.
 
-  
+### Cloning Repository Using Command Line
+
+1. Log into GitHub and locate the correct GitHub Repository.
+
+2. Above the list located to the right of the green "Gitpod" button click code.
+
+3. Under Clone you will see three options HTTPS, SSH and GitHub CLI. Choose which option you prefer and then click the copy icon next to the URL to copy it.
+
+4. Open Terminal.
+
+5. Change the current working directory to the location where you want the cloned directory.
+
+6. Type git clone, and then paste the URL copied earlier during step 3.
+
+7. Press Enter to create your local clone.
+
+### Cloning Repository To GitHub Desktop
+
+1. Log into GitHub and locate the correct GitHub Repository.
+
+2. Above the list located to the right of the green "Gitpod" button click code.
+
+3. Click "Open with GitHub Desktop" to clone and open the repository with GitHub Desktop.
+
+4. Follow the prompts in GitHub Desktop to complete the clone.
 
 ## Credits
 
