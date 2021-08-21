@@ -3,13 +3,11 @@
 
 <a  href="http://missing-piece-rvn.herokuapp.com/home">View the live project here...</a>
 
-  
-
 This site is for a new and emerging company called the Missing Piece. Its designed to be responsive and accessible on a range of devices and have interactive elements to help meet the clients key goals.
 
-Missing Piece prime mission statement is to bring the UK's Live Sound Rental companies closer together, by offering a cross hire platform to aid in increased communication and clarity between all companies. Rental companies have production inventories containing loudspeakers, mixing consoles, microphones, monitor systems any and all equipment required to execute a production. Productions can range from music festivals, major touring artists headline shows, product launches or fashion shows to name but a few. In order to be in a position to cater for any and all potential productions a rental company would have to invest millions of pounds on equipment. This is obviously a massive financial investment that not all rental companies are in a position to do this. Therefore, it's common for number of rental companies in the UK to hold the same stock, that way they can hire stock off one and other in order to cover productions should they not have enough equipment on hand. Up until this point cross hiring has been a laborious task, phoning around different companies to see if they have spare stock. It stressful and time consuming, Missing Piece is offering an alternative.
+The company's prime mission statement is to bring the UK's Live Sound Rental companies closer together, by offering a cross hire platform to aid in increased communication and clarity between all companies. Rental companies have production inventories containing loudspeakers, mixing consoles, microphones, monitor systems, any and all equipment required to execute a production. Productions can range from music festivals, major touring artists headline shows, product launches or fashion shows to name but a few. In order to be in a position to cater for any and all potential productions, a rental company would have to invest millions of pounds on equipment. This is obviously a massive financial investment that not all rental companies are in a position to do this. Therefore, it's common for number of rental companies in the UK to hold the same stock, that way they can hire stock off one and other in order to cover productions, should they not have enough equipment on hand. Up until this point cross hiring has been a laborious task, phoning around different companies to see if they have spare stock. It's stressful and time consuming, Missing Piece is offering an alternative.
 
-The primary goal of this website is to provide visitors the opportunity to search the Missing Piece database for avalaible equipment or register an account with Missing Piece to upload there production inventories. The website features an "About Us" section, "So How Does This Work?" section, "Search Inventory" section and "Register" section. Once an account has been registered a user can upload there inventories, once uploaded these inventories can be edited or deleted. Once uploaded they will appear on the Missing Piece database and can be seen by those using the search to find avalaible production stock.
+The primary goal of this website is to provide visitors the opportunity to search the Missing Piece database for avalaible equipment or register an account with Missing Piece to upload their production inventories. The website features an "About Us" section, "So How Does This Work?" section, "Search Inventory" section and "Register" section. Once an account has been registered, a user can upload their inventories. Once uploaded, these inventories can be edited or deleted. Once uploaded, they will appear on the Missing Piece database and can be seen by those using the search to find avalaible production stock.
 
 <p align ="center"><img src="static/assets/images/README_images/MissingPieceResponsive.png"></p>
 
@@ -336,7 +334,7 @@ This isn't a page but it is a feature, and appears on the navigation bar on the 
 
 ## Testing
 
-Testing information can be found on a separate <a  href="#">Testing Readme</a>
+Testing information can be found on a separate <a  href="https://github.com/RvN-R/milestone-3-missingpiece/blob/master/TESTING.md">Testing Readme</a>
 
   
 
